@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if [[ -z $VIRTUAL_ENV ]]; then
+    source .env/bin/activate
+fi
+
+if [[ $1 =~ ^(server)$ ]]; then
+    flask --debug --app main.py run --port=7000
+
+elif [[ $1 =~ ^(dev)$ ]]; then
+    npm start
+
+elif [[ $1 =~ ^(build)$ ]]; then
+    if [[ $2 =~ ^(watch|w)$ ]]; then
+        npm run build:watch
+    else
+        npm run build
+    fi
+
+elif [[ $1 =~ ^(log)$ ]]; then
+    cat *.log
+
+fi
