@@ -1,4 +1,5 @@
+from flask import render_template
 
 
 def index():
-    return 'AKAM - Home'
+    return render_template('home.html')

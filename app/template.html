@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% include "includes/meta.html" %}
+        
+        {% block head %}{% endblock head %}
+
+        <title>Akam | {% block title %}{% endblock title %}</title>
+
+    </head>
+    <body>
+        <div id="root" class="root">{% block content %}{% endblock %}</div>
+    </body>
+</html>
