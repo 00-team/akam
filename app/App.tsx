@@ -10,7 +10,7 @@ import './style/fonts/imports.scss'
 const Home = loadable(() => import('Home'))
 
 const App: FC = () => {
-    if (ERROR) {
+    if (typeof ERROR !== 'undefined') {
         return (
             <div>
                 <h1>
