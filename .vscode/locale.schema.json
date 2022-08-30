@@ -1,0 +1,17 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "title": "Akam content",
+    "description": "Full contnet of Akam website",
+    "type": "object",
+
+    "required": ["label"],
+
+    "properties": {
+        "label": {
+            "minLength": 1,
+            "examples": ["English", "Persian"],
+            "description": "Label of the content language",
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "json.schemas": [
+        {
+            "fileMatch": ["locale/gg.json"],
+            "url": ".vscode/locale.schema.json"
+        }
+    ],
+    "[html]": {
+        "editor.formatOnSave": false
+    }
+}
