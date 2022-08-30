@@ -1,8 +1,10 @@
 import React from 'react'
 
-import './style/herosection.scss'
+import { Typer } from '@00-team/utils'
 
-const img = require('../../static/imgs/hero.png')
+import img from '../../static/imgs/hero.png'
+
+import './style/herosection.scss'
 
 const HeroSection = () => {
     return (
@@ -11,6 +13,17 @@ const HeroSection = () => {
                 <img src={img} alt='' />
             </div>
             <div className='texts-container'>
+                <div style={{ direction: 'rtl' }}>
+                    <Typer
+                        words={['موفقیت', 'آکام']}
+                        CursorStyle={{
+                            height: 80,
+                            background: 'red',
+                            width: 4,
+                            display: 'inline-block',
+                        }}
+                    />
+                </div>
                 <div className='title_small motto'>!موفقیت اتفاقی نیست</div>
                 <div className='title_hero'>
                     شرکت واردات و صادرات <span>آکام</span>

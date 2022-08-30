@@ -7,7 +7,7 @@
         "build:watch": "webpack --config config/webpack/build.ts --watch"
     },
     "dependencies": {
-        "@00-team/utils": "^0.1.8",
+        "@00-team/utils": "^1.0.0",
         "@loadable/component": "^5.15.2",
         "@react-icons/all-files": "^4.1.0",
         "axios": "^0.27.2",
