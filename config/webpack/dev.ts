@@ -1,9 +1,15 @@
 import HtmlPlugin from 'html-webpack-plugin'
+import { Configuration as WConf } from 'webpack'
+import { Configuration as DConf } from 'webpack-dev-server'
 
 import Base from './base'
 import { DevStyle } from './config/style'
 
-const DevConfig = {
+interface Configuration extends WConf {
+    devServer: DConf
+}
+
+const DevConfig: Configuration = {
     ...Base,
     mode: 'development',
     module: {
@@ -28,10 +34,18 @@ const DevConfig = {
             logging: 'none',
             reconnect: 7,
         },
-        // proxy: {
-        //     context: ['/admin/api', '/m', '/s', '/favicon.ico'],
-        //     target: 'http://127.0.0.1:7000/',
-        // },
+        proxy: [
+            {
+                context: ['/api'],
+                target: 'http://127.0.0.1:7000/',
+            },
+
+            // static
+            {
+                context: ['/favicon.ico'],
+                target: 'http://127.0.0.1:7000/static/',
+            },
+        ],
     },
 }
 
