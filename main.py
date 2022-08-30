@@ -1,5 +1,5 @@
 
-from flask import Flask
+from flask import Flask, url_for
 
 from server import views
 
@@ -14,4 +14,6 @@ app.get('/api/locales_list/')(views.locales_list)
 app.get('/api/get_locale/<locale>/')(views.get_locale)
 
 # errors
+app.register_error_handler(400, views.errors)
+app.register_error_handler(403, views.errors)
 app.register_error_handler(404, views.errors)
