@@ -9,6 +9,17 @@ import './style/fonts/imports.scss'
 const Home = loadable(() => import('Home'))
 
 const App: FC = () => {
+    if (ERROR) {
+        return (
+            <div>
+                <h1>
+                    {ERROR.title} - {ERROR.code} - GGEZ
+                </h1>
+                <p>{ERROR.description}</p>
+            </div>
+        )
+    }
+
     return (
         <Routes>
             <Route index element={<Home />} />
