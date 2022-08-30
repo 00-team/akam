@@ -1,11 +1,15 @@
 .nav-container {
     position: fixed;
+    top: 0;
+
     width: 100%;
 
-    padding: 2rem;
+    padding: 1rem 2rem;
 
     display: flex;
     justify-content: center;
+
+    background-color: var(--thirty-percent);
 
     .nav-wrapper {
         display: flex;
@@ -56,7 +60,7 @@
                     border-radius: 100vmax;
 
                     transition: 0.5s all cubic-bezier(0.175, 0.885, 0.32, 1.275),
-                        0.5s 0.5s width cubic-bezier(0, 1.26, 0.4, 1.38);
+                        0.3s 0.5s width cubic-bezier(0, 1.26, 0.4, 1.38);
                 }
 
                 &:hover {
