@@ -12,6 +12,14 @@
             "examples": ["English", "Persian"],
             "description": "Label of the content language",
             "type": "string"
+        },
+        "direction": {
+            "enum": ["rtl", "ltr"],
+            "default": "ltr",
+            "type": "string"
+        },
+        "content": {
+            "type": "object"
         }
     }
 }

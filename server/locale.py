@@ -18,6 +18,13 @@ def load_locales(paths: list[Path]):
         locale_id = path.name[:-5]
         label = data['label']
         content = data['content']
+        direction = data.get('direction', 'ltr')
+
+        if not direction in ['rtl', 'ltr']:
+            raise ValueError((
+                f'invalid direction: {direction} in {path.name}.\n            '
+                f'possible values are "rtl" & "ltr"'
+            ))
 
         base = {
             'id': locale_id,
