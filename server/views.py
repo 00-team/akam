@@ -1,5 +1,3 @@
-
-
 from flask import abort, render_template
 from werkzeug.exceptions import HTTPException
 
