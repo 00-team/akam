@@ -1,18 +1,10 @@
-// main font?
-@import url(https://fonts.googleapis.com/css2?family=Roboto&display=swap);
-
-// smart font
-// font-family: 'Poppins', sans-serif;
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
-
-// titles font
-// font-family: 'Anton', sans-serif;
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-
-// bold font for categoris
-// font-family: 'Oleo Script', cursive;
-@import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@700&display=swap');
-
-// dropdown font
-// font-family: 'Merienda One', cursive;
-@import url('https://fonts.googleapis.com/css2?family=Merienda+One&display=swap');
+// Titles Font
+@font-face {
+    font-family: Shabnam;
+    src: url('shabnam/Shabnam-Bold.eot');
+    src: url('shabnam/Shabnam-Bold.eot?#iefix') format('embedded-opentype'),
+        url('shabnam/Shabnam-Bold.woff2') format('woff2'),
+        url('shabnam/Shabnam-Bold.woff') format('woff'),
+        url('shabnam/Shabnam-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
