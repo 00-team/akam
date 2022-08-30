@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 
 import loadable from '@loadable/component'
+import Navbar from 'layout/Navbar'
 import { Route, Routes } from 'react-router-dom'
 
 import './style/base.scss'
@@ -21,9 +22,12 @@ const App: FC = () => {
     }
 
     return (
-        <Routes>
-            <Route index element={<Home />} />
-        </Routes>
+        <>
+            <Navbar />
+            <Routes>
+                <Route index element={<Home />} />
+            </Routes>
+        </>
     )
 }
 
