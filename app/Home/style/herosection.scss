@@ -6,8 +6,6 @@
     align-items: center;
     justify-content: center;
 
-    margin-top: 5vh;
-
     background-color: var(--thirty-percent);
 
     .svg-container {
@@ -16,9 +14,37 @@
 
         width: 30vw;
         height: 100%;
+
+        animation: svg-fade-in 1s 0.3s both ease-in-out;
+
+        @keyframes svg-fade-in {
+            from {
+                transform: translateY(20%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
         img {
             width: 100%;
             object-fit: cover;
+
+            animation: img-bounce 4s 2s ease-in-out infinite;
+
+            @keyframes img-bounce {
+                0% {
+                    transform: translateY(0);
+                }
+                50% {
+                    transform: translateY(-3%);
+                }
+                100% {
+                    transform: translateY(0);
+                }
+            }
         }
     }
 
@@ -40,8 +66,27 @@
 
         .text-desc {
             width: 70%;
+            margin-left: auto;
+
+            margin-top: 0.25vh;
 
             opacity: 0.7;
+        }
+
+        .animation {
+            div {
+                animation: text-fadein backwards 1s 2s ease-in-out;
+            }
+            @keyframes text-fadein {
+                from {
+                    transform: translateY(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
         }
     }
 }
