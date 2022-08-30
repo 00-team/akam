@@ -31,6 +31,8 @@
 
 body {
     overflow: hidden;
+
+    text-align: right;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -50,21 +52,30 @@ body {
     }
 }
 
+.title_hero {
+    font-size: g.$TITLE_FONTSIZE_HERO;
+    font-family: Shabnam;
+}
 .title {
     font-size: g.$TITLE_FONTSIZE;
+    font-family: Shabnam;
 }
 .title_small {
     font-size: g.$TITLE_FONTSIZE_SMALL;
+    font-family: Shabnam;
 }
 .title_smaller {
     font-size: g.$TITLE_FONTSIZE_SMALLER;
+    font-family: Shabnam;
 }
 
 .description {
     font-size: g.$DESCRIPTION_FONT_SIZE;
+    font-family: Shabnam;
 }
 .description_small {
     font-size: g.$DESCRIPTION_FONT_SIZE_SMALL;
+    font-family: Shabnam;
 }
 
 .icon {
