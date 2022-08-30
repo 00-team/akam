@@ -1,5 +1,5 @@
 
-from flask import Flask, url_for
+from flask import Flask
 
 from server import views
 
