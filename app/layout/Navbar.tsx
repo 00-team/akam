@@ -4,9 +4,13 @@ import { C } from '@00-team/utils'
 
 import { useLocation } from 'react-router-dom'
 
+import { useAtomValue } from 'jotai'
+import { LocaleAtom } from 'state'
+
 import './style/navbar.scss'
 
 const Navbar: FC = () => {
+    const Loacle = useAtomValue(LocaleAtom).Navbar
     const Location = useLocation()
 
     const CheckLocation = (item: string) =>
@@ -17,17 +21,16 @@ const Navbar: FC = () => {
             <div className='nav-wrapper title_small'>
                 <div className='nav-items'>
                     <div className={`nav-item ${C(CheckLocation('contact'))}`}>
-                        ارتباط با ما
+                        {Loacle.contact}
                     </div>
-
                     <div className={`nav-item ${C(CheckLocation('services'))}`}>
-                        خدمات
+                        {Loacle.services}
                     </div>
                     <div className={`nav-item ${C(CheckLocation('about'))}`}>
-                        درباره ما
+                        {Loacle.about}
                     </div>
                     <div className={`nav-item ${C(CheckLocation(''))}`}>
-                        صفحه اصلی
+                        {Loacle.home}
                     </div>
                 </div>
                 <div className='nav-logo'>LOGO</div>

@@ -33,8 +33,6 @@ const HeroSection: FC = () => {
                         className='title_hero'
                         style={{ animationDelay: '1.3s' }}
                     >
-                        {/* شرکت واردات و صادرات <span>آکام</span> */}
-
                         {Locale.title}
                     </div>
                 </div>
@@ -43,10 +41,6 @@ const HeroSection: FC = () => {
                         className='title_small text-desc'
                         style={{ animationDelay: '1.6s' }}
                     >
-                        {/* لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
-                        چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون
-                        بلکه روزنامه */}
-
                         {Locale.description}
                     </div>
                 </div>
