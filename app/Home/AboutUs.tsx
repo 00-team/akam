@@ -71,8 +71,8 @@ const AboutContent: FC<AboutContentProps> = ({
     className,
 }) => {
     return (
-        <div className='about-content'>
-            <div className={`about-svg ${className && className}`}>
+        <div className={`about-content ${className && className}`}>
+            <div className='about-svg'>
                 <Svg size={30} />
             </div>
             <div className='about-title title_small'>{title}</div>
