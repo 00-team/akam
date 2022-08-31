@@ -1,4 +1,10 @@
 {
     "label": "English",
-    "content": {}
+    "direction": "rtl",
+    "Home": {
+        "hero": {
+            "motto0": { "sentence": "GGEZ", "words": ["word1", "word2"] },
+            "motto": "GGGGGGGGGGGG"
+        }
+    }
 }

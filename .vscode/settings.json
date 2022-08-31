@@ -2,7 +2,7 @@
     "json.schemas": [
         {
             "fileMatch": ["locale/*.json"],
-            "url": ".vscode/locale.schema.json"
+            "url": "/locale/schema.json"
         }
     ],
     "[html]": {
