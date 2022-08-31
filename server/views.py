@@ -1,7 +1,7 @@
-from flask import abort, render_template
+from flask import abort, render_template, request
 from werkzeug.exceptions import HTTPException
 
-from .locale import LOCALES, LOCALES_LIST
+from .locale import DEFAULT_LOCALE, LOCALES, LOCALES_LIST
 
 
 def home():
@@ -12,11 +12,12 @@ def locales_list():
     return LOCALES_LIST
 
 
-def get_locale(locale: str):
+def get_locale():
+    locale = request.args.get('locale', DEFAULT_LOCALE)
     data = LOCALES.get(locale)
 
     if data is None:
-        abort(404)
+        data = LOCALES.get(DEFAULT_LOCALE)
 
     return data
 
@@ -29,4 +30,4 @@ def errors(error: HTTPException):
         'description': error.description,
     }
 
-    return render_template('error.html', error=context)
+    return render_template('error.html', error=context), error.code
