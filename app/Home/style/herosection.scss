@@ -50,13 +50,17 @@
         flex-direction: column;
         gap: 1vh;
 
-        .motto {
-            margin: 1vh 0;
+        .gg-motto {
+            .cursor {
+                background: var(--sixty-percent);
+                width: 2px;
+                height: 15px;
+                display: inline-block;
+            }
         }
 
-        span {
-            color: var(--sixty-percent);
-            font-weight: bold;
+        .motto {
+            margin: 1vh 0;
         }
 
         .text-desc {

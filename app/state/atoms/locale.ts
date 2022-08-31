@@ -3,7 +3,7 @@ import axios from 'axios'
 import { atom } from 'jotai'
 import { BaseLocaleModel, LocaleModel } from 'state'
 
-const Locale = atom<LocaleModel | 'loading'>('loading')
+const Locale = atom<LocaleModel>({} as LocaleModel)
 const LocalesList = atom<BaseLocaleModel[]>([])
 
 const LocaleAtom = atom(

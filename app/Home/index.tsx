@@ -8,9 +8,7 @@ import './style/home.scss'
 const Home: FC = () => {
     return (
         <div className='home-container'>
-            {/* sections */}
             <HeroSection />
-
             <AboutUs />
         </div>
     )

@@ -58,6 +58,11 @@ body {
     }
 }
 
+span.special-word {
+    color: var(--sixty-percent);
+    font-weight: bold;
+}
+
 .title_hero {
     font-size: g.$TITLE_FONTSIZE_HERO;
     font-family: Shabnam;

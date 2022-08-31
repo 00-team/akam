@@ -1,10 +1,12 @@
 import React, { FC, useEffect } from 'react'
 
+import { Empty } from '@00-team/utils'
+
 import loadable from '@loadable/component'
 import Navbar from 'layout/Navbar'
 import { Route, Routes } from 'react-router-dom'
 
-import { useSetAtom } from 'jotai'
+import { useAtom, useSetAtom } from 'jotai'
 import { LocaleAtom, LocalesListAtom } from 'state'
 
 import './style/base.scss'
@@ -14,13 +16,15 @@ const Home = loadable(() => import('Home'))
 const ErrorPage = loadable(() => import('layout/Error'))
 
 const App: FC = () => {
-    const UpdateLocale = useSetAtom(LocaleAtom)
+    const [Locale, UpdateLocale] = useAtom(LocaleAtom)
     const UpdateLocalesList = useSetAtom(LocalesListAtom)
 
     useEffect(() => {
         UpdateLocale()
         UpdateLocalesList()
     }, [])
+
+    if (Empty(Locale)) return <div>Loading...</div>
 
     return (
         <>
