@@ -1,10 +1,19 @@
 {
     "label": "English",
-    "direction": "rtl",
+
+    "Navbar": {
+        "home": "Home",
+        "about": "About",
+        "contact": "Contact",
+        "services": "Services"
+    },
     "Home": {
         "hero": {
-            "motto0": { "sentence": "GGEZ", "words": ["word1", "word2"] },
-            "motto": "GGGGGGGGGGGG"
-        }
+            "motto0": { "sentence": "GGEZ", "words": ["word", "words"] },
+            "motto": "GGGGGGGGGGGG",
+            "description": "**Hero** \n Description",
+            "title": "Hero Title <|Akam|> GGEZ <|COLORED|>"
+        },
+        "about": "GG\nEZ"
     }
 }

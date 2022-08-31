@@ -1,10 +1,10 @@
 {
     "$schema": "http://json-schema.org/schema",
-    "title": "Akam content",
-    "description": "Full contnet of Akam website",
-    "type": "object",
+    "title": "Locale",
+    "description": "Akam locale schema",
 
-    "required": ["label", "Home"],
+    "type": "object",
+    "additionalProperties": false,
 
     "properties": {
         "label": {
@@ -18,15 +18,36 @@
             "default": "ltr",
             "type": "string"
         },
-
+        "Navbar": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "home": {
+                    "type": "string"
+                },
+                "about": {
+                    "type": "string"
+                },
+                "services": {
+                    "type": "string"
+                },
+                "contact": {
+                    "type": "string"
+                }
+            },
+            "required": ["home", "about", "services", "contact"]
+        },
         "Home": {
             "type": "object",
+            "additionalProperties": false,
             "properties": {
                 "hero": {
                     "type": "object",
+                    "additionalProperties": false,
                     "properties": {
                         "motto0": {
                             "type": "object",
+                            "additionalProperties": false,
                             "properties": {
                                 "sentence": {
                                     "type": "string"
@@ -36,19 +57,30 @@
                                     "items": {
                                         "type": "string"
                                     },
-                                    "minItems": 2
+                                    "minItems": 2,
+                                    "uniqueItems": true
                                 }
                             },
                             "required": ["sentence", "words"]
                         },
                         "motto": {
                             "type": "string"
+                        },
+                        "title": {
+                            "type": "string"
+                        },
+                        "description": {
+                            "type": "string"
                         }
                     },
-                    "required": ["motto0", "motto"]
+                    "required": ["motto0", "motto", "title", "description"]
+                },
+                "about": {
+                    "type": "string"
                 }
             },
-            "required": ["hero"]
+            "required": ["hero", "about"]
         }
-    }
+    },
+    "required": ["label", "Home", "Navbar"]
 }
