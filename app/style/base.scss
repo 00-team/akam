@@ -62,6 +62,10 @@ body {
     font-size: g.$TITLE_FONTSIZE_HERO;
     font-family: Shabnam;
 }
+.section_title {
+    font-size: clamp(1.9rem, 3.2vw + 1.6rem, 3.1rem);
+    font-family: Shabnam;
+}
 .title {
     font-size: g.$TITLE_FONTSIZE;
     font-family: Shabnam;
