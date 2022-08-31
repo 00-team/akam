@@ -50,6 +50,7 @@ const HeroSection = () => {
                     </div>
                 </div>
             </div>
+            <div className='scroll-down'></div>
         </div>
     )
 }
