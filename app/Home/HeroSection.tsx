@@ -10,25 +10,23 @@ const HeroSection = () => {
     return (
         <section className='hero-cointainer'>
             <div className='texts-container title_small'>
-                <div style={{ direction: 'rtl' }}>
-                    <Typer
-                        words={['بیزینس', 'شرکت', 'تیم']}
-                        WriteDelay={100}
-                        CursorStyle={{
-                            background: 'var(--sixty-percent)',
-                            width: 2,
-                            height: 15,
-                            display: 'inline-block',
-                        }}
-                    />{' '}
-                    خود را به سطح جهانی ببرید
-                </div>
                 <div className='animation'>
                     <div
                         className='title_small motto'
                         style={{ animationDelay: '1s' }}
                     >
-                        !موفقیت اتفاقی نیست
+                        <Typer
+                            words={['بیزینس', 'شرکت', 'تیم']}
+                            DeleteDelay={100}
+                            MidDelay={1000}
+                            CursorStyle={{
+                                background: 'var(--sixty-percent)',
+                                width: 2,
+                                height: 15,
+                                display: 'inline-block',
+                            }}
+                        />{' '}
+                        خود را به سطح جهانی ببرید
                     </div>
                 </div>{' '}
                 <div className='animation'>
