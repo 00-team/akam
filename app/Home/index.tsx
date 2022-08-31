@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 
+import AboutUs from './AboutUs'
 import HeroSection from './HeroSection'
-import AboutUs from './aboutUs'
 
 import './style/home.scss'
 
