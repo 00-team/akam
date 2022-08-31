@@ -17,12 +17,12 @@ const AboutUs = () => {
                     <div className='content-title section_title'>درباره ما</div>
                     <div className='about-contents'>
                         <div className='contents-wrapper'>
-                            <div className='about-content'></div>
-                            <div className='about-content'></div>
+                            <AboutContent />
+                            <AboutContent />
                         </div>
                         <div className='contents-wrapper'>
-                            <div className='about-content'></div>
-                            <div className='about-content'></div>
+                            <AboutContent />
+                            <AboutContent />
                         </div>
                     </div>
                 </div>
@@ -32,6 +32,10 @@ const AboutUs = () => {
             </div>
         </section>
     )
+}
+
+const AboutContent = () => {
+    return <div className='about-content'></div>
 }
 
 export default AboutUs
