@@ -1,6 +1,7 @@
 import React from 'react'
 
-// import { Typer } from '@00-team/utils'
+import { Typer } from '@00-team/utils'
+
 import heroSvg from '../../static/svgs/hero.svg'
 
 import './style/herosection.scss'
@@ -11,17 +12,19 @@ const HeroSection = () => {
             <div className='svg-container'>
                 <img src={heroSvg} alt='' />
             </div>
-            <div className='texts-container'>
+            <div className='texts-container title_small'>
                 <div style={{ direction: 'rtl' }}>
-                    {/* <Typer
-                        words={['موفقیت', 'آکام']}
+                    <Typer
+                        words={['بیزینس', 'شرکت', 'تیم']}
+                        WriteDelay={100}
                         CursorStyle={{
-                            height: 80,
-                            background: 'red',
-                            width: 4,
+                            background: 'var(--sixty-percent)',
+                            width: 2,
+                            height: 15,
                             display: 'inline-block',
                         }}
-                    /> */}
+                    />{' '}
+                    خود را به سطح جهانی ببرید
                 </div>
                 <div className='animation'>
                     <div
