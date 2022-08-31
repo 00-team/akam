@@ -45,7 +45,7 @@
                     "type": "object",
                     "additionalProperties": false,
                     "properties": {
-                        "motto0": {
+                        "motto": {
                             "type": "object",
                             "additionalProperties": false,
                             "properties": {
@@ -63,9 +63,6 @@
                             },
                             "required": ["sentence", "words"]
                         },
-                        "motto": {
-                            "type": "string"
-                        },
                         "title": {
                             "type": "string"
                         },
@@ -73,7 +70,7 @@
                             "type": "string"
                         }
                     },
-                    "required": ["motto0", "motto", "title", "description"]
+                    "required": ["motto", "title", "description"]
                 },
                 "about": {
                     "type": "string"

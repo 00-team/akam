@@ -1,6 +1,306 @@
 .about-container {
-    height: 100vh;
-    background-color: #040404;
-    color: #f2f2f2;
-    font-size: 2rem;
+    padding: 5vh 3vw;
+    gap: 5vw;
+
+    &#about {
+        align-items: flex-start;
+    }
+    .svg-container {
+        width: 40vw;
+
+        svg {
+            background-color: var(--primary-color);
+        }
+    }
+
+    .about-wrapper {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 2vh;
+
+        margin-top: 5%;
+
+        &.active {
+            .about-title-card {
+                .span-wrapper {
+                    transform: translateY(0);
+                }
+
+                &::before {
+                    width: 100%;
+                }
+            }
+
+            .about-content-wrapper {
+                .content-title {
+                    animation: content-fade-in both 1s 1.5s ease-in-out;
+                }
+                .about-contents .contents-wrapper {
+                    .about-content {
+                        animation: content-fade-in both 1s ease-in-out;
+                    }
+                }
+            }
+            @keyframes content-fade-in {
+                from {
+                    opacity: 0;
+                    transform: translateY(100%);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
+
+        .about-title-card {
+            position: relative;
+
+            overflow: hidden;
+
+            .span-wrapper {
+                background-color: var(--primary-color);
+                padding-left: 10px;
+
+                transform: translateY(100%);
+
+                display: inline-block;
+
+                transition: transform 1s ease-in-out;
+
+                span {
+                    color: var(--sixty-percent);
+                }
+            }
+
+            &::before {
+                content: '';
+
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: 0%;
+                height: 2px;
+
+                z-index: -1;
+
+                transition: width 1s 1s ease-in-out;
+
+                background-color: var(--accent-color);
+            }
+        }
+
+        .about-content-wrapper {
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+            gap: 2vh;
+
+            .content-title {
+                opacity: 0;
+                transform: translateY(100%);
+            }
+            .about-contents {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 2vw;
+
+                .contents-wrapper {
+                    &:nth-child(1) {
+                        position: relative;
+                        top: 30px;
+                    }
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    flex-direction: column;
+                    gap: 6vh;
+
+                    .about-content {
+                        width: 350px;
+                        aspect-ratio: 1.5/1;
+
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-direction: column;
+                        gap: 2vh;
+
+                        border-radius: 10px;
+
+                        background-color: var(--thirty-percent);
+
+                        cursor: default;
+
+                        padding: 0 1rem;
+                        padding-top: 1.5rem;
+
+                        position: relative;
+
+                        opacity: 0;
+                        transform: translateY(100%);
+
+                        transition: box-shadow 0.3s;
+
+                        &:hover {
+                            box-shadow: 0px 20px 40px -10px rgb(0 0 0 / 30%);
+                        }
+
+                        .about-title {
+                            transition: color 0.3s ease-in-out;
+                        }
+
+                        .about-svg {
+                            border-radius: 100vmax;
+
+                            position: absolute;
+                            top: 0;
+                            transform: translateY(-50%);
+
+                            background-color: grey;
+
+                            box-shadow: 0 5px 10px -5px var(--accent-color);
+
+                            svg {
+                                margin: 12px;
+                            }
+                        }
+
+                        .about-description {
+                            opacity: 0.7;
+                        }
+
+                        .about-see-more {
+                            width: 100%;
+                            padding: 0.5rem 1rem;
+
+                            background-color: var(--ten-percent);
+
+                            border-radius: 5px;
+
+                            cursor: pointer;
+
+                            // reset
+                            border: none;
+                            //
+
+                            overflow: hidden;
+                            position: relative;
+
+                            isolation: isolate;
+
+                            transition: 0.5s ease-in-out;
+
+                            &:before,
+                            &:after {
+                                position: absolute;
+                                top: 50%;
+
+                                content: '';
+
+                                width: 20px;
+                                height: 20px;
+
+                                z-index: -1;
+
+                                background-color: var(--primary-color);
+                                border-radius: 100vmax;
+                            }
+
+                            &:before {
+                                left: -20px;
+                                transform: translate(-50%, -50%);
+                                // animation: criss-cross-left 0.8s reverse;
+                            }
+
+                            &:after {
+                                right: -20px;
+                                transform: translate(50%, -50%);
+                                // animation: criss-cross-right 0.8s reverse;
+                            }
+
+                            &:hover {
+                                color: var(--ten-percent);
+                                &:before {
+                                    animation: criss-cross-left 0.8s both;
+                                    animation-direction: alternate;
+                                }
+
+                                &:after {
+                                    animation: criss-cross-right 0.8s both;
+                                    animation-direction: alternate;
+                                }
+
+                                @keyframes criss-cross-left {
+                                    0% {
+                                        left: -20px;
+                                    }
+                                    50% {
+                                        left: 50%;
+                                        width: 20px;
+                                        height: 20px;
+                                    }
+                                    100% {
+                                        left: 50%;
+                                        width: 120%;
+                                        height: 120%;
+                                    }
+                                }
+
+                                @keyframes criss-cross-right {
+                                    0% {
+                                        right: -20px;
+                                    }
+                                    50% {
+                                        right: 50%;
+
+                                        width: 20px;
+                                        height: 20px;
+                                    }
+                                    100% {
+                                        right: 50%;
+
+                                        width: 120%;
+                                        height: 120%;
+                                    }
+                                }
+                            }
+                        }
+
+                        &.trust {
+                            &:hover {
+                                .about-title {
+                                    color: #0a64bc;
+                                }
+                            }
+                            .about-svg {
+                                background-color: #a9d4ff;
+
+                                svg {
+                                    fill: #0a64bc;
+                                }
+                            }
+                        }
+
+                        &.innovation {
+                            &:hover {
+                                .about-title {
+                                    color: #7b54c4;
+                                }
+                            }
+                            .about-svg {
+                                background-color: #e0d1fc;
+                                svg {
+                                    fill: #7b54c4;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

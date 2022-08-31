@@ -14,23 +14,18 @@ const HeroSection: FC = () => {
 
     return (
         <section className='hero-cointainer'>
-            <div className='svg-container'>
-                <img src={heroSvg} alt='' />
-            </div>
             <div className='texts-container title_small'>
-                <div className='gg-motto' style={{ direction: 'rtl' }}>
-                    {/* <Typer words={['بیزینس', 'شرکت', 'تیم']} WriteDelay={100} /> */}
-                    <Typer words={Locale.motto0.words} WriteDelay={100} />
-                    {/* خود را به سطح جهانی ببرید */}
-                    {Locale.motto0.sentence}
-                </div>
                 <div className='animation'>
                     <div
                         className='title_small motto'
                         style={{ animationDelay: '1s' }}
                     >
-                        {/* !موفقیت اتفاقی نیست */}
-                        {Locale.motto}
+                        <Typer
+                            words={Locale.motto.words}
+                            DeleteDelay={100}
+                            MidDelay={1000}
+                        />
+                        {Locale.motto.sentence}
                     </div>
                 </div>
                 <div className='animation'>
@@ -55,6 +50,9 @@ const HeroSection: FC = () => {
                         {Locale.description}
                     </div>
                 </div>
+            </div>
+            <div className='svg-container'>
+                <img src={heroSvg} alt='' />
             </div>
             <div className='scroll-down'></div>
         </section>

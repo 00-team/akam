@@ -7,11 +7,10 @@ interface Locale extends BaseLocale {
     direction?: 'rtl' | 'ltr'
     Home: {
         hero: {
-            motto0: {
+            motto: {
                 sentence: string
                 words: [string, string, ...string[]]
             }
-            motto: string
             title: string
             description: string
         }
