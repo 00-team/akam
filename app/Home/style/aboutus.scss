@@ -1,6 +1,6 @@
 .about-container {
     padding: 5vh 3vw;
-    gap: 3vw;
+    gap: 5vw;
 
     &#about {
         align-items: flex-start;
@@ -79,7 +79,7 @@
 
                         background-color: var(--thirty-percent);
 
-                        cursor: pointer;
+                        cursor: default;
 
                         transition: box-shadow 0.3s;
 
