@@ -7,7 +7,7 @@ import './style/herosection.scss'
 
 const HeroSection = () => {
     return (
-        <div className='hero-cointainer'>
+        <section className='hero-cointainer'>
             <div className='svg-container'>
                 <img src={heroSvg} alt='' />
             </div>
@@ -51,7 +51,7 @@ const HeroSection = () => {
                 </div>
             </div>
             <div className='scroll-down'></div>
-        </div>
+        </section>
     )
 }
 
