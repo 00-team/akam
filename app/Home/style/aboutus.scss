@@ -21,12 +21,33 @@
 
         margin-top: 5%;
 
+        &.active {
+            .about-title {
+                .span-wrapper {
+                    transform: translateY(0);
+                }
+
+                &::before {
+                    width: 100%;
+                }
+            }
+        }
+
         .about-title {
             position: relative;
+
+            overflow: hidden;
 
             .span-wrapper {
                 background-color: var(--primary-color);
                 padding-left: 10px;
+
+                transform: translateY(100%);
+
+                display: inline-block;
+
+                transition: transform 1s ease-in-out;
+
                 span {
                     color: var(--sixty-percent);
                 }
@@ -38,10 +59,12 @@
                 position: absolute;
                 top: 50%;
                 left: 0;
-                width: 100%;
+                width: 0%;
                 height: 2px;
 
                 z-index: -1;
+
+                transition: width 1s 1s ease-in-out;
 
                 background-color: var(--accent-color);
             }
