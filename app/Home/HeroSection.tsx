@@ -9,9 +9,6 @@ import './style/herosection.scss'
 const HeroSection = () => {
     return (
         <section className='hero-cointainer'>
-            <div className='svg-container'>
-                <img src={heroSvg} alt='' />
-            </div>
             <div className='texts-container title_small'>
                 <div style={{ direction: 'rtl' }}>
                     <Typer
@@ -52,6 +49,9 @@ const HeroSection = () => {
                         بلکه روزنامه
                     </div>
                 </div>
+            </div>
+            <div className='svg-container'>
+                <img src={heroSvg} alt='' />
             </div>
             <div className='scroll-down'></div>
         </section>
