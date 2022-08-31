@@ -41,22 +41,24 @@ const AboutUs = () => {
                 {isIntersecting && <object data={aboutSvg} type=''></object>}
             </div>
             <div className={`about-wrapper ${C(isIntersecting)}`}>
-                <div className='about-title title'>
+                <div className='about-title-card title'>
                     <span className='span-wrapper'>
                         چرا <span>آکام؟</span>
                     </span>
                 </div>
-                <div className='about-content'>
+                <div className='about-content-wrapper'>
                     <div className='content-title section_title'>درباره ما</div>
                     <div className='about-contents'>
                         <div className='contents-wrapper'>
                             <AboutContent
                                 Svg={FaHandshake}
+                                animationDelay={2.3}
                                 className='trust'
                                 title='اعتماد'
                                 description='عملیات ها به طور موثر اجرا می شود و این شرکت یک پیشرو در صنعت است.  آکام با عرضه های اصیل و متمایز خود به رشد و توسعه خود ادامه می دهد... '
                             />
                             <AboutContent
+                                animationDelay={2.9}
                                 Svg={FaHandshake}
                                 title='اعتماد'
                                 description='عملیات ها به طور موثر اجرا می شود و این شرکت یک پیشرو در صنعت است.  آکام با عرضه های اصیل و متمایز خود به رشد و توسعه خود ادامه می دهد... '
@@ -64,6 +66,7 @@ const AboutUs = () => {
                         </div>
                         <div className='contents-wrapper'>
                             <AboutContent
+                                animationDelay={2}
                                 Svg={FaGlobe}
                                 className='innovation'
                                 title='نواوری'
@@ -71,6 +74,7 @@ const AboutUs = () => {
                             '
                             />
                             <AboutContent
+                                animationDelay={2.6}
                                 Svg={FaHandshake}
                                 title='اعتماد'
                                 description='عملیات ها به طور موثر اجرا می شود و این شرکت یک پیشرو در صنعت است.  آکام با عرضه های اصیل و متمایز خود به رشد و توسعه خود ادامه می دهد... '
@@ -86,6 +90,7 @@ const AboutUs = () => {
 interface AboutContentProps {
     Svg: IconType
     className?: string
+    animationDelay: number
     title: string
     description: string
 }
@@ -95,9 +100,13 @@ const AboutContent: FC<AboutContentProps> = ({
     title,
     description,
     className,
+    animationDelay,
 }) => {
     return (
-        <div className={`about-content ${className && className}`}>
+        <div
+            className={`about-content ${className && className}`}
+            style={{ animationDelay: `${animationDelay}s` }}
+        >
             <div className='about-svg'>
                 <Svg size={30} />
             </div>
