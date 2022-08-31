@@ -87,7 +87,8 @@
 
                         cursor: default;
 
-                        padding: 2rem 1rem -1vh 2rem;
+                        padding: 0 1rem;
+                        padding-top: 1.5rem;
 
                         position: relative;
 
@@ -95,6 +96,10 @@
 
                         &:hover {
                             box-shadow: 0px 20px 40px -10px rgb(0 0 0 / 30%);
+                        }
+
+                        .about-title {
+                            transition: color 0.3s ease-in-out;
                         }
 
                         .about-svg {
@@ -111,20 +116,6 @@
                             svg {
                                 margin: 12px;
                             }
-
-                            &.trust {
-                                background-color: #a9d4ff;
-                                svg {
-                                    fill: #0a64bc;
-                                }
-                            }
-
-                            &.innovation {
-                                background-color: #e0d1fc;
-                                svg {
-                                    fill: #7b54c4;
-                                }
-                            }
                         }
                         .about-description {
                             opacity: 0.7;
@@ -135,8 +126,124 @@
 
                             background-color: var(--ten-percent);
 
+                            border-radius: 5px;
+
+                            cursor: pointer;
+
                             // reset
                             border: none;
+                            //
+
+                            overflow: hidden;
+                            position: relative;
+
+                            z-index: 1;
+
+                            transition: 0.5s ease-in-out;
+
+                            &:before,
+                            &:after {
+                                position: absolute;
+                                top: 50%;
+
+                                content: '';
+
+                                width: 20px;
+                                height: 20px;
+
+                                z-index: -1;
+
+                                background-color: var(--primary-color);
+                                border-radius: 100vmax;
+                            }
+
+                            &:before {
+                                left: -20px;
+                                transform: translate(-50%, -50%);
+                                // animation: criss-cross-left 0.8s reverse;
+                            }
+
+                            &:after {
+                                right: -20px;
+                                transform: translate(50%, -50%);
+                                // animation: criss-cross-right 0.8s reverse;
+                            }
+
+                            &:hover {
+                                color: var(--ten-percent);
+                                &:before {
+                                    animation: criss-cross-left 0.8s both;
+                                    animation-direction: alternate;
+                                }
+
+                                &:after {
+                                    animation: criss-cross-right 0.8s both;
+                                    animation-direction: alternate;
+                                }
+
+                                @keyframes criss-cross-left {
+                                    0% {
+                                        left: -20px;
+                                    }
+                                    50% {
+                                        left: 50%;
+                                        width: 20px;
+                                        height: 20px;
+                                    }
+                                    100% {
+                                        left: 50%;
+                                        width: 120%;
+                                        height: 120%;
+                                    }
+                                }
+
+                                @keyframes criss-cross-right {
+                                    0% {
+                                        right: -20px;
+                                    }
+                                    50% {
+                                        right: 50%;
+
+                                        width: 20px;
+                                        height: 20px;
+                                    }
+                                    100% {
+                                        right: 50%;
+
+                                        width: 120%;
+                                        height: 120%;
+                                    }
+                                }
+                            }
+                        }
+
+                        &.trust {
+                            &:hover {
+                                .about-title {
+                                    color: #0a64bc;
+                                }
+                            }
+                            .about-svg {
+                                background-color: #a9d4ff;
+
+                                svg {
+                                    fill: #0a64bc;
+                                }
+                            }
+                        }
+
+                        &.innovation {
+                            &:hover {
+                                .about-title {
+                                    color: #7b54c4;
+                                }
+                            }
+                            .about-svg {
+                                background-color: #e0d1fc;
+                                svg {
+                                    fill: #7b54c4;
+                                }
+                            }
                         }
                     }
                 }
