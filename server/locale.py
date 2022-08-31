@@ -5,6 +5,7 @@ from .shared import BASE_DIR
 
 
 LOCALE_DIR = BASE_DIR / 'locale'
+DEFAULT_LOCALE = 'en'
 
 
 def load_locales(paths: list[Path]):
@@ -36,6 +37,9 @@ def load_locales(paths: list[Path]):
             **base,
             'content': content
         }
+
+    if not DEFAULT_LOCALE in locales:
+        raise ValueError('default locale is not in the locales!')
 
     return locales, locales_list
 
