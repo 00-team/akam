@@ -77,9 +77,7 @@ const AboutContent: FC<AboutContentProps> = ({
             </div>
             <div className='about-title title_small'>{title}</div>
             <div className='about-description description'>{description}</div>
-            <div className='see-more'>
-                <button>ادامه مطلب</button>
-            </div>
+            <button className='about-see-more description'>ادامه مطلب</button>
         </div>
     )
 }
