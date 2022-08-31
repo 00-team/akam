@@ -16,17 +16,18 @@ const Navbar = () => {
         <div className='nav-container'>
             <div className='nav-wrapper title_small'>
                 <div className='nav-items'>
-                    <div className={`nav-item ${C(CheckLocation(''))}`}>
-                        صفحه اصلی
+                    <div className={`nav-item ${C(CheckLocation('contact'))}`}>
+                        ارتباط با ما
+                    </div>
+
+                    <div className={`nav-item ${C(CheckLocation('services'))}`}>
+                        خدمات
                     </div>
                     <div className={`nav-item ${C(CheckLocation('about'))}`}>
                         درباره ما
                     </div>
-                    <div className={`nav-item ${C(CheckLocation('services'))}`}>
-                        خدمات
-                    </div>
-                    <div className={`nav-item ${C(CheckLocation('contact'))}`}>
-                        ارتباط با ما
+                    <div className={`nav-item ${C(CheckLocation(''))}`}>
+                        صفحه اصلی
                     </div>
                 </div>
                 <div className='nav-logo'>LOGO</div>
