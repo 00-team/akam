@@ -15,7 +15,6 @@ const Navbar = () => {
     return (
         <div className='nav-container'>
             <div className='nav-wrapper title_small'>
-                <div className='nav-logo'>LOGO</div>
                 <div className='nav-items'>
                     <div className={`nav-item ${C(CheckLocation(''))}`}>
                         صفحه اصلی
@@ -30,6 +29,7 @@ const Navbar = () => {
                         ارتباط با ما
                     </div>
                 </div>
+                <div className='nav-logo'>LOGO</div>
             </div>
         </div>
     )
