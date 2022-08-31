@@ -1,14 +1,7 @@
 .hero-cointainer {
-    width: 100%;
     height: 85vh;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
     background-color: var(--thirty-percent);
-
-    position: relative;
 
     .svg-container {
         display: grid;
