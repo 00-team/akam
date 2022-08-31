@@ -24,6 +24,12 @@ const App: FC = () => {
         UpdateLocalesList()
     }, [])
 
+    useEffect(() => {
+        if (Locale.direction) {
+            document.body.style.direction = Locale.direction
+        }
+    }, [Locale])
+
     if (Empty(Locale)) return <div>Loading...</div>
 
     return (
