@@ -1,3 +1,35 @@
 .about-container {
-    height: 100vh;
+    padding: 3vw 7vh;
+    gap: 3vw;
+
+    &#about {
+        align-items: flex-start;
+    }
+    .svg-container {
+        width: 40vw;
+
+        svg {
+            background-color: var(--primary-color);
+        }
+    }
+
+    .about-wrapper {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 2vh;
+
+        .about-title {
+            span {
+                color: var(--sixty-percent);
+            }
+        }
+
+        .about-content {
+            .content-title {
+                font-size: clamp(1.9rem, 3.2vw + 1.6rem, 3.1rem);
+            }
+        }
+    }
 }
