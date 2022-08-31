@@ -9,11 +9,22 @@ const AboutUs = () => {
         <section className='about-container' id='about'>
             <div className='about-wrapper'>
                 <div className='about-title title'>
-                    چرا <span>آکام؟</span>
+                    <span className='span-wrapper'>
+                        چرا <span>آکام؟</span>
+                    </span>
                 </div>
                 <div className='about-content'>
-                    <div className='content-title title_hero'>درباره ما</div>
-                    <div className='about-contents'></div>
+                    <div className='content-title section_title'>درباره ما</div>
+                    <div className='about-contents'>
+                        <div className='contents-wrapper'>
+                            <div className='about-content'></div>
+                            <div className='about-content'></div>
+                        </div>
+                        <div className='contents-wrapper'>
+                            <div className='about-content'></div>
+                            <div className='about-content'></div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className='svg-container'>
