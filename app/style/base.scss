@@ -35,6 +35,11 @@ body {
     text-align: right;
 }
 
+html,
+body {
+    scroll-behavior: smooth;
+}
+
 @media (prefers-color-scheme: dark) {
     body {
         @include theme.dark;
