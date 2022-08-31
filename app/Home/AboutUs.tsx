@@ -1,7 +1,9 @@
 import React from 'react'
 
+import './style/aboutus.scss'
+
 const AboutUs = () => {
-    return <div>aboutUs</div>
+    return <section className='about-container'>aboutUs</section>
 }
 
 export default AboutUs
