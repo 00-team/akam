@@ -1,7 +1,7 @@
 import TsPaths from 'tsconfig-paths-webpack-plugin'
 import { Configuration } from 'webpack'
 
-// import { BundleAnalyzerPlugin as Analyzer } from 'webpack-bundle-analyzer'
+// import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import Entries from './config/entries'
 import { APP_DIR, DIST_DIR, resolve } from './config/path'
 
@@ -29,7 +29,7 @@ const Base: Configuration = {
     },
     devtool: 'source-map',
     plugins: [
-        // new Analyzer({ openAnalyzer: true })
+        // new BundleAnalyzerPlugin({ openAnalyzer: true, analyzerPort: 7777 }),
     ],
     resolve: {
         extensions: ['.mjs', '.tsx', '.ts', '.js'],

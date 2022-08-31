@@ -7,7 +7,12 @@ const Entries: Entry = {
 
     shared: {
         import: ['react-router-dom', '@00-team/utils'],
-        dependOn: 'react_vendors',
+        dependOn: ['react_vendors'],
+    },
+
+    components: {
+        import: resolve(APP_DIR, 'components'),
+        dependOn: ['react_vendors'],
     },
 
     main: {
@@ -17,7 +22,7 @@ const Entries: Entry = {
 
     Home: {
         import: resolve(APP_DIR, 'Home'),
-        dependOn: ['shared'],
+        dependOn: ['shared', 'components'],
     },
 }
 
