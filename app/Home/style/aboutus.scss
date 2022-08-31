@@ -75,16 +75,59 @@
                         width: 350px;
                         aspect-ratio: 1.5/1;
 
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-direction: column;
+                        gap: 2vh;
+
                         border-radius: 10px;
 
                         background-color: var(--thirty-percent);
 
                         cursor: default;
 
+                        padding: 2rem 1rem;
+
+                        position: relative;
+
                         transition: box-shadow 0.3s;
 
                         &:hover {
                             box-shadow: 0px 20px 40px -10px rgb(0 0 0 / 30%);
+                        }
+
+                        .about-svg {
+                            border-radius: 100vmax;
+
+                            position: absolute;
+                            top: 0;
+                            transform: translateY(-50%);
+
+                            background-color: grey;
+
+                            box-shadow: 0 5px 10px -5px var(--accent-color);
+
+                            svg {
+                                margin: 12px;
+                            }
+
+                            &.trust {
+                                background-color: #a9d4ff;
+                                svg {
+                                    fill: #0a64bc;
+                                }
+                            }
+
+                            &.innovation {
+                                background-color: #e0d1fc;
+                                svg {
+                                    fill: #7b54c4;
+                                }
+                            }
+                        }
+                        .about-description {
+                            opacity: 0.7;
                         }
                     }
                 }
