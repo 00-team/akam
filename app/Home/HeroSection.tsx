@@ -5,6 +5,8 @@ import { Typer } from '@00-team/utils'
 import { useAtomValue } from 'jotai'
 import { LocaleAtom } from 'state'
 
+import { Colored, Description } from 'components'
+
 import heroSvg from '../../static/svgs/hero.svg'
 
 import './style/herosection.scss'
@@ -33,7 +35,7 @@ const HeroSection: FC = () => {
                         className='title_hero'
                         style={{ animationDelay: '1.3s' }}
                     >
-                        {Locale.title}
+                        <Colored {...Locale.title} />
                     </div>
                 </div>
                 <div className='animation'>
@@ -41,7 +43,7 @@ const HeroSection: FC = () => {
                         className='title_small text-desc'
                         style={{ animationDelay: '1.6s' }}
                     >
-                        {Locale.description}
+                        <Description text={Locale.description} />
                     </div>
                 </div>
             </div>

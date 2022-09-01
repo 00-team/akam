@@ -26,7 +26,12 @@ const App: FC = () => {
 
     useEffect(() => {
         if (Locale.direction) {
-            document.body.style.direction = Locale.direction
+            const right = Locale.direction === 'rtl'
+            document.body.style.direction = right ? 'rtl' : 'ltr'
+            document.body.style.textAlign = right ? 'right' : 'left'
+        } else {
+            document.body.style.direction = ''
+            document.body.style.textAlign = ''
         }
     }, [Locale])
 

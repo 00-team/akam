@@ -6,6 +6,41 @@
     "type": "object",
     "additionalProperties": false,
 
+    "$defs": {
+        "description": {
+            "type": ["string", "array"],
+            "items": {
+                "type": "string"
+            }
+        },
+        "colored": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "sentence": {
+                    "type": "string"
+                },
+                "word": {
+                    "type": "string"
+                }
+            },
+            "required": ["sentence", "word"]
+        },
+        "about_card": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "title": {
+                    "type": "string"
+                },
+                "description": {
+                    "$ref": "#/$defs/description"
+                }
+            },
+            "required": ["title", "description"]
+        }
+    },
+
     "properties": {
         "label": {
             "minLength": 1,
@@ -64,16 +99,49 @@
                             "required": ["sentence", "words"]
                         },
                         "title": {
-                            "type": "string"
+                            "$ref": "#/$defs/colored"
                         },
                         "description": {
-                            "type": "string"
+                            "$ref": "#/$defs/description"
                         }
                     },
                     "required": ["motto", "title", "description"]
                 },
                 "about": {
-                    "type": "string"
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "doom": {
+                            "$ref": "#/$defs/colored"
+                        },
+                        "title": {
+                            "type": "string"
+                        },
+                        "trust": {
+                            "$ref": "#/$defs/about_card"
+                        },
+                        "trust2": {
+                            "$ref": "#/$defs/about_card"
+                        },
+                        "trust3": {
+                            "$ref": "#/$defs/about_card"
+                        },
+                        "innovation": {
+                            "$ref": "#/$defs/about_card"
+                        },
+                        "card_button": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "doom",
+                        "title",
+                        "trust",
+                        "trust2",
+                        "trust3",
+                        "innovation",
+                        "card_button"
+                    ]
                 }
             },
             "required": ["hero", "about"]

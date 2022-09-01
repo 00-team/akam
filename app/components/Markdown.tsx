@@ -1,36 +1,38 @@
-// import React, { FC } from 'react'
+import React, { FC } from 'react'
 
-// https://github.com/developit/snarkdown/blob/main/src/index.js
+import { ColoredModel, DescriptionModel } from 'state'
 
-/*
-const Colored: FC<Props> = ({ src }) => {
-    parser('GGEZ \*italic* **bold** ^^ __under__ normal')
+const Colored: FC<ColoredModel> = ({ sentence, word }) => {
+    let substart = sentence.indexOf(word)
 
-    src = 'GG EZ <c>COLOR</c>'
+    if (substart === -1) return <>{sentence}</>
 
-    const colored = src
-        .split(/(\^)/)
-        // .filter(i => i !== '<|' && i !== '|>')
-        // .map((word, idx) =>
-        //     idx % 2 !== 0 ? (
-        //         <span className='special-word' key={idx}>
-        //             {word}
-        //         </span>
-        //     ) : (
-        //         word
-        //     )
-        // )
+    let before = sentence.slice(0, substart)
+    let after = sentence.slice(substart + word.length)
 
-        console.log(colored)
-
-    // return <>{colored}</>
-    return <></>
+    return (
+        <>
+            {before}
+            <span className='colored-word'>{word}</span>
+            {after}
+        </>
+    )
 }
 
+const Description: FC<{ text: DescriptionModel }> = ({ text }) => {
+    if (Array.isArray(text)) {
+        return (
+            <>
+                {text.map((sentence, index) => (
+                    <span className='line' key={index}>
+                        {sentence}
+                    </span>
+                ))}
+            </>
+        )
+    }
 
+    return <>{text}</>
+}
 
-*/
-
-const GG = 12
-
-export { GG }
+export { Colored, Description }

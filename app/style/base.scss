@@ -32,8 +32,6 @@
 body {
     overflow: auto;
     overflow-x: hidden;
-
-    text-align: right;
 }
 
 html,
@@ -58,7 +56,7 @@ body {
     }
 }
 
-span.special-word {
+span.colored-word {
     color: var(--sixty-percent);
     font-weight: bold;
 }

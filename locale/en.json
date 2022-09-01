@@ -10,9 +10,35 @@
     "Home": {
         "hero": {
             "motto": { "sentence": "GGEZ", "words": ["word", "words"] },
-            "description": "**Hero** \n Description",
-            "title": "Hero Title <|Akam|> GGEZ <|COLORED|>"
+            "description": "Hero \n Description",
+            "title": {
+                "sentence": "Akam Company",
+                "word": "Akam"
+            }
         },
-        "about": "GG\nEZ"
+        "about": {
+            "doom": {
+                "sentence": "Why Akam?",
+                "word": "Akam?"
+            },
+            "title": "About Us",
+            "trust": {
+                "title": "Trust",
+                "description": "GGEZ"
+            },
+            "trust2": {
+                "title": "Trust",
+                "description": "GGEZ"
+            },
+            "trust3": {
+                "title": "Trust",
+                "description": "GGEZ"
+            },
+            "innovation": {
+                "title": "Innovation",
+                "description": "Cool"
+            },
+            "card_button": "Read More"
+        }
     }
 }
