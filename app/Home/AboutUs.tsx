@@ -36,9 +36,6 @@ const AboutUs = () => {
 
     return (
         <section className='about-container' ref={LazyRef} id='about'>
-            <div className='svg-container'>
-                {isIntersecting && <object data={aboutSvg} type=''></object>}
-            </div>
             <div className={`about-wrapper ${C(isIntersecting)}`}>
                 <div className='about-title-card title'>
                     <span className='span-wrapper'>
@@ -82,6 +79,9 @@ const AboutUs = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className='svg-container'>
+                {isIntersecting && <object data={aboutSvg} type=''></object>}
             </div>
         </section>
     )
