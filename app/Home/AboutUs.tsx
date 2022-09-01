@@ -67,6 +67,7 @@ const AboutUs: FC = () => {
                             <AboutContent
                                 delay={2.9}
                                 Icon={FaHandshake}
+                                className='innovation'
                                 title={Locale.trust2.title}
                                 description={Locale.trust2.description}
                             />
@@ -82,6 +83,7 @@ const AboutUs: FC = () => {
                             <AboutContent
                                 delay={2.6}
                                 Icon={FaHandshake}
+                                className='trust'
                                 title={Locale.trust3.title}
                                 description={Locale.trust3.description}
                             />

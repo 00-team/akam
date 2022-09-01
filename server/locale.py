@@ -21,7 +21,7 @@ def load_locales(paths: list[Path]):
     schema = get_schema()
 
     for path in paths:
-        with open(path) as f:
+        with open(path, encoding="utf-8") as f:
             data = json.load(f)
 
         validate(data, schema)
