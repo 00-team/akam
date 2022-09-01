@@ -13,7 +13,7 @@ const HeroSection: FC = () => {
     const Locale = useAtomValue(LocaleAtom).Home.hero
 
     return (
-        <section className='hero-cointainer'>
+        <section className='hero-cointainer' id='hero'>
             <div className='texts-container title_small'>
                 <div className='animation'>
                     <div
