@@ -1,28 +1,25 @@
 import React, { FC } from 'react'
 
-interface ColoredProps {
-    text: string
-    subtext: string
-}
+import { ColoredModel, DescriptionModel } from 'state'
 
-const Colored: FC<ColoredProps> = ({ text, subtext }) => {
-    let substart = text.indexOf(subtext)
+const Colored: FC<ColoredModel> = ({ sentence, word }) => {
+    let substart = sentence.indexOf(word)
 
-    if (substart === -1) return <>{text}</>
+    if (substart === -1) return <>{sentence}</>
 
-    let before = text.slice(0, substart)
-    let after = text.slice(substart + subtext.length)
+    let before = sentence.slice(0, substart)
+    let after = sentence.slice(substart + word.length)
 
     return (
         <>
             {before}
-            <span className='colored-word'>{subtext}</span>
+            <span className='colored-word'>{word}</span>
             {after}
         </>
     )
 }
 
-const Description: FC<{ text: string | string[] }> = ({ text }) => {
+const Description: FC<{ text: DescriptionModel }> = ({ text }) => {
     if (Array.isArray(text)) {
         return (
             <>

@@ -36,10 +36,7 @@ const HeroSection: FC = () => {
                         className='title_hero'
                         style={{ animationDelay: '1.3s' }}
                     >
-                        <Colored
-                            text={Locale.title.sentence}
-                            subtext={Locale.title.company}
-                        />
+                        <Colored {...Locale.title} />
                     </div>
                 </div>
                 <div className='animation'>

@@ -1,10 +1,10 @@
 import axios from 'axios'
 
 import { atom } from 'jotai'
-import { BaseLocaleModel, LocaleModel } from 'state'
+import { LocaleModel, LocalesListModel } from 'state'
 
 const Locale = atom<LocaleModel>({} as LocaleModel)
-const LocalesList = atom<BaseLocaleModel[]>([])
+const LocalesList = atom<LocalesListModel[]>([])
 
 const LocaleAtom = atom(
     get => get(Locale),
