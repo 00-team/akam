@@ -3,6 +3,7 @@ import React, { FC, useEffect } from 'react'
 import { Empty } from '@00-team/utils'
 
 import loadable from '@loadable/component'
+import Footer from 'layout/Footer'
 import Navbar from 'layout/Navbar'
 import { Route, Routes } from 'react-router-dom'
 
@@ -40,7 +41,10 @@ const App: FC = () => {
     return (
         <>
             <Navbar />
+
             <MainContent />
+
+            <Footer />
         </>
     )
 }
