@@ -24,7 +24,7 @@ const HeroSection: FC = () => {
                             words={Locale.motto.words}
                             DeleteDelay={100}
                             MidDelay={1000}
-                        />
+                        />{' '}
                         {Locale.motto.sentence}
                     </div>
                 </div>
