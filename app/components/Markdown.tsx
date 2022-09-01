@@ -1,36 +1,41 @@
-// import React, { FC } from 'react'
+import React, { FC } from 'react'
 
-// https://github.com/developit/snarkdown/blob/main/src/index.js
-
-/*
-const Colored: FC<Props> = ({ src }) => {
-    parser('GGEZ \*italic* **bold** ^^ __under__ normal')
-
-    src = 'GG EZ <c>COLOR</c>'
-
-    const colored = src
-        .split(/(\^)/)
-        // .filter(i => i !== '<|' && i !== '|>')
-        // .map((word, idx) =>
-        //     idx % 2 !== 0 ? (
-        //         <span className='special-word' key={idx}>
-        //             {word}
-        //         </span>
-        //     ) : (
-        //         word
-        //     )
-        // )
-
-        console.log(colored)
-
-    // return <>{colored}</>
-    return <></>
+interface ColoredProps {
+    text: string
+    subtext: string
 }
 
+const Colored: FC<ColoredProps> = ({ text, subtext }) => {
+    let substart = text.indexOf(subtext)
 
+    if (substart === -1) return <>{text}</>
 
-*/
+    let before = text.slice(0, substart)
+    let after = text.slice(substart + subtext.length)
 
-const GG = 12
+    return (
+        <>
+            {before}
+            <span className='colored-word'>{subtext}</span>
+            {after}
+        </>
+    )
+}
 
-export { GG }
+const Description: FC<{ text: string | string[] }> = ({ text }) => {
+    if (Array.isArray(text)) {
+        return (
+            <>
+                {text.map((sentence, index) => (
+                    <span className='line' key={index}>
+                        {sentence}
+                    </span>
+                ))}
+            </>
+        )
+    }
+
+    return <>{text}</>
+}
+
+export { Colored, Description }

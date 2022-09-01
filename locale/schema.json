@@ -6,6 +6,15 @@
     "type": "object",
     "additionalProperties": false,
 
+    "$defs": {
+        "description": {
+            "type": ["string", "array"],
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+
     "properties": {
         "label": {
             "minLength": 1,
@@ -64,10 +73,20 @@
                             "required": ["sentence", "words"]
                         },
                         "title": {
-                            "type": "string"
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "sentence": {
+                                    "type": "string"
+                                },
+                                "company": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": ["sentence", "company"]
                         },
                         "description": {
-                            "type": "string"
+                            "$ref": "#/$defs/description"
                         }
                     },
                     "required": ["motto", "title", "description"]

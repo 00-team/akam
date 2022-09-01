@@ -10,8 +10,11 @@
     "Home": {
         "hero": {
             "motto": { "sentence": "GGEZ", "words": ["word", "words"] },
-            "description": "**Hero** \n Description",
-            "title": "Hero Title <|Akam|> GGEZ <|COLORED|>"
+            "description": "Hero \n Description",
+            "title": {
+                "sentence": "Akam Company",
+                "company": "Akam"
+            }
         },
         "about": "GG\nEZ"
     }

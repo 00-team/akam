@@ -3,6 +3,8 @@ interface BaseLocale {
     label: string
 }
 
+type Description = string | string[]
+
 interface Locale extends BaseLocale {
     direction?: 'rtl' | 'ltr'
     Home: {
@@ -11,8 +13,11 @@ interface Locale extends BaseLocale {
                 sentence: string
                 words: [string, string, ...string[]]
             }
-            title: string
-            description: string
+            title: {
+                sentence: string
+                company: string
+            }
+            description: Description
         }
         about: string
     }
