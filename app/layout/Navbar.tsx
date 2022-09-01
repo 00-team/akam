@@ -17,7 +17,7 @@ const Navbar: FC = () => {
         Location.pathname.split('/')[1] === item
 
     return (
-        <div className='nav-container'>
+        <nav className='nav-container'>
             <div className='nav-wrapper title_small'>
                 <div className='nav-items'>
                     <div className={`nav-item ${C(CheckLocation('contact'))}`}>
@@ -35,7 +35,7 @@ const Navbar: FC = () => {
                 </div>
                 <div className='nav-logo'>LOGO</div>
             </div>
-        </div>
+        </nav>
     )
 }
 
