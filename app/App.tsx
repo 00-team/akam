@@ -29,6 +29,9 @@ const App: FC = () => {
             const right = Locale.direction === 'rtl'
             document.body.style.direction = right ? 'rtl' : 'ltr'
             document.body.style.textAlign = right ? 'right' : 'left'
+        } else {
+            document.body.style.direction = ''
+            document.body.style.textAlign = ''
         }
     }, [Locale])
 
