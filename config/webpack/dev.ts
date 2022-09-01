@@ -22,7 +22,7 @@ const DevConfig: Configuration = {
             inject: true,
             publicPath: '/',
             minify: false,
-            templateContent: "<div id='root' />",
+            templateContent: '<div id="root" />',
         }),
     ],
     devServer: {
