@@ -1,16 +1,11 @@
 .footer-container {
-    // debug
-    height: 50vh;
-    //
-
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    gap: 3vh;
+    gap: 5vh;
 
-    padding: 3vh 3vw;
-    padding-top: 6vh;
+    padding: 4vh 3vw;
 
     width: 100%;
 
@@ -151,6 +146,73 @@
                     svg {
                         margin: 10px;
                         fill: white;
+                    }
+                }
+            }
+        }
+    }
+    .content-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        width: 100%;
+
+        .content-wrapper {
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+
+            gap: 20%;
+            row-gap: 3vh;
+
+            .content {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                gap: 1vh;
+
+                .content-header {
+                    margin-bottom: 1vh;
+
+                    position: relative;
+                    isolation: isolate;
+                    padding: 10px 0;
+
+                    span {
+                        padding-left: 10px;
+                        background-color: var(--thirty-percent);
+                    }
+
+                    &::after {
+                        content: '';
+
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+
+                        height: 2px;
+                        width: 50px;
+
+                        z-index: -1;
+
+                        background-color: var(--sixty-percent);
+                    }
+                }
+                .content-link-wrapper {
+                    // reset
+                    color: unset;
+                    text-decoration: none;
+
+                    &:hover .content-link {
+                        transform: translateX(-20%);
+                        color: var(--ten-percent);
+                    }
+
+                    .content-link {
+                        transition: transform 0.3s ease-in-out,
+                            color 0.3s ease-in-out;
                     }
                 }
             }
