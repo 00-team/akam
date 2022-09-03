@@ -69,36 +69,32 @@ const Selling = () => {
                 </div>
             </div>
             <div className='sell-wrapper'>
-                {isIntersecting && (
-                    <>
-                        <SellCard
-                            title=' بازار یابی'
-                            description='
+                <SellCard
+                    title=' بازار یابی'
+                    description='
                             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
                             با استفاده از طراحان گرافیک است. چاپگرها'
-                            svg={MarketingSvg}
-                            transform={Transform}
-                        />
+                    svg={MarketingSvg}
+                    transform={Transform}
+                />
 
-                        <SellCard
-                            title='استراژی کاری '
-                            description='
+                <SellCard
+                    title='استراژی کاری '
+                    description='
                             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
                             با استفاده از طراحان گرافیک است. چاپگرها'
-                            svg={StratsSvg}
-                            transform={Transform}
-                        />
+                    svg={StratsSvg}
+                    transform={Transform}
+                />
 
-                        <SellCard
-                            title=' بازار یابی'
-                            description='
+                <SellCard
+                    title=' بازار یابی'
+                    description='
                             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
                             با استفاده از طراحان گرافیک است. چاپگرها'
-                            svg={MarketingSvg}
-                            transform={Transform}
-                        />
-                    </>
-                )}
+                    svg={MarketingSvg}
+                    transform={Transform}
+                />
             </div>
         </section>
     )
@@ -117,13 +113,36 @@ const SellCard: FC<SellCardProps> = ({
     description,
     transform,
 }) => {
+    const LazyRef = useRef<HTMLDivElement>(null)
+    const [isIntersecting, setisIntersecting] = useState(false)
+
+    useEffect(() => {
+        if (LazyRef.current && !isIntersecting) {
+            var observer = new IntersectionObserver(
+                ([entry]) => {
+                    if (entry && entry.isIntersecting) {
+                        setisIntersecting(true)
+                        observer.disconnect()
+                    }
+                },
+                {
+                    threshold: 0.4,
+                }
+            )
+            observer.observe(LazyRef.current)
+        }
+        return () => {
+            if (observer) observer.disconnect()
+        }
+    }, [LazyRef])
     return (
         <div
             className='sell-card-wrapper'
             style={{ transform: `translateY(${transform}%)` }}
+            ref={LazyRef}
         >
             <div className='card-img'>
-                <img src={svg} alt='' />
+                {isIntersecting && <img src={svg} alt='' />}
             </div>
             <div className='card-content'>
                 <div className='card-title-wrapper title'>
