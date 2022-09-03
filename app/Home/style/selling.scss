@@ -1,0 +1,58 @@
+.sell-container {
+    height: 100vh;
+
+    flex-direction: column;
+    justify-content: flex-start;
+
+    gap: 4vh;
+
+    padding: 5vh 3vw;
+
+    .sell-titles {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2vh;
+
+        .sell-little-title-wrapper {
+            position: relative;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 100%;
+
+            isolation: isolate;
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+
+                width: 100%;
+                height: 2px;
+
+                z-index: -1;
+
+                background-color: var(--accent-color);
+            }
+
+            .sell-little-title {
+                padding: 0 10px;
+
+                background-color: var(--primary-color);
+            }
+
+            &::before {
+                left: 0;
+            }
+            &::after {
+                right: 0;
+            }
+        }
+        .sell-title {
+            margin: 0 30px;
+        }
+    }
+}
