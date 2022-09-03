@@ -1,6 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { FC, useEffect, useRef, useState } from 'react'
 
 import { C } from '@00-team/utils'
+
+import MarketingSvg from './../../static/svgs/marketing.svg'
 
 import './style/selling.scss'
 
@@ -31,7 +33,7 @@ const Selling = () => {
                     }
                 },
                 {
-                    threshold: 0.3,
+                    threshold: 0.4,
                 }
             )
             observer.observe(LazyRef.current)
@@ -65,8 +67,61 @@ const Selling = () => {
                     <div className='icon'></div>
                 </div>
             </div>
-            <div className='sell-wrapper'></div>
+            <div className='sell-wrapper'>
+                {isIntersecting && (
+                    <>
+                        <SellCard
+                            title=' بازار یابی'
+                            description='
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
+                            با استفاده از طراحان گرافیک است. چاپگرها'
+                            svg={MarketingSvg}
+                        />
+                        <SellCard
+                            title=' بازار یابی'
+                            description='
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
+                            با استفاده از طراحان گرافیک است. چاپگرها'
+                            svg={MarketingSvg}
+                        />
+                        <SellCard
+                            title=' بازار یابی'
+                            description='
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
+                            با استفاده از طراحان گرافیک است. چاپگرها'
+                            svg={MarketingSvg}
+                        />
+                    </>
+                )}
+            </div>
         </section>
+    )
+}
+
+interface SellCardProps {
+    svg: string
+    title: string
+    description: string
+}
+
+const SellCard: FC<SellCardProps> = ({ svg, title, description }) => {
+    return (
+        <div className='sell-card-wrapper'>
+            <div className='card-img'>
+                <img src={svg} alt='' />
+            </div>
+            <div className='card-content'>
+                <div className='card-title-wrapper title'>
+                    <span className='card-title'>{title}</span>
+                </div>
+                <div className='card-description title_small'>
+                    {description}
+                </div>
+            </div>
+            <div className='see-more-wrapper '>
+                <button className='see-more title_smaller'>ادامه مطلب</button>
+            </div>
+        </div>
     )
 }
 
