@@ -33,7 +33,11 @@ const Selling = () => {
             ref={LazyRef}
         >
             <div className='sell-titles'>
-                <div className='sell-little-title-wrapper title'>
+                <div
+                    className={`sell-little-title-wrapper title ${C(
+                        isIntersecting
+                    )}`}
+                >
                     <span className='sell-little-title'>
                         چرا <span className='colored-word'>آکام؟</span>
                     </span>
