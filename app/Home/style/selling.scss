@@ -101,6 +101,8 @@
             justify-content: space-between;
             gap: 5vh;
 
+            transition: transform 0.3s ease;
+
             .card-img {
                 transform: translateY(-50%);
 
