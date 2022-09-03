@@ -147,6 +147,10 @@
 
                         &:hover {
                             box-shadow: 0px 20px 40px -10px rgb(0 0 0 / 30%);
+
+                            .about-svg {
+                                transform: translateY(-60%);
+                            }
                         }
 
                         .about-title {
@@ -163,6 +167,8 @@
                             background-color: grey;
 
                             box-shadow: 0 5px 10px -5px var(--accent-color);
+
+                            transition: transform 0.3s ease-in-out;
 
                             svg {
                                 margin: 12px;
