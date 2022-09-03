@@ -3,6 +3,7 @@ import React, { FC, useEffect, useRef, useState } from 'react'
 import { C } from '@00-team/utils'
 
 import MarketingSvg from './../../static/svgs/marketing.svg'
+import StratsSvg from './../../static/svgs/strats.svg'
 
 import './style/selling.scss'
 
@@ -76,20 +77,25 @@ const Selling = () => {
                             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
                             با استفاده از طراحان گرافیک است. چاپگرها'
                             svg={MarketingSvg}
+                            transform={Transform}
                         />
+
+                        <SellCard
+                            title='استراژی کاری '
+                            description='
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
+                            با استفاده از طراحان گرافیک است. چاپگرها'
+                            svg={StratsSvg}
+                            transform={Transform}
+                        />
+
                         <SellCard
                             title=' بازار یابی'
                             description='
                             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
                             با استفاده از طراحان گرافیک است. چاپگرها'
                             svg={MarketingSvg}
-                        />
-                        <SellCard
-                            title=' بازار یابی'
-                            description='
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
-                            با استفاده از طراحان گرافیک است. چاپگرها'
-                            svg={MarketingSvg}
+                            transform={Transform}
                         />
                     </>
                 )}
@@ -102,11 +108,20 @@ interface SellCardProps {
     svg: string
     title: string
     description: string
+    transform: number
 }
 
-const SellCard: FC<SellCardProps> = ({ svg, title, description }) => {
+const SellCard: FC<SellCardProps> = ({
+    svg,
+    title,
+    description,
+    transform,
+}) => {
     return (
-        <div className='sell-card-wrapper'>
+        <div
+            className='sell-card-wrapper'
+            style={{ transform: `translateY(${transform}%)` }}
+        >
             <div className='card-img'>
                 <img src={svg} alt='' />
             </div>
