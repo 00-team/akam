@@ -8,6 +8,19 @@ const Selling = () => {
     const LazyRef = useRef<HTMLDivElement>(null)
     const [isIntersecting, setisIntersecting] = useState(false)
 
+    const SellingTitle = useRef<HTMLDivElement>(null)
+    const [Transform, setTransform] = useState(0)
+
+    window.onscroll = () => {
+        if (SellingTitle.current) {
+            setTransform(
+                SellingTitle.current.getBoundingClientRect().top - 600 <= 0
+                    ? 0
+                    : SellingTitle.current.getBoundingClientRect().top - 600
+            )
+        }
+    }
+
     useEffect(() => {
         if (LazyRef.current && !isIntersecting) {
             var observer = new IntersectionObserver(
@@ -42,7 +55,11 @@ const Selling = () => {
                         چرا <span className='colored-word'>آکام؟</span>
                     </span>
                 </div>
-                <div className='sell-title title_hero'>
+                <div
+                    className='sell-title title_hero'
+                    ref={SellingTitle}
+                    style={{ transform: `translateY(${Transform}%)` }}
+                >
                     <div className='icon'></div>
                     <div className='holder'>استراژی های فروش</div>
                     <div className='icon'></div>
