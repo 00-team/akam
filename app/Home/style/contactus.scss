@@ -1,0 +1,16 @@
+.contact-container {
+    height: 100vh;
+
+    justify-content: center;
+    gap: 5vw;
+
+    .svg-container {
+        width: 40vw;
+    }
+    .contact-wrapper {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 2vh;
+    }
+}
