@@ -12,5 +12,67 @@
         justify-content: flex-start;
         flex-direction: column;
         gap: 2vh;
+
+        &.active {
+            .contact-titles {
+                .contact-title {
+                    &::before {
+                        width: 100%;
+                    }
+                    .titles-wrapper {
+                        transform: translateY(0);
+                    }
+                }
+            }
+            .title_hero {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .title_hero {
+            transform: translateX(100%);
+            opacity: 0;
+
+            transition: all 1s 1s ease-in-out;
+        }
+
+        .contact-titles {
+            display: flex;
+            flex-direction: column;
+            gap: 2vh;
+
+            .contact-title {
+                display: flex;
+                width: 100%;
+
+                position: relative;
+                isolation: isolate;
+                overflow: hidden;
+
+                .titles-wrapper {
+                    padding: 0 10px;
+                    background-color: var(--primary-color);
+
+                    transform: translateY(100%);
+                    display: inline-block;
+
+                    transition: transform 1s ease-in-out;
+                }
+
+                &::before {
+                    content: '';
+
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    width: 0%;
+                    height: 2px;
+                    z-index: -1;
+                    transition: width 1s 1s ease-in-out;
+                    background-color: var(--accent-color);
+                }
+            }
+        }
     }
 }
