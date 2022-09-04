@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 
 import AboutUs from './AboutUs'
+import ContactUs from './ContactUs'
 import HeroSection from './HeroSection'
 import Selling from './Selling'
 
@@ -12,6 +13,7 @@ const Home: FC = () => {
             <HeroSection />
             <AboutUs />
             <Selling />
+            <ContactUs />
         </div>
     )
 }
