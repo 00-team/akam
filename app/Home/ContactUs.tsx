@@ -21,13 +21,18 @@ const ContactUs = () => {
             >
                 <div className={`contact-wrapper ${C(HasIntersected)}`}>
                     <div className='contact-titles'>
-                        <div className='title'>
-                            ارتباط با{' '}
-                            <span className='colored-word'>آرکام</span>
+                        <div className='title contact-title'>
+                            {' '}
+                            <span className='titles-wrapper'>
+                                ارتباط با{' '}
+                                <span className='colored-word'> آرکام</span>
+                            </span>
                         </div>
-                        <div className='title_hero'>راه های ارتباطی ما</div>
+                        <div className='contact-wrapper'>
+                            <div className='title_hero'>راه های ارتباطی ما</div>
+                            <div className='contact-content'></div>
+                        </div>
                     </div>
-                    <div className='contact-content'></div>
                 </div>
                 <div className='svg-container'>
                     {HasIntersected && <object data={ContactSvg}></object>}
