@@ -46,6 +46,22 @@ const HeroSection: FC = () => {
                         <Description text={Locale.description} />
                     </div>
                 </div>
+                <div className='animation'>
+                    <div className='hero-btns title_smaller'>
+                        <button
+                            className='hero-btn about'
+                            style={{ animationDelay: '2s' }}
+                        >
+                            چرا <span className='colored-word'>آکام؟</span>
+                        </button>
+                        <button
+                            className='hero-btn action'
+                            style={{ animationDelay: '2.2s' }}
+                        >
+                            همکاری با ما
+                        </button>
+                    </div>
+                </div>
             </div>
             <div className='svg-container'>
                 <img src={heroSvg} alt='' />
