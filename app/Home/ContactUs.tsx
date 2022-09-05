@@ -41,11 +41,13 @@ const ContactUs = () => {
                                     holder='sadrataghavi1383@gmail.com'
                                     className='gmail'
                                     Icon={SiGmail}
+                                    animDeay={0}
                                 />
                                 <ContactColumn
                                     className='phone'
                                     holder='09120974956'
                                     Icon={MdPhoneInTalk}
+                                    animDeay={0.3}
                                 />
                             </div>
                             <div className='contact-columns'>
@@ -53,11 +55,13 @@ const ContactUs = () => {
                                     className='location'
                                     holder='تهران، امیر اباد، خیابان عبداللهی، پلاک 20'
                                     Icon={MdLocationCity}
+                                    animDeay={0.9}
                                 />
                                 <ContactColumn
                                     className='fax'
                                     holder='13132546'
                                     Icon={FaFax}
+                                    animDeay={1.2}
                                 />
                             </div>
                         </div>
@@ -78,12 +82,19 @@ interface ContactColumnProps {
     Icon: IconType
     holder: string
     className?: string
+    animDeay: number
 }
 
-const ContactColumn: FC<ContactColumnProps> = ({ holder, Icon, className }) => {
+const ContactColumn: FC<ContactColumnProps> = ({
+    holder,
+    Icon,
+    className,
+    animDeay,
+}) => {
     return (
         <div
             className={`contact-column title_smaller ${className && className}`}
+            style={{ transitionDelay: `${animDeay + 2}s` }}
         >
             <div className='column-icon'>
                 <Icon size={25} />
