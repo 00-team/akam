@@ -76,8 +76,13 @@
         }
 
         .animation {
-            div {
+            div:not(.hero-btns) {
                 animation: text-fadein backwards 1s 2s ease-in-out;
+            }
+            .hero-btns {
+                button {
+                    animation: text-fadein backwards 1s 2s ease-in-out;
+                }
             }
             @keyframes text-fadein {
                 from {
@@ -88,6 +93,39 @@
                     transform: translateY(0);
                     opacity: 1;
                 }
+            }
+        }
+    }
+
+    .hero-btns {
+        margin-top: 4vh;
+        display: flex;
+        gap: 3vw;
+
+        padding: 1rem 0;
+
+        overflow: hidden;
+
+        button {
+            font: inherit;
+            border: none;
+            cursor: pointer;
+
+            background-color: transparent;
+
+            padding: 1rem 3rem;
+            border-radius: 10px;
+
+            color: var(--accent-color);
+
+            &.about {
+                border: 2px solid var(--sixty-percent);
+            }
+            &.action {
+                background-color: var(--primary-color);
+                color: var(--sixty-percent);
+
+                box-shadow: 0px 25px 15px -25px black;
             }
         }
     }
