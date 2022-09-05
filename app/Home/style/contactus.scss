@@ -31,8 +31,18 @@
                 }
                 .contact-content .contact-columns {
                     .contact-column {
-                        opacity: 1;
-                        transform: translateX(0);
+                        animation: contact-column-fadein 1s ease-in-out forwards;
+
+                        @keyframes contact-column-fadein {
+                            from {
+                                opacity: 0;
+                                transform: translateX(100%);
+                            }
+                            to {
+                                opacity: 1;
+                                transform: translateX(0);
+                            }
+                        }
                     }
                 }
             }
@@ -105,22 +115,26 @@
                         display: flex;
                         align-items: center;
                         justify-content: center;
-
                         gap: 1vw;
+
+                        padding: 1rem;
 
                         border-radius: 10px;
                         box-shadow: 0px 32px 10px -27px;
 
                         background-color: var(--thirty-percent);
 
-                        padding: 1rem;
+                        cursor: pointer;
 
                         overflow: hidden;
 
                         // animation
                         opacity: 0;
                         transform: translateX(100%);
-                        transition: 1s 2s ease-in-out;
+
+                        &:hover {
+                            transform: translateY(10px);
+                        }
 
                         &:nth-child(2) {
                             position: relative;
