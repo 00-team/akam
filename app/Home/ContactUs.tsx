@@ -94,7 +94,7 @@ const ContactColumn: FC<ContactColumnProps> = ({
     return (
         <div
             className={`contact-column title_smaller ${className && className}`}
-            style={{ transitionDelay: `${animDeay + 2}s` }}
+            style={{ animationDelay: `${animDeay + 2}s` }}
         >
             <div className='column-icon'>
                 <Icon size={25} />
