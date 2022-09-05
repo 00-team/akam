@@ -29,6 +29,12 @@
                     opacity: 1;
                     transform: translateX(0);
                 }
+                .contact-content .contact-columns {
+                    .contact-column {
+                        opacity: 1;
+                        transform: translateX(0);
+                    }
+                }
             }
         }
 
@@ -110,6 +116,11 @@
                         padding: 1rem;
 
                         overflow: hidden;
+
+                        // animation
+                        opacity: 0;
+                        transform: translateX(100%);
+                        transition: 1s 2s ease-in-out;
 
                         &:nth-child(2) {
                             position: relative;
