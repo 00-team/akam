@@ -66,8 +66,11 @@ const ContactUs = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='contact-see-more'>
-                        <button>see more</button>
+                    <div className='contact-see-more title_smaller'>
+                        <button>
+                            <div className='holder'>بیشتر بخوانید</div>
+                            <div className='icon'></div>
+                        </button>
                     </div>
                 </div>
                 <div className='svg-container'>
