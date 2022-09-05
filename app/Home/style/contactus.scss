@@ -230,6 +230,10 @@
 
             overflow: hidden;
 
+            &:hover button {
+                animation: none;
+            }
+
             button {
                 font: inherit;
                 border: none;
