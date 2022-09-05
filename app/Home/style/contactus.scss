@@ -8,70 +8,74 @@
         width: 40vw;
     }
     .contact-wrapper {
+        // debug
+        min-width: 400px;
+
         display: flex;
-        justify-content: flex-start;
         flex-direction: column;
         gap: 2vh;
 
         &.active {
-            .contact-titles {
-                .contact-title {
-                    &::before {
-                        width: 100%;
-                    }
-                    .titles-wrapper {
-                        transform: translateY(0);
-                    }
+            .contact-title {
+                &::before {
+                    width: 100%;
+                }
+                .contact-title-wrapper {
+                    transform: translateY(0);
                 }
             }
-            .title_hero {
-                transform: translateX(0);
-                opacity: 1;
+            .contact-content-wrapper {
+                .contact-content-title {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
             }
         }
 
-        .title_hero {
-            transform: translateX(100%);
-            opacity: 0;
+        .contact-title {
+            position: relative;
+            isolation: isolate;
 
-            transition: all 1s 1s ease-in-out;
+            display: flex;
+            align-items: center;
+
+            overflow: hidden;
+
+            &::before {
+                content: '';
+
+                position: absolute;
+                left: 0;
+
+                width: 0;
+                height: 2px;
+
+                background-color: var(--accent-color);
+
+                z-index: -1;
+                transition: width 1s 1s ease-in-out;
+            }
+
+            .contact-title-wrapper {
+                padding-left: 10px;
+
+                background-color: var(--primary-color);
+
+                transform: translateY(100%);
+                transition: transform 1s ease-in-out;
+            }
         }
 
-        .contact-titles {
+        .contact-content-wrapper {
             display: flex;
             flex-direction: column;
-            gap: 2vh;
+            gap: 4vh;
 
-            .contact-title {
-                display: flex;
-                width: 100%;
+            .contact-content-title {
+                transform: translateX(50%);
+                opacity: 0;
 
-                position: relative;
-                isolation: isolate;
-                overflow: hidden;
-
-                .titles-wrapper {
-                    padding: 0 10px;
-                    background-color: var(--primary-color);
-
-                    transform: translateY(100%);
-                    display: inline-block;
-
-                    transition: transform 1s ease-in-out;
-                }
-
-                &::before {
-                    content: '';
-
-                    position: absolute;
-                    top: 50%;
-                    left: 0;
-                    width: 0%;
-                    height: 2px;
-                    z-index: -1;
-                    transition: width 1s 1s ease-in-out;
-                    background-color: var(--accent-color);
-                }
+                transition: all 1s 1.5s ease-in-out;
             }
         }
     }
