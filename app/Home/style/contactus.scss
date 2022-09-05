@@ -46,6 +46,11 @@
                     }
                 }
             }
+            .contact-see-more {
+                button {
+                    top: 0;
+                }
+            }
         }
 
         .contact-title {
@@ -128,12 +133,18 @@
 
                         overflow: hidden;
 
+                        transition: color 0.5s ease-in-out;
+
                         // animation
                         opacity: 0;
                         transform: translateX(100%);
 
                         &:hover {
-                            transform: translateY(10px);
+                            color: #f2f2f2;
+
+                            &::after {
+                                transform: translateX(0);
+                            }
                         }
 
                         &:nth-child(2) {
@@ -154,23 +165,40 @@
                             border-radius: 100vmax;
                         }
 
+                        &::after {
+                            content: '';
+
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            z-index: -1;
+
+                            transform: translateX(100%);
+
+                            transition: transform 0.5s ease-in-out;
+                        }
+
                         &.gmail {
-                            &::before {
+                            &::before,
+                            &::after {
                                 background-color: #ff4343;
                             }
                         }
                         &.phone {
-                            &::before {
+                            &::before,
+                            &::after {
                                 background-color: var(--ten-percent);
                             }
                         }
                         &.location {
-                            &::before {
+                            &::before,
+                            &::after {
                                 background-color: #34a853;
                             }
                         }
                         &.fax {
-                            &::before {
+                            &::before,
+                            &::after {
                                 background-color: #ff4343;
                             }
                         }
@@ -188,6 +216,48 @@
                                 fill: #f2f2f2;
                             }
                         }
+                    }
+                }
+            }
+        }
+        .contact-see-more {
+            margin: 0 auto;
+            margin-top: 4vh;
+
+            width: 40%;
+
+            padding: 2rem 3rem;
+
+            overflow: hidden;
+
+            button {
+                font: inherit;
+                border: none;
+
+                position: relative;
+                top: 100px;
+
+                width: 100%;
+                padding: 0.5rem 1rem;
+
+                border: 2px solid;
+                border-color: var(--ten-percent);
+                border-radius: 100vmax;
+
+                background-color: transparent;
+
+                color: var(--ten-percent);
+                cursor: pointer;
+
+                transition: top 1s 5s ease-in-out;
+                animation: button-anim 1.5s 10s alternate infinite;
+
+                @keyframes button-anim {
+                    from {
+                        transform: scaleX(1.05);
+                    }
+                    to {
+                        transform: translateY(-30%) scaleX(1);
                     }
                 }
             }
