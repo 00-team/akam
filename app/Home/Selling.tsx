@@ -34,7 +34,7 @@ const Selling = () => {
                     }
                 },
                 {
-                    threshold: 0.4,
+                    threshold: window.innerWidth >= 768 ? 0.4 : 0.1,
                 }
             )
             observer.observe(LazyRef.current)
