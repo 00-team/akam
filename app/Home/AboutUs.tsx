@@ -30,7 +30,7 @@ const AboutUs: FC = () => {
                     }
                 },
                 {
-                    threshold: 0.5,
+                    threshold: window.innerWidth >= 768 ? 0.5 : 0.2,
                 }
             )
             observer.observe(LazyRef.current)
