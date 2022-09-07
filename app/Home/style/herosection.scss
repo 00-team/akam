@@ -5,14 +5,25 @@
 
     justify-content: center;
 
+    padding: 0 1rem;
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column-reverse;
+    }
+
     &#hero .svg-container {
         display: grid;
         place-items: center;
 
-        width: 30vw;
+        width: 500px;
         height: 100%;
 
         animation: svg-fade-in 1s 0.3s both ease-in-out;
+
+        @media screen and (max-width: 768px) {
+            width: 300px;
+            height: auto;
+        }
 
         @keyframes svg-fade-in {
             from {
@@ -73,6 +84,10 @@
             margin-top: 0.25vh;
 
             opacity: 0.7;
+
+            @media screen and (max-width: 768px) {
+                width: 85%;
+            }
         }
 
         .animation {
@@ -106,6 +121,11 @@
 
         overflow: hidden;
 
+        @media screen and (max-width: 768px) {
+            margin-top: 0;
+            gap: 5vw;
+        }
+
         button {
             font: inherit;
             border: none;
@@ -127,6 +147,10 @@
 
                 box-shadow: 0px 25px 15px -25px black;
             }
+
+            @media screen and (max-width: 768px) {
+                padding: 1rem 2rem;
+            }
         }
     }
 
@@ -142,6 +166,10 @@
 
         display: grid;
         place-items: center;
+
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
 
         &::before {
             content: '';
