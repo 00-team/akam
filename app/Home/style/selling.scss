@@ -1,5 +1,5 @@
 .sell-container {
-    height: 100vh;
+    height: auto;
 
     flex-direction: column;
     justify-content: flex-start;
@@ -7,6 +7,10 @@
     gap: 20vh;
 
     padding: 5vh 3vw;
+
+    @media screen and (max-width: 768px) {
+        gap: 35vh;
+    }
 
     .sell-titles {
         display: flex;
@@ -86,6 +90,10 @@
         column-gap: 5vw;
         row-gap: 5vh;
 
+        @media screen and (max-width: 768px) {
+            row-gap: 25vh;
+        }
+
         .sell-card-wrapper {
             aspect-ratio: 3.5/5;
             width: 100%;
@@ -103,6 +111,10 @@
 
             transition: transform 0.3s ease;
 
+            @media screen and (max-width: 768px) {
+                aspect-ratio: 4.5/5;
+            }
+
             .card-img {
                 transform: translateY(-50%);
 
@@ -112,6 +124,10 @@
 
                 display: grid;
                 place-items: center;
+
+                @media screen and (max-width: 768px) {
+                    width: 80%;
+                }
             }
             .card-content {
                 display: flex;
