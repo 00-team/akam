@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef, useState } from 'react'
+import React, { FC, useState } from 'react'
 
 import { C } from '@00-team/utils'
 
@@ -9,7 +9,7 @@ import { FaHandshake } from '@react-icons/all-files/fa/FaHandshake'
 import { useAtomValue } from 'jotai'
 import { DescriptionModel, LocaleAtom } from 'state'
 
-import { Colored, Description } from 'components'
+import { Colored, Description, IsIntersecting } from 'components'
 
 import aboutSvg from '../../static/svgs/about.svg'
 
@@ -17,35 +17,22 @@ import './style/aboutus.scss'
 
 const AboutUs: FC = () => {
     const Locale = useAtomValue(LocaleAtom).Home.about
-    const LazyRef = useRef<HTMLDivElement>(null)
-    const [isIntersecting, setisIntersecting] = useState(false)
 
-    useEffect(() => {
-        if (LazyRef.current && !isIntersecting) {
-            var observer = new IntersectionObserver(
-                ([entry]) => {
-                    if (entry && entry.isIntersecting) {
-                        setisIntersecting(true)
-                        observer.disconnect()
-                    }
-                },
-                {
-                    threshold: window.innerWidth >= 768 ? 0.5 : 0.2,
-                }
-            )
-            observer.observe(LazyRef.current)
-        }
-        return () => {
-            if (observer) observer.disconnect()
-        }
-    }, [LazyRef])
+    const [HasIntersected, setHasIntersected] = useState(false)
 
     return (
-        <section className='about-container' ref={LazyRef} id='about'>
+        <IsIntersecting
+            Tag='section'
+            className='about-container'
+            id='about'
+            Intersected={HasIntersected}
+            setState={setHasIntersected}
+            options={{ threshold: window.innerWidth >= 768 ? 0.5 : 0.2 }}
+        >
             <div className='svg-container'>
-                {isIntersecting && <object data={aboutSvg} type=''></object>}
+                {HasIntersected && <object data={aboutSvg} type='' />}
             </div>
-            <div className={`about-wrapper ${C(isIntersecting)}`}>
+            <div className={`about-wrapper ${C(HasIntersected)}`}>
                 <div className='about-title-card title'>
                     <span className='span-wrapper'>
                         <Colored {...Locale.doom} />
@@ -91,7 +78,7 @@ const AboutUs: FC = () => {
                     </div>
                 </div>
             </div>
-        </section>
+        </IsIntersecting>
     )
 }
 

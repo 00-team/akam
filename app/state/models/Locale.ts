@@ -15,6 +15,8 @@ interface AboutCard {
     description: Description
 }
 
+interface SellingCard extends AboutCard {}
+
 interface Locale {
     label: string
     direction?: 'rtl' | 'ltr'
@@ -46,6 +48,14 @@ interface Locale {
             innovation: AboutCard
             card_button: string
         }
+        selling: {
+            doom: Colored
+            title: string
+            marketing: SellingCard
+            marketing2: SellingCard
+            business_strategy: SellingCard
+            card_button: string
+        }
     }
 }
 
@@ -54,4 +64,5 @@ export {
     Description as DescriptionModel,
     Colored as ColoredModel,
     AboutCard as AboutCardModel,
+    SellingCard as SellingCardModel,
 }

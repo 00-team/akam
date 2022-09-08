@@ -46,6 +46,26 @@
                 "description": "Cool"
             },
             "card_button": "Read More"
+        },
+        "selling": {
+            "doom": {
+                "sentence": "Why Akam?",
+                "word": "Akam?"
+            },
+            "title": "Sales strategies",
+            "marketing": {
+                "title": "Trust",
+                "description": "GGEZ"
+            },
+            "marketing2": {
+                "title": "Trust",
+                "description": "GGEZ"
+            },
+            "business_strategy": {
+                "title": "Trust",
+                "description": "GGEZ"
+            },
+            "card_button": "Read More"
         }
     }
 }

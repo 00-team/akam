@@ -38,6 +38,9 @@
                 }
             },
             "required": ["title", "description"]
+        },
+        "selling_card": {
+            "$ref": "#/$defs/about_card"
         }
     },
 
@@ -155,9 +158,41 @@
                         "innovation",
                         "card_button"
                     ]
+                },
+                "selling": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "doom": {
+                            "$ref": "#/$defs/colored"
+                        },
+                        "title": {
+                            "type": "string"
+                        },
+                        "marketing": {
+                            "$ref": "#/$defs/selling_card"
+                        },
+                        "marketing2": {
+                            "$ref": "#/$defs/selling_card"
+                        },
+                        "business_strategy": {
+                            "$ref": "#/$defs/selling_card"
+                        },
+                        "card_button": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "doom",
+                        "title",
+                        "marketing",
+                        "marketing2",
+                        "business_strategy",
+                        "card_button"
+                    ]
                 }
             },
-            "required": ["hero", "about"]
+            "required": ["hero", "about", "selling"]
         }
     },
     "required": ["label", "Home", "Navbar"]

@@ -1,52 +1,47 @@
-import React, { FC, useEffect, useRef, useState } from 'react'
+import React, { FC, useRef, useState } from 'react'
 
 import { C } from '@00-team/utils'
+
+import { useAtomValue } from 'jotai'
+import { DescriptionModel, LocaleAtom } from 'state'
+
+import { Colored, IsIntersecting } from 'components'
 
 import MarketingSvg from './../../static/svgs/marketing.svg'
 import StratsSvg from './../../static/svgs/strats.svg'
 
 import './style/selling.scss'
 
-const Selling = () => {
-    const LazyRef = useRef<HTMLDivElement>(null)
+const Selling: FC = () => {
+    const Locale = useAtomValue(LocaleAtom).Home.selling
     const [isIntersecting, setisIntersecting] = useState(false)
 
     const SellingTitle = useRef<HTMLDivElement>(null)
-    const [Transform, setTransform] = useState(0)
+    const [Transform] = useState(0)
 
-    window.onscroll = () => {
-        if (SellingTitle.current) {
-            setTransform(
-                SellingTitle.current.getBoundingClientRect().top - 600 <= 0
-                    ? 0
-                    : SellingTitle.current.getBoundingClientRect().top - 600
-            )
-        }
-    }
+    // this is not good
 
-    useEffect(() => {
-        if (LazyRef.current && !isIntersecting) {
-            var observer = new IntersectionObserver(
-                ([entry]) => {
-                    if (entry && entry.isIntersecting) {
-                        setisIntersecting(true)
-                        observer.disconnect()
-                    }
-                },
-                {
-                    threshold: window.innerWidth >= 768 ? 0.4 : 0.1,
-                }
-            )
-            observer.observe(LazyRef.current)
-        }
-        return () => {
-            if (observer) observer.disconnect()
-        }
-    }, [LazyRef])
+    // useEffect(() => {
+    //     window.onscroll = () => {
+    //         if (SellingTitle.current) {
+    //             setTransform(
+    //                 SellingTitle.current.getBoundingClientRect().top - 600 <= 0
+    //                     ? 0
+    //                     : SellingTitle.current.getBoundingClientRect().top - 600
+    //             )
+    //         }
+    //     }
+    // }, [])
+
     return (
-        <section
+        <IsIntersecting
+            Tag='section'
+            Intersected={isIntersecting}
+            setState={setisIntersecting}
+            options={{
+                threshold: window.innerWidth >= 768 ? 0.4 : 0.1,
+            }}
             className={`sell-container ${C(isIntersecting)}`}
-            ref={LazyRef}
         >
             <div className='sell-titles'>
                 <div
@@ -55,7 +50,7 @@ const Selling = () => {
                     )}`}
                 >
                     <span className='sell-little-title'>
-                        چرا <span className='colored-word'>آکام؟</span>
+                        <Colored {...Locale.doom} />
                     </span>
                 </div>
                 <div
@@ -64,85 +59,61 @@ const Selling = () => {
                     style={{ transform: `translateY(${Transform}%)` }}
                 >
                     <div className='icon'></div>
-                    <div className='holder'>استراژی های فروش</div>
+                    <div className='holder'>{Locale.title}</div>
                     <div className='icon'></div>
                 </div>
             </div>
             <div className='sell-wrapper'>
                 <SellCard
-                    title=' بازار یابی'
-                    description='
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
-                            با استفاده از طراحان گرافیک است. چاپگرها'
+                    title={Locale.marketing.title}
+                    description={Locale.marketing.description}
                     svg={MarketingSvg}
                     transform={Transform}
                 />
 
                 <SellCard
-                    title='استراژی کاری '
-                    description='
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
-                            با استفاده از طراحان گرافیک است. چاپگرها'
+                    title={Locale.business_strategy.title}
+                    description={Locale.business_strategy.description}
                     svg={StratsSvg}
                     transform={Transform}
                 />
 
                 <SellCard
-                    title=' بازار یابی'
-                    description='
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
-                            با استفاده از طراحان گرافیک است. چاپگرها'
+                    title={Locale.marketing2.title}
+                    description={Locale.marketing2.description}
                     svg={MarketingSvg}
                     transform={Transform}
                 />
             </div>
-        </section>
+        </IsIntersecting>
     )
 }
 
 interface SellCardProps {
     svg: string
     title: string
-    description: string
+    description: DescriptionModel
     transform: number
 }
 
-const SellCard: FC<SellCardProps> = ({
-    svg,
-    title,
-    description,
-    transform,
-}) => {
-    const LazyRef = useRef<HTMLDivElement>(null)
+const SellCard: FC<SellCardProps> = props => {
+    const { svg, title, description, transform } = props
+
     const [isIntersecting, setisIntersecting] = useState(false)
 
-    useEffect(() => {
-        if (LazyRef.current && !isIntersecting) {
-            var observer = new IntersectionObserver(
-                ([entry]) => {
-                    if (entry && entry.isIntersecting) {
-                        setisIntersecting(true)
-                        observer.disconnect()
-                    }
-                },
-                {
-                    threshold: 0.4,
-                }
-            )
-            observer.observe(LazyRef.current)
-        }
-        return () => {
-            if (observer) observer.disconnect()
-        }
-    }, [LazyRef])
     return (
-        <div
+        <IsIntersecting
+            Tag='div'
             className='sell-card-wrapper'
+            options={{
+                threshold: 0.4,
+            }}
             style={{ transform: `translateY(${transform}%)` }}
-            ref={LazyRef}
+            Intersected={isIntersecting}
+            setState={setisIntersecting}
         >
             <div className='card-img'>
-                {isIntersecting && <img src={svg} alt='' />}
+                {isIntersecting && <img src={svg} />}
             </div>
             <div className='card-content'>
                 <div className='card-title-wrapper title'>
@@ -155,7 +126,7 @@ const SellCard: FC<SellCardProps> = ({
             <div className='see-more-wrapper '>
                 <button className='see-more title_smaller'>ادامه مطلب</button>
             </div>
-        </div>
+        </IsIntersecting>
     )
 }
 
