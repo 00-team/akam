@@ -52,13 +52,13 @@ const HeroSection: FC = () => {
                             className='hero-btn about'
                             style={{ animationDelay: '2s' }}
                         >
-                            چرا <span className='colored-word'>آکام؟</span>
+                            <Colored {...Locale.buttons.about} />
                         </button>
                         <button
                             className='hero-btn action'
                             style={{ animationDelay: '2.2s' }}
                         >
-                            همکاری با ما
+                            {Locale.buttons.collaboration}
                         </button>
                     </div>
                 </div>

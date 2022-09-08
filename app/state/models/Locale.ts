@@ -32,6 +32,10 @@ interface Locale {
             }
             title: Colored
             description: Description
+            buttons: {
+                about: Colored
+                collaboration: string
+            }
         }
         about: {
             doom: Colored

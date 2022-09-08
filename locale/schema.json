@@ -103,9 +103,22 @@
                         },
                         "description": {
                             "$ref": "#/$defs/description"
+                        },
+                        "buttons": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "about": {
+                                    "$ref": "#/$defs/colored"
+                                },
+                                "collaboration": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": ["about", "collaboration"]
                         }
                     },
-                    "required": ["motto", "title", "description"]
+                    "required": ["motto", "title", "description", "buttons"]
                 },
                 "about": {
                     "type": "object",
