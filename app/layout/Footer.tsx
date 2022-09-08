@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 
 import { HiLocationMarker } from '@react-icons/all-files/hi/HiLocationMarker'
 import { IoCall } from '@react-icons/all-files/io5/IoCall'
@@ -6,7 +6,7 @@ import { MdEmail } from '@react-icons/all-files/md/MdEmail'
 
 import './style/footer.scss'
 
-const Footer = () => {
+const Footer: FC = () => {
     return (
         <footer className='footer-container'>
             <FooterMainSection />
@@ -15,14 +15,13 @@ const Footer = () => {
     )
 }
 
-const FooterMainSection = () => {
+const FooterMainSection: FC = () => {
     return (
         <div className='header-section-wrapper title_small'>
             <div className='header-section-container'>
                 <div className='header-section header-call'>
                     <div className='header-section-elems'>
                         <div className='icon header-icon call'>
-                            {' '}
                             <IoCall size={24} />
                         </div>
                         <div className='header-holder'>09120974956</div>
@@ -60,7 +59,7 @@ const FooterMainSection = () => {
     )
 }
 
-const ContentSection = () => {
+const ContentSection: FC = () => {
     return (
         <div className='content-section'>
             <div className='content-wrapper'>

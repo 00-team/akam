@@ -229,7 +229,13 @@
                 }
             },
             "required": ["hero", "about", "selling", "contact"]
+        },
+        "Footer": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {},
+            "required": []
         }
     },
-    "required": ["label", "Home", "Navbar"]
+    "required": ["label", "Home", "Navbar", "Footer"]
 }
