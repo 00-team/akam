@@ -8,13 +8,17 @@ import { MdLocationCity } from '@react-icons/all-files/md/MdLocationCity'
 import { MdPhoneInTalk } from '@react-icons/all-files/md/MdPhoneInTalk'
 import { SiGmail } from '@react-icons/all-files/si/SiGmail'
 
-import { IsIntersecting } from 'components'
+import { useAtomValue } from 'jotai'
+import { LocaleAtom } from 'state'
+
+import { Colored, IsIntersecting } from 'components'
 
 import ContactSvg from '../../static/svgs/contact.svg'
 
 import './style/contactus.scss'
 
 const ContactUs: FC = () => {
+    const Locale = useAtomValue(LocaleAtom).Home.contact
     const [HasIntersected, setHasIntersected] = useState(false)
 
     return (
@@ -28,24 +32,24 @@ const ContactUs: FC = () => {
             <div className={`contact-wrapper ${C(HasIntersected)}`}>
                 <div className='contact-title title'>
                     <span className='contact-title-wrapper'>
-                        ارتباط با <span className='colored-word'>اکام</span>
+                        <Colored {...Locale.doom} />
                     </span>
                 </div>
                 <div className='contact-content-wrapper'>
                     <div className='contact-content-title title_hero'>
-                        راه های ارتباطی با ما
+                        {Locale.title}
                     </div>
                     <div className='contact-content'>
                         <div className='contact-columns'>
                             <ContactColumn
-                                holder='sadrataghavi1383@gmail.com'
+                                holder={Locale.gmail}
                                 className='gmail'
                                 Icon={SiGmail}
                                 animDeay={0}
                             />
                             <ContactColumn
                                 className='phone'
-                                holder='09120974956'
+                                holder={Locale.phone}
                                 Icon={MdPhoneInTalk}
                                 animDeay={0.3}
                             />
@@ -53,13 +57,13 @@ const ContactUs: FC = () => {
                         <div className='contact-columns'>
                             <ContactColumn
                                 className='location'
-                                holder='تهران، امیر اباد، خیابان عبداللهی، پلاک 20'
+                                holder={Locale.location}
                                 Icon={MdLocationCity}
                                 animDeay={0.9}
                             />
                             <ContactColumn
                                 className='fax'
-                                holder='13132546'
+                                holder={Locale.fax}
                                 Icon={FaFax}
                                 animDeay={1.2}
                             />
@@ -68,7 +72,7 @@ const ContactUs: FC = () => {
                 </div>
                 <div className='contact-see-more title_smaller'>
                     <button>
-                        <div className='holder'>بیشتر بخوانید</div>
+                        <div className='holder'>{Locale.button}</div>
                         <div className='icon'></div>
                     </button>
                 </div>

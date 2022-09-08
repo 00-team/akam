@@ -66,6 +66,18 @@
                 "description": "GGEZ"
             },
             "card_button": "Read More"
+        },
+        "contact": {
+            "doom": {
+                "sentence": "Contact with Akam",
+                "word": "Akam"
+            },
+            "title": "Ways of communication with us",
+            "gmail": "random@gmail.com",
+            "fax": "random fax",
+            "phone": "ramdom phone",
+            "location": "random location",
+            "button": "read more"
         }
     }
 }

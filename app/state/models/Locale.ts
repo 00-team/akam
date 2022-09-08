@@ -56,6 +56,15 @@ interface Locale {
             business_strategy: SellingCard
             card_button: string
         }
+        contact: {
+            doom: Colored
+            title: string
+            gmail: string
+            fax: string
+            phone: string
+            location: string
+            button: string
+        }
     }
 }
 

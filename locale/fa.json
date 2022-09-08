@@ -79,6 +79,18 @@
                 ]
             },
             "card_button": "ادامه مطلب"
+        },
+        "contact": {
+            "doom": {
+                "sentence": "ارتباط با اکام",
+                "word": "اکام"
+            },
+            "title": "راه های ارتباطی با ما",
+            "gmail": "random@gmail.com",
+            "fax": "random fax",
+            "phone": "ramdom phone",
+            "location": "random location",
+            "button": "بیشتر بخوانید"
         }
     },
     "Navbar": {

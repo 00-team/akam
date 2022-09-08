@@ -190,9 +190,45 @@
                         "business_strategy",
                         "card_button"
                     ]
+                },
+                "contact": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "doom": {
+                            "$ref": "#/$defs/colored"
+                        },
+                        "title": {
+                            "type": "string"
+                        },
+                        "gmail": {
+                            "type": "string"
+                        },
+                        "fax": {
+                            "type": "string"
+                        },
+                        "phone": {
+                            "type": "string"
+                        },
+                        "location": {
+                            "type": "string"
+                        },
+                        "button": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "doom",
+                        "title",
+                        "gmail",
+                        "fax",
+                        "phone",
+                        "location",
+                        "button"
+                    ]
                 }
             },
-            "required": ["hero", "about", "selling"]
+            "required": ["hero", "about", "selling", "contact"]
         }
     },
     "required": ["label", "Home", "Navbar"]
