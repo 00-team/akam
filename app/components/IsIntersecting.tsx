@@ -43,4 +43,4 @@ const IsIntersecting: FC<IsIntersectingProps> = ({
     )
 }
 
-export default IsIntersecting
+export { IsIntersecting }
