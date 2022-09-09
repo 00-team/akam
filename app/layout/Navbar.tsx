@@ -7,6 +7,8 @@ import { useLocation } from 'react-router-dom'
 import { useAtomValue } from 'jotai'
 import { LocaleAtom } from 'state'
 
+import { Select } from 'components'
+
 import './style/navbar.scss'
 
 const Navbar: FC = () => {
@@ -19,22 +21,37 @@ const Navbar: FC = () => {
     return (
         <nav className='nav-container'>
             <div className='nav-wrapper title_small'>
-                <div className='nav-language'>
-                    <div className='holder'></div>
-                    <div className='icon'></div>
-                </div>
-                <div className='nav-items'>
-                    <div className={`nav-item ${C(CheckLocation('contact'))}`}>
-                        {Loacle.contact}
+                <div className='nav-content'>
+                    <div className='nav-language title_smaller'>
+                        {/* <div className='icon'>
+                            <IoIosGlobe size={24} />
+                        </div>
+                        <div className='holder'>فارسی</div> */}
+                        <Select />
                     </div>
-                    <div className={`nav-item ${C(CheckLocation('services'))}`}>
-                        {Loacle.services}
-                    </div>
-                    <div className={`nav-item ${C(CheckLocation('about'))}`}>
-                        {Loacle.about}
-                    </div>
-                    <div className={`nav-item ${C(CheckLocation(''))}`}>
-                        {Loacle.home}
+                    <div className='nav-items'>
+                        <div
+                            className={`nav-item ${C(
+                                CheckLocation('contact')
+                            )}`}
+                        >
+                            {Loacle.contact}
+                        </div>
+                        <div
+                            className={`nav-item ${C(
+                                CheckLocation('services')
+                            )}`}
+                        >
+                            {Loacle.services}
+                        </div>
+                        <div
+                            className={`nav-item ${C(CheckLocation('about'))}`}
+                        >
+                            {Loacle.about}
+                        </div>
+                        <div className={`nav-item ${C(CheckLocation(''))}`}>
+                            {Loacle.home}
+                        </div>
                     </div>
                 </div>
                 <div className='nav-logo'>LOGO</div>
