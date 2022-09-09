@@ -19,6 +19,10 @@ const Navbar: FC = () => {
     return (
         <nav className='nav-container'>
             <div className='nav-wrapper title_small'>
+                <div className='nav-language'>
+                    <div className='holder'></div>
+                    <div className='icon'></div>
+                </div>
                 <div className='nav-items'>
                     <div className={`nav-item ${C(CheckLocation('contact'))}`}>
                         {Loacle.contact}
