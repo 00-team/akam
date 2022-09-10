@@ -57,7 +57,7 @@ const Navbar: FC = () => {
 
 export default Navbar
 
-const SAMPLE_LANGS = ['english', 'french']
+const SAMPLE_LANGS = ['english', 'french', 'english', 'french']
 
 const ChangeLang = () => {
     const [ChangeLang, setChangeLang] = useState(false)
@@ -66,7 +66,7 @@ const ChangeLang = () => {
             className='nav-language-wrapper  title_smaller'
             onClick={() => setChangeLang(!ChangeLang)}
         >
-            <div className='nav-language-default '>
+            <div className={`nav-language-default ${C(ChangeLang)}`}>
                 <div className='drop-icon icon'>
                     <FiChevronDown />
                 </div>
