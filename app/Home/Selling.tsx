@@ -1,4 +1,4 @@
-import React, { FC, useRef, useState } from 'react'
+import React, { FC, useEffect, useRef, useState } from 'react'
 
 import { C } from '@00-team/utils'
 
@@ -17,21 +17,19 @@ const Selling: FC = () => {
     const [isIntersecting, setisIntersecting] = useState(false)
 
     const SellingTitle = useRef<HTMLDivElement>(null)
-    const [Transform] = useState(0)
+    const [Transform, setTransform] = useState(0)
 
-    // this is not good
+    const UpdateTransform = () => {
+        if (!SellingTitle.current) return
+        const { top } = SellingTitle.current.getBoundingClientRect()
 
-    // useEffect(() => {
-    //     window.onscroll = () => {
-    //         if (SellingTitle.current) {
-    //             setTransform(
-    //                 SellingTitle.current.getBoundingClientRect().top - 600 <= 0
-    //                     ? 0
-    //                     : SellingTitle.current.getBoundingClientRect().top - 600
-    //             )
-    //         }
-    //     }
-    // }, [])
+        setTransform(Math.max(top - 600, 0))
+    }
+
+    useEffect(() => {
+        UpdateTransform()
+        window.addEventListener('scroll', UpdateTransform)
+    }, [])
 
     return (
         <IsIntersecting
