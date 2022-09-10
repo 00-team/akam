@@ -82,7 +82,9 @@ const ChangeLang = () => {
                             className='language-change'
                             key={index}
                             style={{
-                                transitionDelay: `${index * 0.25 + 0.5}s`,
+                                transitionDelay: `${
+                                    ChangeLang ? index * 0.25 + 0.5 : 0
+                                }s`,
                             }}
                         >
                             <div className='icon'>
