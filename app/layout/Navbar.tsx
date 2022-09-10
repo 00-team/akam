@@ -7,8 +7,8 @@ import { IoIosGlobe } from '@react-icons/all-files/io/IoIosGlobe'
 
 import { useLocation } from 'react-router-dom'
 
-import { useAtomValue } from 'jotai'
-import { LocaleAtom } from 'state'
+import { useAtom, useAtomValue } from 'jotai'
+import { LocaleAtom, LocalesListAtom } from 'state'
 
 import './style/navbar.scss'
 
@@ -57,10 +57,13 @@ const Navbar: FC = () => {
 
 export default Navbar
 
-const SAMPLE_LANGS = ['english', 'french', 'english', 'french']
-
-const ChangeLang = () => {
+const ChangeLang: FC = () => {
+    const [Locale, UpdateLocale] = useAtom(LocaleAtom)
+    const LocaleList = useAtomValue(LocalesListAtom).filter(
+        ({ id }) => id !== Locale.id
+    )
     const [ChangeLang, setChangeLang] = useState(false)
+
     return (
         <div
             className='nav-language-wrapper  title_smaller'
@@ -70,13 +73,13 @@ const ChangeLang = () => {
                 <div className='drop-icon icon'>
                     <FiChevronDown />
                 </div>
-                <div className='holder'>فارسی</div>
+                <div className='holder'>{Locale.label}</div>
                 <div className='icon'>
                     <IoIosGlobe size={24} />
                 </div>
             </div>
             <div className={`nav-language-change ${C(ChangeLang)}`}>
-                {SAMPLE_LANGS.map((lang, index) => {
+                {LocaleList.map(({ label, id }, index) => {
                     return (
                         <div
                             className='language-change'
@@ -86,11 +89,12 @@ const ChangeLang = () => {
                                     ChangeLang ? index * 0.25 + 0.5 : 0
                                 }s`,
                             }}
+                            onClick={() => UpdateLocale(id)}
                         >
                             <div className='icon'>
                                 <IoIosGlobe size={24} />
                             </div>
-                            <div className='holder'>{lang}</div>
+                            <div className='holder'>{label}</div>
                         </div>
                     )
                 })}

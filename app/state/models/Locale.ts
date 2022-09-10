@@ -18,6 +18,7 @@ interface AboutCard {
 interface SellingCard extends AboutCard {}
 
 interface Locale {
+    id: string
     label: string
     direction?: 'rtl' | 'ltr'
     Navbar: {
