@@ -88,18 +88,86 @@
                 }
             }
 
-            .nav-language {
+            .nav-language-wrapper {
                 display: flex;
                 align-items: center;
-                gap: 1vw;
+                flex-direction: column;
 
-                padding: 15px;
+                width: 150px;
 
-                border-radius: 10px;
-                background-color: var(--thirty-percent);
-                box-shadow: 3px 1px 18px -10px black;
+                position: relative;
 
-                cursor: pointer;
+                direction: ltr;
+
+                .nav-language-default {
+                    display: flex;
+                    align-items: center;
+                    gap: 1vw;
+
+                    padding: 15px;
+
+                    width: 100%;
+
+                    border-radius: 10px;
+                    background-color: var(--thirty-percent);
+                    box-shadow: 3px 1px 18px -10px black;
+
+                    cursor: pointer;
+                }
+                .nav-language-change {
+                    position: absolute;
+                    bottom: 0;
+                    transform: translateY(calc(100% + 15px));
+
+                    width: 100%;
+
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: flex-start;
+
+                    gap: 0.5vh;
+
+                    padding: 10px 0;
+
+                    cursor: pointer;
+
+                    border-radius: 10px;
+                    background-color: var(--thirty-percent);
+                    box-shadow: 3px 1px 18px -10px black;
+
+                    overflow: hidden;
+
+                    visibility: hidden;
+                    opacity: 0;
+                    transition: all 0.5s ease-in-out;
+
+                    &.active {
+                        visibility: visible;
+                        opacity: 1;
+
+                        .language-change {
+                            transform: translateX(0);
+                        }
+                    }
+
+                    .language-change {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 1vw;
+
+                        width: 100%;
+                        padding: 10px 0;
+
+                        text-transform: capitalize;
+
+                        transform: translateX(100%);
+
+                        transition: transform 0.5s
+                            cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                    }
+                }
             }
         }
     }
