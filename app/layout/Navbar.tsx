@@ -1,13 +1,14 @@
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
 
 import { C } from '@00-team/utils'
+
+import { FiChevronDown } from '@react-icons/all-files/fi/FiChevronDown'
+import { IoIosGlobe } from '@react-icons/all-files/io/IoIosGlobe'
 
 import { useLocation } from 'react-router-dom'
 
 import { useAtomValue } from 'jotai'
 import { LocaleAtom } from 'state'
-
-import { Select } from 'components'
 
 import './style/navbar.scss'
 
@@ -22,13 +23,7 @@ const Navbar: FC = () => {
         <nav className='nav-container'>
             <div className='nav-wrapper title_small'>
                 <div className='nav-content'>
-                    <div className='nav-language title_smaller'>
-                        {/* <div className='icon'>
-                            <IoIosGlobe size={24} />
-                        </div>
-                        <div className='holder'>فارسی</div> */}
-                        <Select />
-                    </div>
+                    <ChangeLang />
                     <div className='nav-items'>
                         <div
                             className={`nav-item ${C(
@@ -61,3 +56,43 @@ const Navbar: FC = () => {
 }
 
 export default Navbar
+
+const SAMPLE_LANGS = ['english', 'french']
+
+const ChangeLang = () => {
+    const [ChangeLang, setChangeLang] = useState(false)
+    return (
+        <div
+            className='nav-language-wrapper  title_smaller'
+            onClick={() => setChangeLang(!ChangeLang)}
+        >
+            <div className='nav-language-default '>
+                <div className='drop-icon icon'>
+                    <FiChevronDown />
+                </div>
+                <div className='holder'>فارسی</div>
+                <div className='icon'>
+                    <IoIosGlobe size={24} />
+                </div>
+            </div>
+            <div className={`nav-language-change ${C(ChangeLang)}`}>
+                {SAMPLE_LANGS.map((lang, index) => {
+                    return (
+                        <div
+                            className='language-change'
+                            key={index}
+                            style={{
+                                transitionDelay: `${index * 0.25 + 0.5}s`,
+                            }}
+                        >
+                            <div className='icon'>
+                                <IoIosGlobe size={24} />
+                            </div>
+                            <div className='holder'>{lang}</div>
+                        </div>
+                    )
+                })}
+            </div>
+        </div>
+    )
+}
