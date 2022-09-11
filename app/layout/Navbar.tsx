@@ -32,18 +32,18 @@ const Navbar: FC = () => {
             {WindowWidth >= 1024 ? (
                 <MajorScreenNav CheckLocation={CheckLocation} Loacle={Loacle} />
             ) : (
-                <SmallScreenNav />
+                <SmallScreenNav CheckLocation={CheckLocation} Loacle={Loacle} />
             )}
         </>
     )
 }
 
-interface MajorScreenNavProps {
+interface NavProps {
     CheckLocation: (item: string) => void
     Loacle: LocaleModel['Navbar']
 }
 
-const MajorScreenNav: FC<MajorScreenNavProps> = ({ CheckLocation, Loacle }) => {
+const MajorScreenNav: FC<NavProps> = ({ CheckLocation, Loacle }) => {
     return (
         <nav className='nav-container'>
             <div className='nav-wrapper title_small'>
@@ -80,8 +80,49 @@ const MajorScreenNav: FC<MajorScreenNavProps> = ({ CheckLocation, Loacle }) => {
     )
 }
 
-const SmallScreenNav = () => {
-    return <></>
+const SmallScreenNav: FC<NavProps> = ({ CheckLocation, Loacle }) => {
+    const [Active, setActive] = useState(false)
+    setActive
+    return (
+        <nav>
+            <div className={`open-btn ${Active}`}>
+                <div className='line'></div>
+                <div className='line'></div>
+                <div className='line'></div>
+            </div>
+            <section className='navbar-wrapper'>
+                <ChangeLang />
+                <div className='nav-content'>
+                    <ChangeLang />
+                    <div className='nav-items'>
+                        <div
+                            className={`nav-item ${C(
+                                CheckLocation('contact')
+                            )}`}
+                        >
+                            {Loacle.contact}
+                        </div>
+                        <div
+                            className={`nav-item ${C(
+                                CheckLocation('services')
+                            )}`}
+                        >
+                            {Loacle.services}
+                        </div>
+                        <div
+                            className={`nav-item ${C(CheckLocation('about'))}`}
+                        >
+                            {Loacle.about}
+                        </div>
+                        <div className={`nav-item ${C(CheckLocation(''))}`}>
+                            {Loacle.home}
+                        </div>
+                    </div>
+                </div>
+                <div className='nav-logo'>LOGO</div>
+            </section>
+        </nav>
+    )
 }
 
 export default Navbar
