@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 
 import { C } from '@00-team/utils'
 
@@ -8,17 +8,42 @@ import { IoIosGlobe } from '@react-icons/all-files/io/IoIosGlobe'
 import { useLocation } from 'react-router-dom'
 
 import { useAtom, useAtomValue } from 'jotai'
-import { LocaleAtom, LocalesListAtom } from 'state'
+import { LocaleAtom, LocaleModel, LocalesListAtom } from 'state'
 
 import './style/navbar.scss'
 
 const Navbar: FC = () => {
+    const [WindowWidth, setWindowWidth] = useState(innerWidth)
+
     const Loacle = useAtomValue(LocaleAtom).Navbar
     const Location = useLocation()
+
+    useEffect(() => {
+        window.onresize = () => {
+            setWindowWidth(innerWidth)
+        }
+    }, [])
 
     const CheckLocation = (item: string) =>
         Location.pathname.split('/')[1] === item
 
+    return (
+        <>
+            {WindowWidth >= 1024 ? (
+                <MajorScreenNav CheckLocation={CheckLocation} Loacle={Loacle} />
+            ) : (
+                <SmallScreenNav />
+            )}
+        </>
+    )
+}
+
+interface MajorScreenNavProps {
+    CheckLocation: (item: string) => void
+    Loacle: LocaleModel['Navbar']
+}
+
+const MajorScreenNav: FC<MajorScreenNavProps> = ({ CheckLocation, Loacle }) => {
     return (
         <nav className='nav-container'>
             <div className='nav-wrapper title_small'>
@@ -53,6 +78,10 @@ const Navbar: FC = () => {
             </div>
         </nav>
     )
+}
+
+const SmallScreenNav = () => {
+    return <></>
 }
 
 export default Navbar
