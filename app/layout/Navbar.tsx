@@ -33,7 +33,7 @@ const Navbar: FC = () => {
 
     return (
         <>
-            {WindowWidth >= 1024 ? (
+            {WindowWidth >= 1026 ? (
                 <MajorScreenNav CheckLocation={CheckLocation} Loacle={Loacle} />
             ) : (
                 <SmallScreenNav CheckLocation={CheckLocation} Loacle={Loacle} />
@@ -54,28 +54,34 @@ const MajorScreenNav: FC<NavProps> = ({ CheckLocation, Loacle }) => {
                 <div className='nav-content'>
                     <ChangeLang />
                     <div className='nav-items'>
-                        <div
+                        <a
+                            href='contact-us'
                             className={`nav-item ${C(
                                 CheckLocation('contact')
                             )}`}
                         >
                             {Loacle.contact}
-                        </div>
-                        <div
+                        </a>
+                        <a
+                            href='services'
                             className={`nav-item ${C(
                                 CheckLocation('services')
                             )}`}
                         >
                             {Loacle.services}
-                        </div>
-                        <div
+                        </a>
+                        <a
+                            href='about'
                             className={`nav-item ${C(CheckLocation('about'))}`}
                         >
                             {Loacle.about}
-                        </div>
-                        <div className={`nav-item ${C(CheckLocation(''))}`}>
+                        </a>
+                        <a
+                            href='/'
+                            className={`nav-item ${C(CheckLocation(''))}`}
+                        >
                             {Loacle.home}
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <div className='nav-logo'>LOGO</div>
@@ -101,7 +107,8 @@ const SmallScreenNav: FC<NavProps> = ({ CheckLocation, Loacle }) => {
                 <ChangeLang titleFont='title_small' />
                 <div className='nav-content'>
                     <div className='nav-items'>
-                        <div
+                        <a
+                            href='contact-us'
                             className={`nav-item ${C(
                                 CheckLocation('contact')
                             )}`}
@@ -110,8 +117,9 @@ const SmallScreenNav: FC<NavProps> = ({ CheckLocation, Loacle }) => {
                                 <CgPhone size={24} />
                             </div>
                             <div className='holder'>{Loacle.contact}</div>
-                        </div>
-                        <div
+                        </a>
+                        <a
+                            href='services'
                             className={`nav-item ${C(
                                 CheckLocation('services')
                             )}`}
@@ -120,19 +128,23 @@ const SmallScreenNav: FC<NavProps> = ({ CheckLocation, Loacle }) => {
                                 <GrServices size={24} />
                             </div>
                             <div className='holder'>{Loacle.services}</div>
-                        </div>
-                        <div
+                        </a>
+                        <a
+                            href='about'
                             className={`nav-item ${C(CheckLocation('about'))}`}
                         >
                             <FaBuilding size={24} />
                             <div className='holder'>{Loacle.about}</div>
-                        </div>
-                        <div className={`nav-item ${C(CheckLocation(''))}`}>
+                        </a>
+                        <a
+                            href='/'
+                            className={`nav-item ${C(CheckLocation(''))}`}
+                        >
                             <div className='icon'>
                                 <FaHome size={24} />
                             </div>
                             <div className='holder'>{Loacle.home}</div>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <div className='nav-logo'>LOGO</div>
