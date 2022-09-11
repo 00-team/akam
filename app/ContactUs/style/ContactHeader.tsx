@@ -1,6 +1,6 @@
 import React from 'react'
 
-import HeaderImg from '../../static/imgs/ContactHeader.jpg'
+import HeaderImg from '../../../static/imgs/ContactHeader.jpg'
 
 const ContactHeader = () => {
     return (
