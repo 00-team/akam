@@ -13,6 +13,10 @@
 
     background-color: var(--thirty-percent);
 
+    @media screen and (max-width: 1200px) {
+        padding: 1rem 0;
+    }
+
     .nav-wrapper {
         display: flex;
         align-items: center;
