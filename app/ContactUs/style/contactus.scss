@@ -6,11 +6,6 @@
 
     min-height: 100vh;
 
-    padding-top: 5vh;
-    @media screen and (max-width: 1024px) {
-        padding-top: 0;
-    }
-
     background-color: var(--thirty-percent);
 
     .contact-header {
@@ -21,7 +16,6 @@
         width: 100%;
         aspect-ratio: 1/0.22;
 
-        background-position: 0 50px;
         background-size: cover;
         background-repeat: no-repeat;
 
