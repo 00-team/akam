@@ -265,12 +265,14 @@
             align-items: center;
             justify-content: center;
 
-            color: var(--primary-color);
+            color: var(--accent-color);
 
             transition: 0.3s ease-in-out color;
 
             @media screen and (max-width: 1024px) {
                 gap: 5vw;
+
+                color: var(--primary-color);
 
                 svg {
                     path {
