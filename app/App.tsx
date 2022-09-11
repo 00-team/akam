@@ -3,6 +3,7 @@ import React, { FC, useEffect } from 'react'
 import { Empty } from '@00-team/utils'
 
 import loadable from '@loadable/component'
+import ContactUsPage from 'ContactUs'
 import Footer from 'layout/Footer'
 import Navbar from 'layout/Navbar'
 import { Route, Routes } from 'react-router-dom'
@@ -57,6 +58,7 @@ const MainContent: FC = () => {
     return (
         <Routes>
             <Route index element={<Home />} />
+            <Route path={'contact-us'} element={<ContactUsPage />} />
         </Routes>
     )
 }
