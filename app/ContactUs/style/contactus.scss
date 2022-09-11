@@ -1,0 +1,27 @@
+.contact-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    min-height: 100vh;
+
+    padding-top: 3vh;
+    @media screen and (max-width: 1024px) {
+        padding-top: 0;
+    }
+
+    .contact-header {
+        width: 100%;
+        aspect-ratio: 1/0.22;
+
+        @media screen and (max-width: 1024px) {
+            aspect-ratio: 1/0.5;
+        }
+        @media screen and (max-width: 1440px) {
+            aspect-ratio: 1/0.3;
+        }
+
+        background-color: black;
+    }
+}
