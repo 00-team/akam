@@ -2,7 +2,11 @@ import React, { FC, useEffect, useState } from 'react'
 
 import { C } from '@00-team/utils'
 
+import { CgPhone } from '@react-icons/all-files/cg/CgPhone'
+import { FaBuilding } from '@react-icons/all-files/fa/FaBuilding'
+import { FaHome } from '@react-icons/all-files/fa/FaHome'
 import { FiChevronDown } from '@react-icons/all-files/fi/FiChevronDown'
+import { GrServices } from '@react-icons/all-files/gr/GrServices'
 import { IoIosGlobe } from '@react-icons/all-files/io/IoIosGlobe'
 
 import { useLocation } from 'react-router-dom'
@@ -82,40 +86,52 @@ const MajorScreenNav: FC<NavProps> = ({ CheckLocation, Loacle }) => {
 
 const SmallScreenNav: FC<NavProps> = ({ CheckLocation, Loacle }) => {
     const [Active, setActive] = useState(false)
-    setActive
+
     return (
-        <nav>
-            <div className={`open-btn ${Active}`}>
+        <nav className='mobile-nav'>
+            <div
+                className={`toggle-btn ${C(Active)}`}
+                onClick={() => setActive(!Active)}
+            >
                 <div className='line'></div>
                 <div className='line'></div>
                 <div className='line'></div>
             </div>
-            <section className='navbar-wrapper'>
-                <ChangeLang />
+            <section className={`navbar-wrapper title ${C(Active)}`}>
+                <ChangeLang titleFont='title_small' />
                 <div className='nav-content'>
-                    <ChangeLang />
                     <div className='nav-items'>
                         <div
                             className={`nav-item ${C(
                                 CheckLocation('contact')
                             )}`}
                         >
-                            {Loacle.contact}
+                            <div className='icon'>
+                                <CgPhone size={24} />
+                            </div>
+                            <div className='holder'>{Loacle.contact}</div>
                         </div>
                         <div
                             className={`nav-item ${C(
                                 CheckLocation('services')
                             )}`}
                         >
-                            {Loacle.services}
+                            <div className='icon'>
+                                <GrServices size={24} />
+                            </div>
+                            <div className='holder'>{Loacle.services}</div>
                         </div>
                         <div
                             className={`nav-item ${C(CheckLocation('about'))}`}
                         >
-                            {Loacle.about}
+                            <FaBuilding size={24} />
+                            <div className='holder'>{Loacle.about}</div>
                         </div>
                         <div className={`nav-item ${C(CheckLocation(''))}`}>
-                            {Loacle.home}
+                            <div className='icon'>
+                                <FaHome size={24} />
+                            </div>
+                            <div className='holder'>{Loacle.home}</div>
                         </div>
                     </div>
                 </div>
@@ -127,7 +143,11 @@ const SmallScreenNav: FC<NavProps> = ({ CheckLocation, Loacle }) => {
 
 export default Navbar
 
-const ChangeLang: FC = () => {
+interface ChangeLangProps {
+    titleFont?: string
+}
+
+const ChangeLang: FC<ChangeLangProps> = ({ titleFont }) => {
     const [Locale, UpdateLocale] = useAtom(LocaleAtom)
     const LocaleList = useAtomValue(LocalesListAtom).filter(
         ({ id }) => id !== Locale.id
@@ -136,7 +156,9 @@ const ChangeLang: FC = () => {
 
     return (
         <div
-            className='nav-language-wrapper  title_smaller'
+            className={`nav-language-wrapper  ${
+                titleFont ? titleFont : 'title_smaller'
+            }`}
             onClick={() => setChangeLang(!ChangeLang)}
         >
             <div className={`nav-language-default ${C(ChangeLang)}`}>
