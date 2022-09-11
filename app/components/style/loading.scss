@@ -2,9 +2,30 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    gap: 2vh;
 
     width: 100%;
     height: 100%;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    .titles-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 2vh;
+
+        padding: 5rem 10rem;
+
+        background: rgba(215, 207, 230, 0.8);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(0px);
+
+        @media screen and (max-width: 768px) {
+            padding: 2rem 3rem;
+        }
+    }
 }
