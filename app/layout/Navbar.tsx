@@ -9,7 +9,7 @@ import { FiChevronDown } from '@react-icons/all-files/fi/FiChevronDown'
 import { GrServices } from '@react-icons/all-files/gr/GrServices'
 import { IoIosGlobe } from '@react-icons/all-files/io/IoIosGlobe'
 
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 import { useAtom, useAtomValue } from 'jotai'
 import { LocaleAtom, LocaleModel, LocalesListAtom } from 'state'
@@ -34,54 +34,47 @@ const Navbar: FC = () => {
     return (
         <>
             {WindowWidth >= 1026 ? (
-                <MajorScreenNav CheckLocation={CheckLocation} Loacle={Loacle} />
+                <MajorScreenNav isLoc={CheckLocation} Loacle={Loacle} />
             ) : (
-                <SmallScreenNav CheckLocation={CheckLocation} Loacle={Loacle} />
+                <SmallScreenNav isLoc={CheckLocation} Loacle={Loacle} />
             )}
         </>
     )
 }
 
 interface NavProps {
-    CheckLocation: (item: string) => void
+    isLoc: (item: string) => void
     Loacle: LocaleModel['Navbar']
 }
 
-const MajorScreenNav: FC<NavProps> = ({ CheckLocation, Loacle }) => {
+const MajorScreenNav: FC<NavProps> = ({ isLoc, Loacle }) => {
     return (
         <nav className='nav-container'>
             <div className='nav-wrapper title_small'>
                 <div className='nav-content'>
                     <ChangeLang />
                     <div className='nav-items'>
-                        <a
-                            href='contact-us'
-                            className={`nav-item ${C(
-                                CheckLocation('contact')
-                            )}`}
+                        <Link
+                            to='contact'
+                            className={`nav-item ${C(isLoc('contact'))}`}
                         >
                             {Loacle.contact}
-                        </a>
-                        <a
-                            href='services'
-                            className={`nav-item ${C(
-                                CheckLocation('services')
-                            )}`}
+                        </Link>
+                        <Link
+                            to='services'
+                            className={`nav-item ${C(isLoc('services'))}`}
                         >
                             {Loacle.services}
-                        </a>
-                        <a
-                            href='about'
-                            className={`nav-item ${C(CheckLocation('about'))}`}
+                        </Link>
+                        <Link
+                            to='about'
+                            className={`nav-item ${C(isLoc('about'))}`}
                         >
                             {Loacle.about}
-                        </a>
-                        <a
-                            href='/'
-                            className={`nav-item ${C(CheckLocation(''))}`}
-                        >
+                        </Link>
+                        <Link to='/' className={`nav-item ${C(isLoc(''))}`}>
                             {Loacle.home}
-                        </a>
+                        </Link>
                     </div>
                 </div>
                 <div className='nav-logo'>LOGO</div>
@@ -90,7 +83,7 @@ const MajorScreenNav: FC<NavProps> = ({ CheckLocation, Loacle }) => {
     )
 }
 
-const SmallScreenNav: FC<NavProps> = ({ CheckLocation, Loacle }) => {
+const SmallScreenNav: FC<NavProps> = ({ isLoc, Loacle }) => {
     const [Active, setActive] = useState(false)
 
     return (
@@ -107,44 +100,37 @@ const SmallScreenNav: FC<NavProps> = ({ CheckLocation, Loacle }) => {
                 <ChangeLang titleFont='title_small' />
                 <div className='nav-content'>
                     <div className='nav-items'>
-                        <a
-                            href='contact-us'
-                            className={`nav-item ${C(
-                                CheckLocation('contact')
-                            )}`}
+                        <Link
+                            to='contact'
+                            className={`nav-item ${C(isLoc('contact'))}`}
                         >
                             <div className='icon'>
                                 <CgPhone size={24} />
                             </div>
                             <div className='holder'>{Loacle.contact}</div>
-                        </a>
-                        <a
-                            href='services'
-                            className={`nav-item ${C(
-                                CheckLocation('services')
-                            )}`}
+                        </Link>
+                        <Link
+                            to='services'
+                            className={`nav-item ${C(isLoc('services'))}`}
                         >
                             <div className='icon'>
                                 <GrServices size={24} />
                             </div>
                             <div className='holder'>{Loacle.services}</div>
-                        </a>
-                        <a
-                            href='about'
-                            className={`nav-item ${C(CheckLocation('about'))}`}
+                        </Link>
+                        <Link
+                            to='about'
+                            className={`nav-item ${C(isLoc('about'))}`}
                         >
                             <FaBuilding size={24} />
                             <div className='holder'>{Loacle.about}</div>
-                        </a>
-                        <a
-                            href='/'
-                            className={`nav-item ${C(CheckLocation(''))}`}
-                        >
+                        </Link>
+                        <Link to='/' className={`nav-item ${C(isLoc(''))}`}>
                             <div className='icon'>
                                 <FaHome size={24} />
                             </div>
                             <div className='holder'>{Loacle.home}</div>
-                        </a>
+                        </Link>
                     </div>
                 </div>
                 <div className='nav-logo'>LOGO</div>
@@ -152,8 +138,6 @@ const SmallScreenNav: FC<NavProps> = ({ CheckLocation, Loacle }) => {
         </nav>
     )
 }
-
-export default Navbar
 
 interface ChangeLangProps {
     titleFont?: string
@@ -206,3 +190,4 @@ const ChangeLang: FC<ChangeLangProps> = ({ titleFont }) => {
         </div>
     )
 }
+export default Navbar
