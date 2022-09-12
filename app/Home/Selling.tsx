@@ -7,9 +7,6 @@ import { DescriptionModel, LocaleAtom } from 'state'
 
 import { Colored, IsIntersecting } from 'components'
 
-import MarketingSvg from './../../static/svgs/marketing.svg'
-import StratsSvg from './../../static/svgs/strats.svg'
-
 import './style/selling.scss'
 
 const Selling: FC = () => {
@@ -65,21 +62,21 @@ const Selling: FC = () => {
                 <SellCard
                     title={Locale.marketing.title}
                     description={Locale.marketing.description}
-                    svg={MarketingSvg}
+                    svg='/static/svg/marketing.svg'
                     transform={Transform}
                 />
 
                 <SellCard
                     title={Locale.business_strategy.title}
                     description={Locale.business_strategy.description}
-                    svg={StratsSvg}
+                    svg='/static/svg/strats.svg'
                     transform={Transform}
                 />
 
                 <SellCard
                     title={Locale.marketing2.title}
                     description={Locale.marketing2.description}
-                    svg={MarketingSvg}
+                    svg='/static/svg/marketing.svg'
                     transform={Transform}
                 />
             </div>

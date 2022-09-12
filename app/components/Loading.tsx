@@ -1,14 +1,12 @@
-import React from 'react'
-
-import loadingImg from '../../static/imgs/loading.jpg'
+import React, { FC } from 'react'
 
 import './style/loading.scss'
 
-const Loading = () => {
+const Loading: FC = () => {
     return (
         <div
             className='site-loading'
-            style={{ backgroundImage: `url(${loadingImg})` }}
+            style={{ backgroundImage: `url(/static/image/loading.jpg)` }}
         >
             <div className='titles-wrapper'>
                 <div className='loading-title title_hero'>
@@ -20,4 +18,4 @@ const Loading = () => {
     )
 }
 
-export default Loading
+export { Loading }

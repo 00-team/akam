@@ -1,6 +1,6 @@
 {
     "name": "akam",
-    "version": "0.1.0",
+    "version": "0.1.5",
     "scripts": {
         "start": "webpack serve --config config/webpack/dev.ts",
         "build": "webpack --config config/webpack/build.ts",

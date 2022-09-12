@@ -8,6 +8,7 @@ app = Flask(__name__, static_folder='static')
 
 
 app.get('/')(views.home)
+app.get('/contact/')(views.contact)
 
 # apis
 app.get('/api/locales_list/')(views.locales_list)

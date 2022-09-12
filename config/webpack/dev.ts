@@ -36,7 +36,7 @@ const DevConfig: Configuration = {
         },
         proxy: [
             {
-                context: ['/api'],
+                context: ['/api', '/static'],
                 target: 'http://127.0.0.1:7000/',
             },
 

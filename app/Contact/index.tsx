@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { FC } from 'react'
 
-import ContactSocials from './ContactSocials'
+import { ContactHeader } from './ContactHeader'
+import { ContactSocials } from './ContactSocials'
 
-import ContactHeader from './style/ContactHeader'
 import './style/contactus.scss'
 
-const ContactUsPage = () => {
+const Contact: FC = () => {
     return (
         <section className='contact-page-container'>
             <ContactHeader />
@@ -52,4 +52,4 @@ const ContactUsPage = () => {
     )
 }
 
-export default ContactUsPage
+export default Contact
