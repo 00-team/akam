@@ -3,12 +3,15 @@ import React, { FC, useEffect } from 'react'
 import { Empty } from '@00-team/utils'
 
 import loadable from '@loadable/component'
+import ContactUsPage from 'ContactUs'
 import Footer from 'layout/Footer'
 import Navbar from 'layout/Navbar'
 import { Route, Routes } from 'react-router-dom'
 
 import { useAtom, useSetAtom } from 'jotai'
 import { LocaleAtom, LocalesListAtom } from 'state'
+
+import Loading from 'components/Loading'
 
 import './style/base.scss'
 import './style/fonts/imports.scss'
@@ -36,7 +39,7 @@ const App: FC = () => {
         }
     }, [Locale])
 
-    if (Empty(Locale)) return <div>Loading...</div>
+    if (Empty(Locale)) return <Loading />
 
     return (
         <>
@@ -55,6 +58,7 @@ const MainContent: FC = () => {
     return (
         <Routes>
             <Route index element={<Home />} />
+            <Route path={'contact-us'} element={<ContactUsPage />} />
         </Routes>
     )
 }

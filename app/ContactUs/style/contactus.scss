@@ -1,0 +1,215 @@
+.contact-page-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    min-height: 100vh;
+
+    background-color: var(--thirty-percent);
+
+    .contact-header {
+        display: grid;
+        place-items: center;
+        color: var(--primary-color);
+
+        width: 100%;
+        aspect-ratio: 1/0.22;
+
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        @media screen and (max-width: 1024px) {
+            aspect-ratio: 1/0.5;
+        }
+        @media screen and (max-width: 1440px) {
+            aspect-ratio: 1/0.3;
+        }
+    }
+    .contact-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5vh;
+
+        width: 100%;
+
+        padding: 7vh 5vw;
+
+        .contact-socials-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            gap: 10vh;
+
+            width: 100%;
+
+            .contact-socials {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+                row-gap: 5vh;
+                column-gap: 8vw;
+
+                padding: 1rem 4rem;
+
+                $color-call: var(--sixty-percent);
+                $color-tel: linear-gradient(
+                        to bottom,
+                        rgba(255, 255, 255, 0.2),
+                        rgba(0, 0, 0, 0.15)
+                    ),
+                    #08a0e9;
+                $color-twitter: #2b97f1;
+                $color-dribbble: #ef5a92;
+                $color-instagram: linear-gradient(
+                        to bottom,
+                        rgba(255, 255, 255, 0.1),
+                        rgba(0, 0, 0, 0.1)
+                    ),
+                    linear-gradient(
+                        180deg,
+                        #f99257 0%,
+                        #e42d59 25%,
+                        #bb2d93 65%,
+                        #7738c5 100%
+                    );
+                $color-linkedin: #006599;
+                $color-facebook: linear-gradient(
+                        to bottom,
+                        rgba(255, 255, 255, 0.2),
+                        rgba(0, 0, 0, 0.2)
+                    ),
+                    linear-gradient(-35deg, #69c9d0 30%, #1dee40 75%);
+
+                @mixin social-icon($color) {
+                    background: $color;
+                    color: #fff;
+
+                    .tooltip {
+                        background: $color;
+                        color: currentColor;
+                    }
+                }
+
+                &.horizental .social-icon {
+                    transform: translateY(100%);
+                    opacity: 0;
+                }
+                &.vertical .social-icon {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+
+                &.horizental .social-icon {
+                    animation: FadeinH 0.7s
+                        cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+                }
+                &.vertical .social-icon {
+                    animation: FadeinV 0.7s
+                        cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+                }
+
+                @keyframes FadeinH {
+                    from {
+                        transform: translateY(100%);
+                        opacity: 0;
+                    }
+                    to {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
+                }
+                @keyframes FadeinV {
+                    from {
+                        transform: translateX(100%);
+                        opacity: 0;
+                    }
+                    to {
+                        transform: translateX(0);
+                        opacity: 1;
+                    }
+                }
+
+                .social-icon {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    width: 80px;
+                    height: 80px;
+                    margin: 0 0.5rem;
+
+                    border-radius: 100vmax;
+                    cursor: pointer;
+
+                    font: inherit;
+
+                    text-decoration: none;
+                    transition: transform 0.5s ease-in-out,
+                        opacity 0.5s ease-in-out, all 0.15s ease;
+
+                    &:hover {
+                        color: #fff;
+
+                        .tooltip {
+                            visibility: visible;
+                            opacity: 1;
+                            transform: translate(-50%, -150%);
+                        }
+                    }
+
+                    &:active {
+                        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5) inset;
+                    }
+
+                    &.linkedin {
+                        @include social-icon($color-linkedin);
+                    }
+                    &.twitter {
+                        @include social-icon($color-twitter);
+                    }
+                    &.call {
+                        @include social-icon($color-call);
+                    }
+                    &.facebook {
+                        @include social-icon($color-facebook);
+                    }
+                    &.instagram {
+                        @include social-icon($color-instagram);
+                    }
+                    &.dribbble {
+                        @include social-icon($color-dribbble);
+                    }
+                    &.tel {
+                        @include social-icon($color-tel);
+                    }
+
+                    .icon-svg {
+                        position: relative;
+                        top: 1px;
+                    }
+                    .tooltip {
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        left: 50%;
+                        padding: 0.8rem 1rem;
+                        border-radius: 40px;
+
+                        opacity: 0;
+                        pointer-events: none;
+                        text-transform: uppercase;
+                        transform: translate(-50%, -100%);
+                        transition: all 0.3s ease;
+                        z-index: 1;
+                    }
+                }
+            }
+        }
+    }
+}
