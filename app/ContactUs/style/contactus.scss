@@ -31,7 +31,7 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        gap: 5vh;
+        gap: 15vh;
 
         width: 100%;
 
@@ -209,6 +209,30 @@
                         z-index: 1;
                     }
                 }
+            }
+        }
+        .contact-loc_form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            column-gap: 5vh;
+
+            width: 100%;
+
+            form,
+            .contact-location {
+                width: 50%;
+            }
+
+            .contact-form fieldset {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 1vh;
+                flex-direction: column;
+
+                padding: 10px 15px;
             }
         }
     }
