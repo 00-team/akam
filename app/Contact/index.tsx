@@ -39,6 +39,7 @@ const Contact: FC = () => {
                                 name='gmail'
                             />
                             <textarea
+                                placeholder='متن پیام...'
                                 className='title_smaller'
                                 name='message'
                                 cols={30}
