@@ -220,19 +220,136 @@
 
             width: 100%;
 
+            @media screen and (max-width: 1024px) {
+                flex-direction: column;
+            }
+
             form,
             .contact-location {
                 width: 50%;
+
+                @media screen and (max-width: 1024px) {
+                    width: 100%;
+                }
             }
 
             .contact-form fieldset {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                gap: 1vh;
+                gap: 2vh;
                 flex-direction: column;
 
-                padding: 10px 15px;
+                padding: 1rem 1.5rem;
+                border-radius: 10px;
+
+                &:hover {
+                    legend.title {
+                        transform: translateY(-10%);
+                    }
+                }
+
+                legend.title {
+                    padding: 1rem;
+
+                    transition: transform 0.5s ease-in-out;
+                }
+
+                input {
+                    padding: 10px 15px;
+                    border-radius: 10px;
+                    background-color: var(--primary-color);
+
+                    border: none;
+
+                    caret-color: var(--accent-color);
+                    color: var(--accent-color);
+
+                    &::placeholder {
+                        color: var(--sixty-percent);
+                    }
+                }
+
+                .title-inps {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+
+                    gap: 2vw;
+
+                    input {
+                        width: 50%;
+                    }
+                }
+
+                .gmail {
+                    width: 100%;
+                }
+
+                textarea {
+                    width: 100%;
+                    background-color: var(--primary-color);
+
+                    border: none;
+                    border-radius: 5px;
+
+                    padding: 1rem;
+
+                    caret-color: var(--sixty-percent);
+                    color: var(--accent-color);
+                }
+
+                .cta-wrapper {
+                    width: 100%;
+
+                    margin-top: 2vh;
+
+                    button {
+                        background-color: var(--ten-percent);
+
+                        padding: 1.5vh 1.6vw;
+
+                        border-radius: 5px;
+                        border: none;
+
+                        cursor: pointer;
+
+                        position: relative;
+                        isolation: isolate;
+                        overflow: hidden;
+                        transition: color 0.5s ease-in-out;
+
+                        @media screen and (max-width: 1024px) {
+                            width: 100%;
+                        }
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            right: -50px;
+                            bottom: 0;
+                            left: 0;
+
+                            border-right: 50px solid transparent;
+                            border-bottom: 80px solid var(--primary-color);
+                            transform: translateX(-100%);
+
+                            z-index: -1;
+
+                            transition: transform 0.5s ease-in-out;
+                        }
+
+                        &:hover,
+                        &:focus {
+                            color: var(--ten-percent);
+                            &::before {
+                                transform: translate(0);
+                            }
+                        }
+                    }
+                }
             }
         }
     }
