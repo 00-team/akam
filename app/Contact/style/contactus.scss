@@ -216,7 +216,8 @@
             align-items: center;
             justify-content: center;
 
-            column-gap: 5vh;
+            row-gap: 5vh;
+            column-gap: 5vw;
 
             width: 100%;
 
@@ -242,6 +243,9 @@
 
                 padding: 1rem 1.5rem;
                 border-radius: 10px;
+
+                border-color: var(--accent-color);
+                border-style: solid;
 
                 &:hover {
                     legend.title {
@@ -349,6 +353,18 @@
                             }
                         }
                     }
+                }
+            }
+            .contact-location {
+                height: 100%;
+
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                gap: 5vh;
+
+                iframe {
+                    width: 100%;
                 }
             }
         }
