@@ -10,11 +10,10 @@ jobs:
     name: Deploy 📦
     runs-on: ubuntu-latest
     steps:
-      - run: echo "GGEZ"
-      # - name: connect/deploy
-      #   uses: appleboy/ssh-action@master
-      #   with:
-      #     host: ${{ secrets.HOST }}
-      #     username: ${{ secrets.USERNAME }}
-      #     key: ${{ secrets.KEY }}
-      #     script: bash /site/akam/config/deploy.sh
+      - name: connect/deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          script: bash /site/akam/config/deploy.sh
