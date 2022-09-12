@@ -87,7 +87,7 @@ const SmallScreenNav: FC<NavProps> = ({ isLoc, Loacle }) => {
     const [Active, setActive] = useState(false)
 
     return (
-        <nav className='mobile-nav'>
+        <>
             <div
                 className={`toggle-btn ${C(Active)}`}
                 onClick={() => setActive(!Active)}
@@ -96,46 +96,48 @@ const SmallScreenNav: FC<NavProps> = ({ isLoc, Loacle }) => {
                 <div className='line'></div>
                 <div className='line'></div>
             </div>
-            <section className={`navbar-wrapper title ${C(Active)}`}>
-                <ChangeLang titleFont='title_small' />
-                <div className='nav-content'>
-                    <div className='nav-items'>
-                        <Link
-                            to='contact'
-                            className={`nav-item ${C(isLoc('contact'))}`}
-                        >
-                            <div className='icon'>
-                                <CgPhone size={24} />
-                            </div>
-                            <div className='holder'>{Loacle.contact}</div>
-                        </Link>
-                        <Link
-                            to='services'
-                            className={`nav-item ${C(isLoc('services'))}`}
-                        >
-                            <div className='icon'>
-                                <GrServices size={24} />
-                            </div>
-                            <div className='holder'>{Loacle.services}</div>
-                        </Link>
-                        <Link
-                            to='about'
-                            className={`nav-item ${C(isLoc('about'))}`}
-                        >
-                            <FaBuilding size={24} />
-                            <div className='holder'>{Loacle.about}</div>
-                        </Link>
-                        <Link to='/' className={`nav-item ${C(isLoc(''))}`}>
-                            <div className='icon'>
-                                <FaHome size={24} />
-                            </div>
-                            <div className='holder'>{Loacle.home}</div>
-                        </Link>
+            <nav className={`mobile-nav ${C(Active)}`}>
+                <section className='navbar-wrapper title '>
+                    <ChangeLang titleFont='title_small' />
+                    <div className='nav-content'>
+                        <div className='nav-items'>
+                            <Link
+                                to='contact'
+                                className={`nav-item ${C(isLoc('contact'))}`}
+                            >
+                                <div className='icon'>
+                                    <CgPhone size={24} />
+                                </div>
+                                <div className='holder'>{Loacle.contact}</div>
+                            </Link>
+                            <Link
+                                to='services'
+                                className={`nav-item ${C(isLoc('services'))}`}
+                            >
+                                <div className='icon'>
+                                    <GrServices size={24} />
+                                </div>
+                                <div className='holder'>{Loacle.services}</div>
+                            </Link>
+                            <Link
+                                to='about'
+                                className={`nav-item ${C(isLoc('about'))}`}
+                            >
+                                <FaBuilding size={24} />
+                                <div className='holder'>{Loacle.about}</div>
+                            </Link>
+                            <Link to='/' className={`nav-item ${C(isLoc(''))}`}>
+                                <div className='icon'>
+                                    <FaHome size={24} />
+                                </div>
+                                <div className='holder'>{Loacle.home}</div>
+                            </Link>
+                        </div>
                     </div>
-                </div>
-                <div className='nav-logo'>LOGO</div>
-            </section>
-        </nav>
+                    <div className='nav-logo'>LOGO</div>
+                </section>
+            </nav>
+        </>
     )
 }
 
