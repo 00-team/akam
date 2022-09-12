@@ -20,4 +20,12 @@ elif [[ $1 =~ ^(build)$ ]]; then
 elif [[ $1 =~ ^(log)$ ]]; then
     cat *.log
 
+elif [[ $1 =~ ^(tag)$ ]]; then
+    if [[ -z $2 ]]; then
+        exit
+    else
+        git tag -a "v$2" -m "release $2"
+        git push origin "v$2"
+    fi
+
 fi
