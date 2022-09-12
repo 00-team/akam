@@ -33,8 +33,7 @@ function check_diff {
 run "requirements.txt" "install pip packages" "pip install -r requirements.txt"
 run "package.json package-lock.json" "install npm packages" "npm ci"
 run "app/* config/webpack/*" "build the app!" "npm run build"
-run "config/akam.uwsgi.service" "update uwsgi service" \ 
-"cp config/akam.uwsgi.service /etc/systemd/system/ --force && systemctl daemon-reload"
+run "config/akam.uwsgi.service" "update uwsgi service" "cp config/akam.uwsgi.service /etc/systemd/system/ --force && systemctl daemon-reload"
 base_run "restart uwsgi service" "systemctl restart akam.uwsgi"
 run "config/nginx.conf" "restart nginx" "systemctl restart nginx"
 
