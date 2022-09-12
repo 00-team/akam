@@ -8,6 +8,10 @@ def home():
     return render_template('home.html')
 
 
+def contact():
+    return render_template('contact.html')
+
+
 def locales_list():
     return LOCALES_LIST
 
