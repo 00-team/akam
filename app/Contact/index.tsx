@@ -21,28 +21,34 @@ const Contact: FC = () => {
                             <div className='title-inps'>
                                 <input
                                     type='text'
-                                    className='name title_small'
+                                    className='name title_smaller'
                                     name='name'
                                     placeholder='نام'
                                 />
                                 <input
                                     type='text'
-                                    className='lastname title_small'
+                                    className='lastname title_smaller'
                                     name='lastname'
                                     placeholder='نام خانوادگی'
                                 />
                             </div>
                             <input
                                 type='text'
-                                className='gmail title_small'
+                                className='gmail title_smaller'
+                                placeholder='example@gmail.com'
                                 name='gmail'
                             />
                             <textarea
-                                className='title_small'
+                                className='title_smaller'
                                 name='message'
                                 cols={30}
                                 rows={10}
                             ></textarea>
+                            <div className='cta-wrapper'>
+                                <button className='cta title_smaller'>
+                                    ارسال
+                                </button>
+                            </div>
                         </fieldset>
                     </form>
                     <div className='contact-location'></div>
