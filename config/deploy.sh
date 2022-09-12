@@ -1,23 +1,14 @@
 SPACER="============================================================================================"
-
-function base_run {
-    echo "🔷 $1"
-    $2
-    echo $SPACER
-}
-
-function run {
-    if check_diff $1; then
-        base_run $2 $3
-    fi
-}
+EG="🔷"
 
 cd /site/akam/
 source .env/bin/activate
 
 OLD_COMMIT=$(git rev-parse HEAD)
 
-base_run "update the source" "git pull"
+echo "$EG update the source"
+git pull
+echo $SPACER
 
 NEW_COMMIT=$(git rev-parse HEAD)
 
@@ -30,11 +21,39 @@ function check_diff {
     fi
 }
 
-run "requirements.txt" "install pip packages" "pip install -r requirements.txt"
-run "package.json package-lock.json" "install npm packages" "npm ci"
-run "app/* config/webpack/*" "build the app!" "npm run build"
-run "config/akam.uwsgi.service" "update uwsgi service" "cp config/akam.uwsgi.service /etc/systemd/system/ --force && systemctl daemon-reload"
-base_run "restart uwsgi service" "systemctl restart akam.uwsgi"
-run "config/nginx.conf" "restart nginx" "systemctl restart nginx"
+if check_diff "requirements.txt"; then
+    echo "$EG install pip packages"
+    pip install -r requirements.txt
+    echo $SPACER
+fi
+
+if check_diff "package.json package-lock.json"; then
+    echo "$EG install npm packages"
+    npm ci
+    echo $SPACER
+fi
+
+if check_diff "app/* config/webpack/*"; then
+    echo "$EG build the app!"
+    npm run build
+    echo $SPACER
+fi
+
+if check_diff "config/akam.uwsgi.service"; then
+    echo "$EG update uwsgi service"
+    cp config/akam.uwsgi.service /etc/systemd/system/ --force
+    systemctl daemon-reload
+    echo $SPACER
+fi
+
+echo "$EG restart uwsgi service"
+systemctl restart akam.uwsgi
+echo $SPACER
+
+if check_diff "config/nginx.conf"; then
+    echo "$EG restart nginx"
+    systemctl restart nginx
+    echo $SPACER
+fi
 
 echo "Deploy is Done! ✅"
