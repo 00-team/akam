@@ -3,7 +3,7 @@ Description=Akam uWSGI
 After=syslog.target
 
 [Service]
-ExecStart=/usr/local/bin/uwsgi --ini /site/akam/config/akam.ini
+ExecStart=/usr/local/bin/uwsgi --ini /site/akam/config/uwsgi.ini
 RuntimeDirectory=uwsgi
 Restart=always
 KillSignal=SIGQUIT
