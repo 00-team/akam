@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 
-import AboutUs from './AboutUs'
-import ContactUs from './ContactUs'
+import About from './About'
+import Contact from './Contact'
 import HeroSection from './HeroSection'
 import Selling from './Selling'
 
@@ -11,9 +11,9 @@ const Home: FC = () => {
     return (
         <div className='home-container'>
             <HeroSection />
-            <AboutUs />
+            <About />
             <Selling />
-            <ContactUs />
+            <Contact />
         </div>
     )
 }

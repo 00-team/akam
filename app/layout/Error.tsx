@@ -1,6 +1,5 @@
 import React, { FC } from 'react'
 
-// import ErrorSvg from '../../static/svgs/error.svg'
 import './style/error.scss'
 
 const Error: FC<ErrorData> = ({ code, title, description }) => {
