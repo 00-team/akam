@@ -20,7 +20,7 @@ const Error: FC<ErrorData> = ({ code, title, description }) => {
                 </button>
             )} */}
             <div className='svg-container'>
-                <object data={'/static/svgs/error.svg'} type=''></object>
+                <object data={'/static/svg/error.svg'} type='' />
             </div>
             <h1 className='title'></h1>
             <p className='title_hero'>صفحه ای که به دنبال آن هستید پیدا نشد!</p>
