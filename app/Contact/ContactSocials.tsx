@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { FC } from 'react'
 
 import { FiPhoneCall } from '@react-icons/all-files/fi/FiPhoneCall'
 import { SiGmail } from '@react-icons/all-files/si/SiGmail'
 import { SiTelegram } from '@react-icons/all-files/si/SiTelegram'
 import { SiWhatsapp } from '@react-icons/all-files/si/SiWhatsapp'
 
-const ContactSocials = () => {
+const ContactSocials: FC = () => {
     const IsMobile = innerWidth <= 1024
 
     return (
@@ -51,4 +51,4 @@ const ContactSocials = () => {
     )
 }
 
-export default ContactSocials
+export { ContactSocials }

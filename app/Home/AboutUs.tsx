@@ -11,8 +11,6 @@ import { DescriptionModel, LocaleAtom } from 'state'
 
 import { Colored, Description, IsIntersecting } from 'components'
 
-import aboutSvg from '../../static/svgs/about.svg'
-
 import './style/aboutus.scss'
 
 const AboutUs: FC = () => {
@@ -30,7 +28,9 @@ const AboutUs: FC = () => {
             options={{ threshold: window.innerWidth >= 768 ? 0.5 : 0.2 }}
         >
             <div className='svg-container'>
-                {HasIntersected && <object data={aboutSvg} type='' />}
+                {HasIntersected && (
+                    <object data='/static/svg/about.svg' type='' />
+                )}
             </div>
             <div className={`about-wrapper ${C(HasIntersected)}`}>
                 <div className='about-title-card title'>

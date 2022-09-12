@@ -3,7 +3,6 @@ import React, { FC, useEffect } from 'react'
 import { Empty } from '@00-team/utils'
 
 import loadable from '@loadable/component'
-import ContactUsPage from 'ContactUs'
 import Footer from 'layout/Footer'
 import Navbar from 'layout/Navbar'
 import { Route, Routes } from 'react-router-dom'
@@ -11,12 +10,13 @@ import { Route, Routes } from 'react-router-dom'
 import { useAtom, useSetAtom } from 'jotai'
 import { LocaleAtom, LocalesListAtom } from 'state'
 
-import Loading from 'components/Loading'
+import { Loading } from 'components'
 
 import './style/base.scss'
 import './style/fonts/imports.scss'
 
 const Home = loadable(() => import('Home'))
+const Contact = loadable(() => import('Contact'))
 const ErrorPage = loadable(() => import('layout/Error'))
 
 const App: FC = () => {
@@ -58,7 +58,7 @@ const MainContent: FC = () => {
     return (
         <Routes>
             <Route index element={<Home />} />
-            <Route path={'contact-us'} element={<ContactUsPage />} />
+            <Route path='contact' element={<Contact />} />
         </Routes>
     )
 }

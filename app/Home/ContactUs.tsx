@@ -13,8 +13,6 @@ import { LocaleAtom } from 'state'
 
 import { Colored, IsIntersecting } from 'components'
 
-import ContactSvg from '../../static/svgs/contact.svg'
-
 import './style/contactus.scss'
 
 const ContactUs: FC = () => {
@@ -78,7 +76,7 @@ const ContactUs: FC = () => {
                 </div>
             </div>
             <div className='svg-container'>
-                {HasIntersected && <object data={ContactSvg}></object>}
+                {HasIntersected && <object data='/static/svg/contact.svg' />}
             </div>
         </IsIntersecting>
     )

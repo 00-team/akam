@@ -7,8 +7,7 @@ import { LocaleAtom } from 'state'
 
 import { Colored, Description } from 'components'
 
-import heroSvg from '../../static/svgs/hero.svg'
-
+// import heroSvg from '../../static/svgs/hero.svg'
 import './style/herosection.scss'
 
 const HeroSection: FC = () => {
@@ -64,7 +63,7 @@ const HeroSection: FC = () => {
                 </div>
             </div>
             <div className='svg-container'>
-                <img src={heroSvg} alt='' />
+                <img src={'/static/svgs/hero.svg'} alt='' />
             </div>
             <div className='scroll-down'></div>
         </section>
