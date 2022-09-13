@@ -14,6 +14,5 @@ jobs:
       - name: Validate Locales
         uses: FalsePattern/json-schema-validator@master
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
           json_schema: ./locale/schema.json
           json_path_pattern: ^(\.\/locale\/)(?!schema).+\.json$
