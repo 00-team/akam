@@ -1,7 +1,7 @@
 # akam
 
 akam company\
-[link](https://google.com)
+[akambusiness.com](https://akambusiness.com)
 
 ## action status
 
