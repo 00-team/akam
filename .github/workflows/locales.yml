@@ -1,0 +1,19 @@
+name: Test the Locales 🐣
+
+on:
+  push:
+    paths:
+      - 'locale/*.json'
+
+jobs:
+  verify:
+    name: Verify the Locales by schema
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Validate Locales
+        uses: snapcart/json-schema-validator@v1.0.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          json_schema: ./locale/schema.json
+          json_path_pattern: ^(.+)?\/locale\/(?!schema).+\.json$
