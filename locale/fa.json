@@ -104,6 +104,22 @@
         "header": {
             "sentence": "تماس با آکام",
             "word": "آکام"
+        },
+        "title": "راه های ارتباطی ما",
+        "location": {
+            "sentence": "آکام کجاست؟",
+            "word": "آکام"
+        },
+        "form": {
+            "title": {
+                "sentence": "پیام مستقیم به آکام؟",
+                "word": "آکام؟"
+            },
+            "first_name": "نام",
+            "last_name": "نام خانوادگی",
+            "message": "متن پیام...",
+            "email": "example@gmail.com",
+            "button": "ارسال"
         }
     }
 }

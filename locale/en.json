@@ -80,5 +80,27 @@
             "button": "read more"
         }
     },
-    "Footer": {}
+    "Footer": {},
+    "Contact": {
+        "header": {
+            "sentence": "Contact with Akam",
+            "word": "Akam"
+        },
+        "title": "Contact ...",
+        "location": {
+            "sentence": "Akam Location",
+            "word": "Loc"
+        },
+        "form": {
+            "title": {
+                "sentence": "GGEZ",
+                "word": "EZ"
+            },
+            "first_name": "Name",
+            "last_name": "Last name",
+            "email": "GGEZ@EZGG.org",
+            "message": "your message",
+            "button": "Send"
+        }
+    }
 }
