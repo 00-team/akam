@@ -95,6 +95,7 @@ const SellCard: FC<SellCardProps> = props => {
     const { svg, title, description, transform } = props
 
     const [isIntersecting, setisIntersecting] = useState(false)
+    const Locale = useAtomValue(LocaleAtom).Home.selling.card_button
 
     return (
         <IsIntersecting
@@ -119,7 +120,7 @@ const SellCard: FC<SellCardProps> = props => {
                 </div>
             </div>
             <div className='see-more-wrapper '>
-                <button className='see-more title_smaller'>ادامه مطلب</button>
+                <button className='see-more title_smaller'>{Locale}</button>
             </div>
         </IsIntersecting>
     )
