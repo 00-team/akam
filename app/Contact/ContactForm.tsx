@@ -1,5 +1,7 @@
 import React, { FC } from 'react'
 
+import Recaptcha from 'react-google-recaptcha'
+
 import { useAtomValue } from 'jotai'
 import { LocaleAtom } from 'state'
 
@@ -41,6 +43,7 @@ const ContactForm: FC = () => {
                     rows={10}
                     placeholder={Locale.message}
                 ></textarea>
+                <Recaptcha sitekey='6LdtbPchAAAAAHnA1I7gwa_mKl5sWh-jWe6daYif' />
                 <div className='cta-wrapper'>
                     <button className='cta title_smaller'>
                         {Locale.button}
