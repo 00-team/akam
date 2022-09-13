@@ -12,8 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Validate Locales
-        uses: snapcart/json-schema-validator@v1.0.0
+        uses: FalsePattern/json-schema-validator@master
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           json_schema: ./locale/schema.json
-          json_path_pattern: ^(.+)?\/locale\/(?!schema).+\.json$
+          json_path_pattern: ^(\.\/locale\/)(?!schema).+\.json$

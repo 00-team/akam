@@ -100,5 +100,10 @@
         "services": "استراژی های فروش"
     },
     "Footer": {},
-    "Contact": {}
+    "Contact": {
+        "header": {
+            "sentence": "تماس با آکام",
+            "word": "آکام"
+        }
+    }
 }
