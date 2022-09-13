@@ -235,7 +235,55 @@
             "additionalProperties": false,
             "properties": {},
             "required": []
+        },
+        "Contact": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "header": {
+                    "$ref": "#/$defs/colored"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "location": {
+                    "$ref": "#/$defs/colored"
+                },
+                "form": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "title": {
+                            "$ref": "#/$defs/colored"
+                        },
+                        "first_name": {
+                            "type": "string"
+                        },
+                        "last_name": {
+                            "type": "string"
+                        },
+                        "email": {
+                            "type": "string"
+                        },
+                        "description": {
+                            "type": "string"
+                        },
+                        "button": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "title",
+                        "first_name",
+                        "last_name",
+                        "email",
+                        "description",
+                        "button"
+                    ]
+                }
+            },
+            "required": ["header", "title", "location", "form"]
         }
     },
-    "required": ["label", "Home", "Navbar", "Footer"]
+    "required": ["label", "Home", "Navbar", "Footer", "Contact"]
 }
