@@ -1,6 +1,12 @@
 # akam
 
-akam company
+akam company\
+[link](https://google.com)
+
+## action status
+
+[![Test the Locales 🐣](https://github.com/00-team/akam/actions/workflows/locales.yml/badge.svg)](https://github.com/00-team/akam/actions/workflows/locales.yml)
+[![Deploy to Server 👻](https://github.com/00-team/akam/actions/workflows/deploy.yml/badge.svg)](https://github.com/00-team/akam/actions/workflows/deploy.yml)
 
 ## install requirements
 
