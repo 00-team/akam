@@ -1,6 +1,13 @@
 import React, { FC } from 'react'
 
+import { useAtomValue } from 'jotai'
+import { LocaleAtom } from 'state'
+
+import { Colored } from 'components'
+
 const ContactHeader: FC = () => {
+    const Locale = useAtomValue(LocaleAtom).Contact.header
+
     return (
         <div
             className='contact-header'
@@ -11,7 +18,7 @@ const ContactHeader: FC = () => {
             }}
         >
             <div className='header-text title_hero'>
-                تماس با <span className='colored-word'>آکام</span>
+                <Colored {...Locale} />
             </div>
         </div>
     )

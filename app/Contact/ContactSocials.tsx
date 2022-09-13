@@ -5,14 +5,17 @@ import { SiGmail } from '@react-icons/all-files/si/SiGmail'
 import { SiTelegram } from '@react-icons/all-files/si/SiTelegram'
 import { SiWhatsapp } from '@react-icons/all-files/si/SiWhatsapp'
 
+import { useAtomValue } from 'jotai'
+import { LocaleAtom } from 'state'
+
 const ContactSocials: FC = () => {
+    const Locale = useAtomValue(LocaleAtom).Contact.title
+
     const IsMobile = innerWidth <= 1024
 
     return (
         <div className='contact-socials-wrapper'>
-            <div className='contact-socials-title title_hero'>
-                راه های ارتباطی ما
-            </div>
+            <div className='contact-socials-title title_hero'>{Locale}</div>
             <div
                 className={`contact-socials title_smaller ${
                     IsMobile ? 'vertical' : 'horizental'

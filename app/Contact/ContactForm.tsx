@@ -1,41 +1,50 @@
-import React from 'react'
+import React, { FC } from 'react'
 
-const ContactForm = () => {
+import { useAtomValue } from 'jotai'
+import { LocaleAtom } from 'state'
+
+import { Colored } from 'components'
+
+const ContactForm: FC = () => {
+    const Locale = useAtomValue(LocaleAtom).Contact.form
+
     return (
         <form className='contact-form '>
             <fieldset>
                 <legend className='title'>
-                    پیام مستقیم به <span className='colored-word'>آکام؟</span>
+                    <Colored {...Locale.title} />
                 </legend>
                 <div className='title-inps'>
                     <input
                         type='text'
                         className='name title_smaller'
                         name='name'
-                        placeholder='نام'
+                        placeholder={Locale.first_name}
                     />
                     <input
                         type='text'
                         className='lastname title_smaller'
                         name='lastname'
-                        placeholder='نام خانوادگی'
+                        placeholder={Locale.last_name}
                     />
                 </div>
                 <input
                     type='text'
                     className='gmail title_smaller'
-                    placeholder='example@gmail.com'
                     name='gmail'
+                    placeholder={Locale.email}
                 />
                 <textarea
-                    placeholder='متن پیام...'
                     className='title_smaller'
                     name='message'
                     cols={30}
                     rows={10}
+                    placeholder={Locale.message}
                 ></textarea>
                 <div className='cta-wrapper'>
-                    <button className='cta title_smaller'>ارسال</button>
+                    <button className='cta title_smaller'>
+                        {Locale.button}
+                    </button>
                 </div>
             </fieldset>
         </form>

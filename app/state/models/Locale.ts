@@ -67,6 +67,19 @@ interface Locale {
             button: string
         }
     }
+    Contact: {
+        header: Colored
+        title: string
+        location: Colored
+        form: {
+            title: Colored
+            first_name: string
+            last_name: string
+            email: string
+            message: string
+            button: string
+        }
+    }
 }
 
 export { Locale as LocaleModel, LocalesList as LocalesListModel }
