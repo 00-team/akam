@@ -7,6 +7,8 @@ import { LocaleAtom, SendContact } from 'state'
 
 import { Colored } from 'components'
 
+const EMAIL_VALIDATOR = /^[\w\-\.]+@([\w-]+\.)+[\w-]{2,}$/gm
+
 interface InputRefs {
     first_name: HTMLInputElement | null
     last_name: HTMLInputElement | null
@@ -30,6 +32,7 @@ const ContactForm: FC = () => {
         if (!inputs.current) return
         const { first_name, last_name, email, message } = inputs.current
         if (!first_name || !last_name || !email || !message || !token) return
+        if (!EMAIL_VALIDATOR.test(email.value)) return
 
         SendContact({
             first_name: first_name.value,

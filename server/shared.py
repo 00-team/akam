@@ -1,8 +1,13 @@
+import json
 from logging.config import dictConfig
 from pathlib import Path
 
 
 BASE_DIR = Path(__file__).parent.parent
+DATABASE_DIR = BASE_DIR / 'database'
+
+with open(DATABASE_DIR / 'secrets.json') as f:
+    SECRETS = json.load(f)
 
 
 dictConfig({
