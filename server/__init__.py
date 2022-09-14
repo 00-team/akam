@@ -1,4 +1,5 @@
 from . import views
+from .contact import send_contact
 from .locale import LOCALES, LOCALES_LIST
 from .shared import BASE_DIR
 
@@ -9,5 +10,6 @@ __all__ = [
 
     'BASE_DIR',
 
-    'views'
+    'views',
+    'send_contact'
 ]
