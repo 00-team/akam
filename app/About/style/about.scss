@@ -42,6 +42,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column;
             gap: 10vh;
 
             .creators-title {
@@ -103,6 +104,33 @@
                             transform: translateY(0);
                         }
                     }
+                }
+            }
+            .creators-wrapper {
+                width: 100%;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+
+                row-gap: 5vw;
+                column-gap: 8vh;
+
+                .about-card-container {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+
+                    gap: 3vh;
+
+                    background-color: var(--thirty-percent);
+
+                    aspect-ratio: 1/1;
+                    width: 100%;
+                    max-width: 330px;
+                    min-width: 230px;
                 }
             }
         }
