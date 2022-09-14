@@ -1,9 +1,15 @@
+import logging
+
 from flask import request
+
+
+logger = logging.getLogger('debug')
+logger.name = __name__
 
 
 def send_contact():
     data = request.json
-    print(request.remote_addr)
+    logger.info(f'contact addr user: {request.remote_addr}')
 
     try:
         recaptcha = data['recaptcha']

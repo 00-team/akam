@@ -1,39 +1,6 @@
-
-from logging.config import dictConfig
-
 from flask import Flask
 
 from server import send_contact, views
-
-
-dictConfig({
-    'version': 1,
-    'disable_existing_loggers': False,
-    'formatters': {
-        'default': {
-            'format': (
-                ('-' * 50) + '\n{asctime}\n'
-                '{levelname}:{name}\n'
-                '{message}\n'
-            ),
-            'style': '{',
-        },
-    },
-    'handlers': {
-        'error_file': {
-            'level': 'ERROR',
-            'class': 'logging.FileHandler',
-            'filename': 'error.log',
-            'formatter': 'default'
-        },
-        'requests': {
-            'level': 'ERROR',
-            'class': 'logging.FileHandler',
-            'filename': 'requests.log',
-            'formatter': 'default'
-        },
-    },
-})
 
 
 app = Flask(__name__, static_folder='static')
