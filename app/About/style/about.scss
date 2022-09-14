@@ -1,0 +1,110 @@
+.about-page-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    // debug
+    min-height: 100vh;
+
+    .about-header {
+        display: grid;
+        place-items: center;
+        color: var(--primary-color);
+
+        width: 100%;
+        aspect-ratio: 1/0.22;
+
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        @media screen and (max-width: 1024px) {
+            aspect-ratio: 1/0.5;
+        }
+        @media screen and (max-width: 1440px) {
+            aspect-ratio: 1/0.3;
+        }
+    }
+
+    .about-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 15vh;
+
+        width: 100%;
+
+        padding: 7vh 5vw;
+
+        .about-creators {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10vh;
+
+            .creators-title {
+                position: relative;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+
+                isolation: isolate;
+                overflow: hidden;
+
+                &::before,
+                &::after {
+                    content: '';
+                    position: absolute;
+
+                    width: 0;
+                    height: 2px;
+
+                    z-index: -1;
+
+                    background-color: var(--accent-color);
+
+                    animation: WidthOpen 1.5s 0.5s ease-in-out forwards;
+
+                    @keyframes WidthOpen {
+                        from {
+                            width: 0;
+                        }
+                        to {
+                            width: 100%;
+                        }
+                    }
+                }
+
+                &::before {
+                    left: 0;
+                }
+                &::after {
+                    right: 0;
+                }
+
+                .header-wrapper {
+                    transform: translateY(100%);
+
+                    animation: Fadein 1s ease-in-out forwards;
+
+                    padding: 0 25px;
+                    background-color: var(--primary-color);
+                    white-space: nowrap;
+
+                    @keyframes Fadein {
+                        from {
+                            transform: translateY(100%);
+                        }
+                        to {
+                            transform: translateY(0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
