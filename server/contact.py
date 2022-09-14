@@ -10,6 +10,7 @@ logger.name = __name__
 def send_contact():
     data = request.json
     logger.info(f'contact addr user: {request.remote_addr}')
+    logger.info(f'contact access_route: {request.access_route}')
 
     try:
         recaptcha = data['recaptcha']
