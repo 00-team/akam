@@ -27,20 +27,29 @@ const ContactForm: FC = () => {
     const Locale = useAtomValue(LocaleAtom).Contact.form
     const [token, setToken] = useState<string | null>(null)
     const inputs = useRef<InputRefs>(DefaultInputs)
+    const [Error, setError] = useState('')
 
-    const Send = () => {
+    const Send = async () => {
         if (!inputs.current) return
         const { first_name, last_name, email, message } = inputs.current
-        if (!first_name || !last_name || !email || !message || !token) return
-        if (!EMAIL_VALIDATOR.test(email.value)) return
+        if (!first_name || !last_name || !email || !message || !token) {
+            setError('pls fill all the fields')
+            return
+        }
+        if (!EMAIL_VALIDATOR.test(email.value)) {
+            setError('pls enter a valid email')
+            return
+        }
 
-        SendContact({
+        const status = await SendContact({
             first_name: first_name.value,
             email: email.value,
             last_name: last_name.value,
             message: message.value,
             recaptcha: token,
         })
+
+        console.log(status)
     }
 
     return (
@@ -50,6 +59,7 @@ const ContactForm: FC = () => {
                     <Colored {...Locale.title} />
                 </legend>
                 <div className='title-inps'>
+                    <div>{Error}</div>
                     <input
                         type='text'
                         className='name title_smaller'

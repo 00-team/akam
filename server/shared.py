@@ -5,6 +5,11 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).parent.parent
 DATABASE_DIR = BASE_DIR / 'database'
+DOOM_PATH = DATABASE_DIR / 'doom.json'
+
+if not DOOM_PATH.is_file():
+    with open(DOOM_PATH, 'w') as f:
+        json.dump({}, f)
 
 with open(DATABASE_DIR / 'secrets.json') as f:
     SECRETS = json.load(f)
