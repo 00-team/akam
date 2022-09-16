@@ -1,7 +1,7 @@
 from . import views
 from .contact import send_contact
 from .locale import LOCALES, LOCALES_LIST
-from .shared import BASE_DIR
+from .shared import BASE_DIR, SECRETS
 
 
 __all__ = [
@@ -9,6 +9,7 @@ __all__ = [
     'LOCALES_LIST',
 
     'BASE_DIR',
+    'SECRETS',
 
     'views',
     'send_contact'

@@ -1,9 +1,10 @@
 from flask import Flask
 
-from server import send_contact, views
+from server import SECRETS, send_contact, views
 
 
 app = Flask(__name__, static_folder='static')
+app.secret_key = SECRETS['APP_SECERT_KEY']
 
 
 app.get('/')(views.home)
