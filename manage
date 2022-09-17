@@ -24,6 +24,7 @@ elif [[ $1 =~ ^(tag)$ ]]; then
     if [[ -z $2 ]]; then
         exit
     else
+        git push
         git tag -a "v$2" -m "release $2"
         git push origin "v$2"
     fi
