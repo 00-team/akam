@@ -162,4 +162,6 @@ yarn-error.log*
 
 # akam ignores
 templates/base.html
-database
+database/doom.json
+database/secrets.json
+
