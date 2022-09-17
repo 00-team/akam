@@ -100,7 +100,16 @@
             "last_name": "Last name",
             "email": "GGEZ@EZGG.org",
             "message": "your message",
-            "button": "Send"
+            "button": "Send",
+            "responses": {
+                "success": "your message successfully has been send!",
+                "captcha": "error! please verify the captcha",
+                "data": "error! invalid input",
+                "timeout": "error! you are sending your messages too quickly!",
+                "empty": "error! please fill all the fields",
+                "email": "error! please enter a valid email",
+                "unknown": "an unknown error has happend"
+            }
         }
     }
 }
