@@ -78,6 +78,15 @@ interface Locale {
             email: string
             message: string
             button: string
+            responses: {
+                success: string
+                data: string
+                captcha: string
+                timeout: string
+                empty: string
+                email: string
+                unknown: string
+            }
         }
     }
 }

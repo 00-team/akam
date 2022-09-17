@@ -8,7 +8,7 @@ interface DataProps {
     recaptcha: string
 }
 
-type ResponseTypes = 'success' | 'data' | 'captcha' | 'tiemout' | 'unknown'
+type ResponseTypes = 'success' | 'data' | 'captcha' | 'timeout' | 'unknown'
 type SC = (data: DataProps) => Promise<ResponseTypes>
 
 const SendContact: SC = async data => {

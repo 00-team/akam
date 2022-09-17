@@ -38,7 +38,7 @@ def get_doom_contact(user_ip):
             new_dooms.append(user_contact)
 
     with open(DOOM_PATH, 'w') as f:
-        json.dump(new_dooms, f, indent=4, )
+        json.dump(new_dooms, f, indent=2)
 
     return current_contact
 
@@ -51,7 +51,7 @@ def add_doom_contact(info):
     dooms.append(info)
 
     with open(DOOM_PATH, 'w') as f:
-        json.dump(dooms, f)
+        json.dump(dooms, f, indent=2)
 
 
 def send_contact():
@@ -64,8 +64,11 @@ def send_contact():
 
         first_name = str(data['first_name'])  # 0-50
         last_name = str(data['last_name'])  # 0-50
-        email = str(data['email']).encode('ascii')  # 0-250
+        email = str(data['email'])  # 0-250
         message = str(data['message'])  # 20-500
+
+        # ensure that the email is in ascii
+        email.encode('ascii')
 
         if (
             len(first_name) > 50 or

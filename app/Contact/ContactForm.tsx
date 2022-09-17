@@ -7,13 +7,12 @@ import { LocaleAtom, SendContact } from 'state'
 
 import { Colored } from 'components'
 
-const EMAIL_VALIDATOR = /^[\w\-\.]+@([\w-]+\.)+[\w-]{2,}$/gm
-
 interface InputRefs {
     first_name: HTMLInputElement | null
     last_name: HTMLInputElement | null
     email: HTMLInputElement | null
     message: HTMLTextAreaElement | null
+    captcha: Recaptcha | null
 }
 
 const DefaultInputs: InputRefs = {
@@ -21,24 +20,33 @@ const DefaultInputs: InputRefs = {
     last_name: null,
     email: null,
     message: null,
+    captcha: null,
 }
 
 const ContactForm: FC = () => {
     const Locale = useAtomValue(LocaleAtom).Contact.form
-    const [token, setToken] = useState<string | null>(null)
     const inputs = useRef<InputRefs>(DefaultInputs)
-    const [Error, setError] = useState('')
+    const [Response, setResponse] = useState('')
 
     const Send = async () => {
         if (!inputs.current) return
-        const { first_name, last_name, email, message } = inputs.current
-        if (!first_name || !last_name || !email || !message || !token) {
-            setError('pls fill all the fields')
-            return
+        const { first_name, last_name, email, message, captcha } =
+            inputs.current
+        if (!first_name || !last_name || !email || !message || !captcha) {
+            return setResponse(Locale.responses['empty'])
         }
-        if (!EMAIL_VALIDATOR.test(email.value)) {
-            setError('pls enter a valid email')
-            return
+
+        if (
+            !/^[\x00-\x7F]*$/.test(email.value) ||
+            !/^[\w\-\.]+@([\w-]+\.)+[\w-]{2,}$/gm.test(email.value)
+        ) {
+            return setResponse(Locale.responses['email'])
+        }
+
+        const token = captcha.getValue()
+
+        if (!token) {
+            return setResponse(Locale.responses['captcha'])
         }
 
         const status = await SendContact({
@@ -49,17 +57,19 @@ const ContactForm: FC = () => {
             recaptcha: token,
         })
 
-        console.log(status)
+        captcha.reset()
+
+        setResponse(Locale.responses[status])
     }
 
     return (
-        <form className='contact-form '>
+        <form className='contact-form'>
             <fieldset>
                 <legend className='title'>
                     <Colored {...Locale.title} />
                 </legend>
                 <div className='title-inps'>
-                    <div>{Error}</div>
+                    <div>{Response}</div>
                     <input
                         type='text'
                         className='name title_smaller'
@@ -100,8 +110,9 @@ const ContactForm: FC = () => {
                 ></textarea>
                 <Recaptcha
                     sitekey='6LdtbPchAAAAAHnA1I7gwa_mKl5sWh-jWe6daYif'
-                    onChange={token => setToken(token)}
-                    onExpired={() => setToken(null)}
+                    ref={node => {
+                        if (node) inputs.current.captcha = node
+                    }}
                 />
                 <div className='cta-wrapper'>
                     <button
