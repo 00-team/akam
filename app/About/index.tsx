@@ -1,11 +1,18 @@
-import React from 'react'
+import React, { FC } from 'react'
+
+import { useAtomValue } from 'jotai'
+import { LocaleAtom } from 'state'
+
+import { Colored } from 'components'
 
 import AboutCard from './AboutCard'
 import AboutHeader from './AboutHeader'
 
 import './style/about.scss'
 
-const About = () => {
+const About: FC = () => {
+    const Locale = useAtomValue(LocaleAtom).About
+
     return (
         <div className='about-page-container'>
             <AboutHeader />
@@ -13,26 +20,13 @@ const About = () => {
                 <div className='about-creators'>
                     <header className='creators-title title_hero'>
                         <div className='header-wrapper'>
-                            دستندرکاران{' '}
-                            <span className='colored-word'>آکام</span>
+                            <Colored {...Locale.title} />
                         </div>
                     </header>
                     <div className='creators-wrapper'>
-                        <AboutCard
-                            title='صدرا تقوی'
-                            role='برنامه نویس'
-                            motto='لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از مجیطراحی اساسا مورد استفاده قرار گیرد.'
-                        />
-                        <AboutCard
-                            title='صدرا تقوی'
-                            role='برنامه نویس'
-                            motto='لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از مجیطراحی اساسا مورد استفاده قرار گیرد.'
-                        />
-                        <AboutCard
-                            title='صدرا تقوی'
-                            role='برنامه نویس'
-                            motto='لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از مجیطراحی اساسا مورد استفاده قرار گیرد.'
-                        />
+                        {Locale.members.map(member => (
+                            <AboutCard {...member} />
+                        ))}
                     </div>
                 </div>
             </section>

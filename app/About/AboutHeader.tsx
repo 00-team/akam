@@ -1,6 +1,13 @@
-import React from 'react'
+import React, { FC } from 'react'
 
-const AboutHeader = () => {
+import { useAtomValue } from 'jotai'
+import { LocaleAtom } from 'state'
+
+import { Colored } from 'components'
+
+const AboutHeader: FC = () => {
+    const Locale = useAtomValue(LocaleAtom).About.header
+
     return (
         <div
             className='about-header'
@@ -11,7 +18,7 @@ const AboutHeader = () => {
             }}
         >
             <div className='header-text title_hero'>
-                درباره <span className='colored-word'>آکام</span>
+                <Colored {...Locale} />
             </div>
         </div>
     )

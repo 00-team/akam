@@ -29,7 +29,17 @@
             },
             "required": ["title", "description"]
         },
-        "selling_card": { "$ref": "#/$defs/about_card" }
+        "selling_card": { "$ref": "#/$defs/about_card" },
+        "member_card": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": { "type": "string" },
+                "role": { "type": "string" },
+                "description": { "$ref": "#/$defs/description" }
+            },
+            "required": ["name", "role", "description"]
+        }
     },
 
     "properties": {
@@ -216,7 +226,24 @@
                 }
             },
             "required": ["header", "title", "location", "form"]
+        },
+        "About": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "header": { "$ref": "#/$defs/colored" },
+                "title": { "$ref": "#/$defs/colored" },
+                "members": {
+                    "type": "array",
+                    "additionalItems": false,
+                    "items": {
+                        "$ref": "#/$defs/member_card"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": ["header", "title", "members"]
         }
     },
-    "required": ["label", "Home", "Navbar", "Footer", "Contact"]
+    "required": ["label", "Home", "Navbar", "Footer", "Contact", "About"]
 }

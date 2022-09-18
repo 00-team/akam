@@ -10,10 +10,7 @@
         "hero": {
             "motto": {
                 "sentence": "test1",
-                "words": [
-                    "word",
-                    "words"
-                ]
+                "words": ["word", "words"]
             },
             "description": "Hero \n Description",
             "title": {
@@ -116,5 +113,16 @@
                 "unknown": "an unknown error has happend"
             }
         }
+    },
+    "About": {
+        "header": { "sentence": "About Akam", "word": "Akam" },
+        "title": { "sentence": "Akam's Members", "word": "Akam" },
+        "members": [
+            {
+                "name": "Member X",
+                "role": "GGEZ",
+                "description": "12\n19"
+            }
+        ]
     }
 }

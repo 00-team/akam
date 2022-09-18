@@ -15,6 +15,12 @@ interface AboutCard {
     description: Description
 }
 
+interface MemberCard {
+    name: string
+    role: string
+    description: Description
+}
+
 interface SellingCard extends AboutCard {}
 
 interface Locale {
@@ -89,6 +95,11 @@ interface Locale {
             }
         }
     }
+    About: {
+        header: Colored
+        title: Colored
+        members: [MemberCard, ...MemberCard[]]
+    }
 }
 
 export { Locale as LocaleModel, LocalesList as LocalesListModel }
@@ -96,5 +107,6 @@ export {
     Description as DescriptionModel,
     Colored as ColoredModel,
     AboutCard as AboutCardModel,
+    MemberCard as MemberCardModel,
     SellingCard as SellingCardModel,
 }
