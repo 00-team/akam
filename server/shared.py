@@ -59,5 +59,9 @@ dictConfig({
             'level': 'DEBUG',
             'handlers': ['debug']
         }
+    },
+    'root': {
+        'level': 'WARN',
+        'handlers': ['warn']
     }
 })

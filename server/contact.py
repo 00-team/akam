@@ -1,5 +1,4 @@
 import json
-import logging
 import time
 
 from flask import request, session
@@ -14,10 +13,6 @@ CONTACT_TIMEOUT = 30 * 60
 
 class SendTimeout(Exception):
     pass
-
-
-logger = logging.getLogger('debug')
-logger.name = __name__
 
 
 def get_doom_contact(user_ip):
