@@ -119,12 +119,12 @@
     },
     "About": {
         "header": {
-            "sentence": "درباره آکام",
-            "word": "آکام"
+            "sentence": "About ",
+            "word": "Akam"
         },
         "title": {
-            "sentence": "دستندرکاران آکام",
-            "word": "آکام"
+            "sentence": "Akam Managers ",
+            "word": "Akam"
         },
         "members": [
             {
