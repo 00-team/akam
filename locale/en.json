@@ -9,10 +9,13 @@
     "Home": {
         "hero": {
             "motto": {
-                "sentence": "test1",
-                "words": ["word", "words"]
+                "sentence": "In the world ",
+                "words": [
+                    "Take your business",
+                    ""
+                ]
             },
-            "description": "Hero \n Description",
+            "description": "Trade  \n With World",
             "title": {
                 "sentence": "Akam Company",
                 "word": "Akam"
@@ -75,7 +78,7 @@
                 "word": "Akam"
             },
             "title": "Ways of communication with us",
-            "gmail": "random@gmail.com",
+            "gmail": "info@akambusiness.com",
             "fax": "random fax",
             "phone": "ramdom phone",
             "location": "random location",
@@ -100,7 +103,7 @@
             },
             "first_name": "Name",
             "last_name": "Last name",
-            "email": "GGEZ@EZGG.org",
+            "email": "info@akambusiness.com",
             "message": "your message",
             "button": "Send",
             "responses": {
@@ -113,16 +116,5 @@
                 "unknown": "an unknown error has happend"
             }
         }
-    },
-    "About": {
-        "header": { "sentence": "About Akam", "word": "Akam" },
-        "title": { "sentence": "Akam's Members", "word": "Akam" },
-        "members": [
-            {
-                "name": "Member X",
-                "role": "GGEZ",
-                "description": "12\n19"
-            }
-        ]
     }
 }
