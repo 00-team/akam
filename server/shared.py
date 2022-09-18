@@ -37,6 +37,7 @@ app.secret_key = SECRETS['APP_SECERT_KEY']
 app.config.update(MAIL_CONFIG)
 
 mail = Mail(app)
+app.extensions['mail'].debug = 0
 
 
 dictConfig({
