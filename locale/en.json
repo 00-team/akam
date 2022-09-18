@@ -104,7 +104,7 @@
             "first_name": "Name",
             "last_name": "Last name",
             "email": "info@akambusiness.com",
-            "message": "your message",
+            "message": "your messages",
             "button": "Send",
             "responses": {
                 "success": "your message successfully has been send!",
@@ -116,5 +116,41 @@
                 "unknown": "an unknown error has happend"
             }
         }
+    },
+    "About": {
+        "header": {
+            "sentence": "درباره آکام",
+            "word": "آکام"
+        },
+        "title": {
+            "sentence": "دستندرکاران آکام",
+            "word": "آکام"
+        },
+        "members": [
+            {
+                "name": "member 1",
+                "role": "Role x",
+                "description": [
+                    "line 1",
+                    "line 2"
+                ]
+            },
+            {
+                "name": "member 2",
+                "role": "Role x",
+                "description": [
+                    "line 1",
+                    "line 2"
+                ]
+            },
+            {
+                "name": "Member 3",
+                "role": "Role x",
+                "description": [
+                    "line 1",
+                    "line 2"
+                ]
+            }
+        ]
     }
 }

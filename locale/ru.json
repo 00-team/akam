@@ -1,5 +1,5 @@
 {
-    "label": "russia",
+    "label": "Russia",
     "Navbar": {
         "home": "Home",
         "about": "About",
@@ -88,7 +88,7 @@
     "Footer": {},
     "Contact": {
         "header": {
-            "sentence": "Contact with Akam",
+            "sentence": "Contact  Akam",
             "word": "Akam"
         },
         "title": "Contact ...",
@@ -116,5 +116,42 @@
                 "unknown": "an unknown error has happend"
             }
         }
+    },
+    "About": {
+        "header": {
+            "sentence": "درباره آکام",
+            "word": "آکام"
+        },
+        "title": {
+            "sentence": "دستندرکاران آکام",
+            "word": "آکام"
+        },
+        "members": [
+            {
+                "name": "member 1",
+                "role": "Role x",
+                "description": [
+                    "line 1",
+                    "line 2"
+                ]
+            },
+            {
+                "name": "member 2",
+                "role": "Role x",
+                "description": [
+                    "line 1",
+                    "line 2"
+                ]
+            },
+            {
+                "name": "Member 3",
+                "role": "Role x",
+                "description": [
+                    "line 1",
+                    "line 2"
+                ]
+            }
+        ]
     }
+
 }
