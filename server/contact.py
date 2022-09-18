@@ -3,7 +3,7 @@ import time
 
 from flask import request, session
 
-from .shared import DOOM_PATH
+from .shared import DOOM_PATH, MAIL_SENDER, SECRETS, mail
 from .utils import InvalidCaptcha, contact_hook, get_user_ip, verify_captcha
 
 
@@ -54,7 +54,6 @@ def send_contact():
     user_ip = get_user_ip(request)
 
     try:
-
         recaptcha = str(data['recaptcha'])
 
         first_name = str(data['first_name'])  # 0-50
@@ -110,6 +109,18 @@ def send_contact():
     except SendTimeout:
         return {'error': 'timeout'}, 400
 
+    mail.send_message(
+        subject='Message From Akam',
+        sender=MAIL_SENDER,
+        recipients=SECRETS['ADMINS'],
+        body=(
+            f'First Name: {first_name}\n'
+            f'Last Name: {last_name}\n'
+            f'Email: {email}\n'
+            f'Message: {message}'
+        ),
+        charset='utf-8',
+    )
     contact_hook(first_name, last_name, email, message)
 
     return {'success': True}
