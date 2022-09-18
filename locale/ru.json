@@ -1,0 +1,120 @@
+{
+    "label": "russia",
+    "Navbar": {
+        "home": "Home",
+        "about": "About",
+        "contact": "Contact",
+        "services": "Services"
+    },
+    "Home": {
+        "hero": {
+            "motto": {
+                "sentence": "In the world ",
+                "words": [
+                    "Take your business",
+                    ""
+                ]
+            },
+            "description": "Trade  \n With World",
+            "title": {
+                "sentence": "Akam Company",
+                "word": "Akam"
+            },
+            "buttons": {
+                "about": {
+                    "sentence": "Why Akam?",
+                    "word": "Akam?"
+                },
+                "collaboration": "collaboration with Akam"
+            }
+        },
+        "about": {
+            "doom": {
+                "sentence": "Why Akam?",
+                "word": "Akam?"
+            },
+            "title": "About Us",
+            "trust": {
+                "title": "Trust",
+                "description": "GGEZ"
+            },
+            "trust2": {
+                "title": "Trust",
+                "description": "GGEZ"
+            },
+            "trust3": {
+                "title": "Trust",
+                "description": "GGEZ"
+            },
+            "innovation": {
+                "title": "Innovation",
+                "description": "Cool"
+            },
+            "card_button": "Read More"
+        },
+        "selling": {
+            "doom": {
+                "sentence": "Why Akam?",
+                "word": "Akam?"
+            },
+            "title": "Sales strategies",
+            "marketing": {
+                "title": "Trust",
+                "description": "GGEZ"
+            },
+            "marketing2": {
+                "title": "Trust",
+                "description": "GGEZ"
+            },
+            "business_strategy": {
+                "title": "Trust",
+                "description": "GGEZ"
+            },
+            "card_button": "Read More"
+        },
+        "contact": {
+            "doom": {
+                "sentence": "Contact with Akam",
+                "word": "Akam"
+            },
+            "title": "Ways of communication with us",
+            "gmail": "info@akambusiness.com",
+            "fax": "random fax",
+            "phone": "ramdom phone",
+            "location": "random location",
+            "button": "read more"
+        }
+    },
+    "Footer": {},
+    "Contact": {
+        "header": {
+            "sentence": "Contact with Akam",
+            "word": "Akam"
+        },
+        "title": "Contact ...",
+        "location": {
+            "sentence": "Akam Location",
+            "word": "Loc"
+        },
+        "form": {
+            "title": {
+                "sentence": "GGEZ",
+                "word": "EZ"
+            },
+            "first_name": "Name",
+            "last_name": "Last name",
+            "email": "info@akambusiness.com",
+            "message": "your message",
+            "button": "Send",
+            "responses": {
+                "success": "your message successfully has been send!",
+                "captcha": "error! please verify the captcha",
+                "data": "error! invalid input",
+                "timeout": "error! you are sending your messages too quickly!",
+                "empty": "error! please fill all the fields",
+                "email": "error! please enter a valid email",
+                "unknown": "an unknown error has happend"
+            }
+        }
+    }
+}
