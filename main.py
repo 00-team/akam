@@ -1,14 +1,10 @@
-from flask import Flask
 
-from server import SECRETS, send_contact, views
-
-
-app = Flask(__name__, static_folder='static')
-app.secret_key = SECRETS['APP_SECERT_KEY']
+from server import app, send_contact, views
 
 
 app.get('/')(views.home)
 app.get('/contact/')(views.contact)
+app.get('/about/')(views.about)
 
 # apis
 app.get('/api/locales_list/')(views.locales_list)
