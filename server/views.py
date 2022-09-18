@@ -1,4 +1,4 @@
-from flask import abort, render_template, request
+from flask import render_template, request
 from werkzeug.exceptions import HTTPException
 
 from .locale import DEFAULT_LOCALE, LOCALES, LOCALES_LIST
@@ -10,6 +10,10 @@ def home():
 
 def contact():
     return render_template('contact.html')
+
+
+def about():
+    return render_template('about.html')
 
 
 def locales_list():
