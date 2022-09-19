@@ -36,7 +36,7 @@ const FooterMainSection: FC = () => {
                             <MdEmail size={24} />
                         </div>
                         <div className='header-holder '>
-                            sadrataghavi1383@gmail.com
+                            info@akambusiness.com
                         </div>
                         <div className='header-svg'></div>
                     </div>
