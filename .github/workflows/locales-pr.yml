@@ -10,8 +10,9 @@ jobs:
     name: Verify the Locales by schema
     runs-on: ubuntu-latest
     steps:
-      - run: echo GGEZ
-      # - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+      - run: ls
+      - run: cat ./locale/ru.json
       # - name: Validate Locales
       #   uses: FalsePattern/json-schema-validator@master
       #   with:
