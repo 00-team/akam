@@ -5,7 +5,11 @@
         "hero": {
             "motto": {
                 "sentence": "خود را به سطح جهانی ببرید",
-                "words": ["بیزینس", "شرکت", "تیم"]
+                "words": [
+                    "بیزینس",
+                    "شرکت",
+                    "تیم"
+                ]
             },
             "title": {
                 "word": "آکام",
@@ -142,19 +146,28 @@
         },
         "members": [
             {
-                "name": "member 1",
+                "name": " Habib Aryamanesh ",
                 "role": "Role x",
-                "description": ["line 1", "line 2"]
+                "description": [
+                    "line 1",
+                    "line 2"
+                ]
             },
             {
-                "name": "member 2",
+                "name": "Reza Kangari",
                 "role": "Role x",
-                "description": ["line 1", "line 2"]
+                "description": [
+                    "line 1",
+                    "line 2"
+                ]
             },
             {
-                "name": "Member 3",
+                "name": "Parisa Safarkhani ",
                 "role": "Role x",
-                "description": ["line 1", "line 2"]
+                "description": [
+                    "line 1",
+                    "line 2"
+                ]
             }
         ]
     }
