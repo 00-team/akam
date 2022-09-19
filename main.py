@@ -1,13 +1,10 @@
-from flask import Flask
 
-from server import send_contact, views
-
-
-app = Flask(__name__, static_folder='static')
+from server import app, send_contact, views
 
 
 app.get('/')(views.home)
 app.get('/contact/')(views.contact)
+app.get('/about/')(views.about)
 
 # apis
 app.get('/api/locales_list/')(views.locales_list)

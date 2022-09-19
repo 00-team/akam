@@ -1,18 +1,38 @@
-import React from 'react'
+import React, { FC } from 'react'
 
+import { useAtomValue } from 'jotai'
+import { LocaleAtom } from 'state'
+
+import { Colored } from 'components'
+
+import AboutCard from './AboutCard'
 import AboutCreators from './AboutCreators'
 import AboutHeader from './AboutHeader'
 import AboutStory from './AboutStory'
 
 import './style/about.scss'
 
-const About = () => {
+const About: FC = () => {
+    const Locale = useAtomValue(LocaleAtom).About
+
     return (
         <div className='about-page-container'>
             <AboutHeader />
             <section className='about-wrapper'>
                 <AboutCreators />
                 <AboutStory />
+                <div className='about-creators'>
+                    <header className='creators-title title_hero'>
+                        <div className='header-wrapper'>
+                            <Colored {...Locale.title} />
+                        </div>
+                    </header>
+                    <div className='creators-wrapper'>
+                        {Locale.members.map(member => (
+                            <AboutCard {...member} />
+                        ))}
+                    </div>
+                </div>
             </section>
         </div>
     )

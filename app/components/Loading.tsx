@@ -12,7 +12,7 @@ const Loading: FC = () => {
                 <div className='loading-title title_hero'>
                     به سایت <span className='colored-word'>آکام</span> خوش امدید
                 </div>
-                <div className='title'>سایت در حال برگزاری است...</div>
+                <div className='title'>...سایت در حال برگزاری است</div>
             </div>
         </div>
     )

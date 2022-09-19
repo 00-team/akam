@@ -1,5 +1,5 @@
 {
-    "label": "English",
+    "label": "Russia",
     "Navbar": {
         "home": "Home",
         "about": "About",
@@ -104,7 +104,7 @@
             "first_name": "Name",
             "last_name": "Last name",
             "email": "info@akambusiness.com",
-            "message": "your messages",
+            "message": "your message",
             "button": "Send",
             "responses": {
                 "success": "your message successfully has been send!",
@@ -119,12 +119,12 @@
     },
     "About": {
         "header": {
-            "sentence": "About ",
-            "word": "Akam"
+            "sentence": "درباره آکام",
+            "word": "آکام"
         },
         "title": {
-            "sentence": "Akam Managers ",
-            "word": "Akam"
+            "sentence": "دستندرکاران آکام",
+            "word": "آکام"
         },
         "members": [
             {
@@ -153,4 +153,5 @@
             }
         ]
     }
+
 }

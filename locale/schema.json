@@ -9,20 +9,14 @@
     "$defs": {
         "description": {
             "type": ["string", "array"],
-            "items": {
-                "type": "string"
-            }
+            "items": { "type": "string" }
         },
         "colored": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
-                "sentence": {
-                    "type": "string"
-                },
-                "word": {
-                    "type": "string"
-                }
+                "sentence": { "type": "string" },
+                "word": { "type": "string" }
             },
             "required": ["sentence", "word"]
         },
@@ -30,17 +24,21 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
-                "title": {
-                    "type": "string"
-                },
-                "description": {
-                    "$ref": "#/$defs/description"
-                }
+                "title": { "type": "string" },
+                "description": { "$ref": "#/$defs/description" }
             },
             "required": ["title", "description"]
         },
-        "selling_card": {
-            "$ref": "#/$defs/about_card"
+        "selling_card": { "$ref": "#/$defs/about_card" },
+        "member_card": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": { "type": "string" },
+                "role": { "type": "string" },
+                "description": { "$ref": "#/$defs/description" }
+            },
+            "required": ["name", "role", "description"]
         }
     },
 
@@ -60,18 +58,10 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
-                "home": {
-                    "type": "string"
-                },
-                "about": {
-                    "type": "string"
-                },
-                "services": {
-                    "type": "string"
-                },
-                "contact": {
-                    "type": "string"
-                }
+                "home": { "type": "string" },
+                "about": { "type": "string" },
+                "services": { "type": "string" },
+                "contact": { "type": "string" }
             },
             "required": ["home", "about", "services", "contact"]
         },
@@ -87,36 +77,24 @@
                             "type": "object",
                             "additionalProperties": false,
                             "properties": {
-                                "sentence": {
-                                    "type": "string"
-                                },
+                                "sentence": { "type": "string" },
                                 "words": {
                                     "type": "array",
-                                    "items": {
-                                        "type": "string"
-                                    },
+                                    "items": { "type": "string" },
                                     "minItems": 2,
                                     "uniqueItems": true
                                 }
                             },
                             "required": ["sentence", "words"]
                         },
-                        "title": {
-                            "$ref": "#/$defs/colored"
-                        },
-                        "description": {
-                            "$ref": "#/$defs/description"
-                        },
+                        "title": { "$ref": "#/$defs/colored" },
+                        "description": { "$ref": "#/$defs/description" },
                         "buttons": {
                             "type": "object",
                             "additionalProperties": false,
                             "properties": {
-                                "about": {
-                                    "$ref": "#/$defs/colored"
-                                },
-                                "collaboration": {
-                                    "type": "string"
-                                }
+                                "about": { "$ref": "#/$defs/colored" },
+                                "collaboration": { "type": "string" }
                             },
                             "required": ["about", "collaboration"]
                         }
@@ -127,27 +105,13 @@
                     "type": "object",
                     "additionalProperties": false,
                     "properties": {
-                        "doom": {
-                            "$ref": "#/$defs/colored"
-                        },
-                        "title": {
-                            "type": "string"
-                        },
-                        "trust": {
-                            "$ref": "#/$defs/about_card"
-                        },
-                        "trust2": {
-                            "$ref": "#/$defs/about_card"
-                        },
-                        "trust3": {
-                            "$ref": "#/$defs/about_card"
-                        },
-                        "innovation": {
-                            "$ref": "#/$defs/about_card"
-                        },
-                        "card_button": {
-                            "type": "string"
-                        }
+                        "doom": { "$ref": "#/$defs/colored" },
+                        "title": { "type": "string" },
+                        "trust": { "$ref": "#/$defs/about_card" },
+                        "trust2": { "$ref": "#/$defs/about_card" },
+                        "trust3": { "$ref": "#/$defs/about_card" },
+                        "innovation": { "$ref": "#/$defs/about_card" },
+                        "card_button": { "type": "string" }
                     },
                     "required": [
                         "doom",
@@ -163,24 +127,12 @@
                     "type": "object",
                     "additionalProperties": false,
                     "properties": {
-                        "doom": {
-                            "$ref": "#/$defs/colored"
-                        },
-                        "title": {
-                            "type": "string"
-                        },
-                        "marketing": {
-                            "$ref": "#/$defs/selling_card"
-                        },
-                        "marketing2": {
-                            "$ref": "#/$defs/selling_card"
-                        },
-                        "business_strategy": {
-                            "$ref": "#/$defs/selling_card"
-                        },
-                        "card_button": {
-                            "type": "string"
-                        }
+                        "doom": { "$ref": "#/$defs/colored" },
+                        "title": { "type": "string" },
+                        "marketing": { "$ref": "#/$defs/selling_card" },
+                        "marketing2": { "$ref": "#/$defs/selling_card" },
+                        "business_strategy": { "$ref": "#/$defs/selling_card" },
+                        "card_button": { "type": "string" }
                     },
                     "required": [
                         "doom",
@@ -195,27 +147,13 @@
                     "type": "object",
                     "additionalProperties": false,
                     "properties": {
-                        "doom": {
-                            "$ref": "#/$defs/colored"
-                        },
-                        "title": {
-                            "type": "string"
-                        },
-                        "gmail": {
-                            "type": "string"
-                        },
-                        "fax": {
-                            "type": "string"
-                        },
-                        "phone": {
-                            "type": "string"
-                        },
-                        "location": {
-                            "type": "string"
-                        },
-                        "button": {
-                            "type": "string"
-                        }
+                        "doom": { "$ref": "#/$defs/colored" },
+                        "title": { "type": "string" },
+                        "gmail": { "type": "string" },
+                        "fax": { "type": "string" },
+                        "phone": { "type": "string" },
+                        "location": { "type": "string" },
+                        "button": { "type": "string" }
                     },
                     "required": [
                         "doom",
@@ -240,36 +178,40 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
-                "header": {
-                    "$ref": "#/$defs/colored"
-                },
-                "title": {
-                    "type": "string"
-                },
-                "location": {
-                    "$ref": "#/$defs/colored"
-                },
+                "header": { "$ref": "#/$defs/colored" },
+                "title": { "type": "string" },
+                "location": { "$ref": "#/$defs/colored" },
                 "form": {
                     "type": "object",
                     "additionalProperties": false,
                     "properties": {
-                        "title": {
-                            "$ref": "#/$defs/colored"
-                        },
-                        "first_name": {
-                            "type": "string"
-                        },
-                        "last_name": {
-                            "type": "string"
-                        },
-                        "email": {
-                            "type": "string"
-                        },
-                        "message": {
-                            "type": "string"
-                        },
-                        "button": {
-                            "type": "string"
+                        "title": { "$ref": "#/$defs/colored" },
+                        "first_name": { "type": "string" },
+                        "last_name": { "type": "string" },
+                        "email": { "type": "string" },
+                        "message": { "type": "string" },
+                        "button": { "type": "string" },
+                        "responses": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "success": { "type": "string" },
+                                "data": { "type": "string" },
+                                "captcha": { "type": "string" },
+                                "timeout": { "type": "string" },
+                                "empty": { "type": "string" },
+                                "email": { "type": "string" },
+                                "unknown": { "type": "string" }
+                            },
+                            "required": [
+                                "success",
+                                "data",
+                                "captcha",
+                                "timeout",
+                                "empty",
+                                "email",
+                                "unknown"
+                            ]
                         }
                     },
                     "required": [
@@ -278,12 +220,30 @@
                         "last_name",
                         "email",
                         "message",
-                        "button"
+                        "button",
+                        "responses"
                     ]
                 }
             },
             "required": ["header", "title", "location", "form"]
+        },
+        "About": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "header": { "$ref": "#/$defs/colored" },
+                "title": { "$ref": "#/$defs/colored" },
+                "members": {
+                    "type": "array",
+                    "additionalItems": false,
+                    "items": {
+                        "$ref": "#/$defs/member_card"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": ["header", "title", "members"]
         }
     },
-    "required": ["label", "Home", "Navbar", "Footer", "Contact"]
+    "required": ["label", "Home", "Navbar", "Footer", "Contact", "About"]
 }
