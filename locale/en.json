@@ -103,7 +103,7 @@
             },
             "first_name": "Name",
             "last_name": "Last name",
-            "email": "info@akambusiness.com",
+            "email": "example@example.com",
             "message": "your messages",
             "button": "Send",
             "responses": {
