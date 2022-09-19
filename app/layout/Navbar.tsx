@@ -55,19 +55,19 @@ const MajorScreenNav: FC<NavProps> = ({ isLoc, Loacle }) => {
                     <ChangeLang />
                     <div className='nav-items'>
                         <Link
-                            to='contact'
+                            to='contact/'
                             className={`nav-item ${C(isLoc('contact'))}`}
                         >
                             {Loacle.contact}
                         </Link>
                         <Link
-                            to='services'
+                            to='services/'
                             className={`nav-item ${C(isLoc('services'))}`}
                         >
                             {Loacle.services}
                         </Link>
                         <Link
-                            to='about'
+                            to='about/'
                             className={`nav-item ${C(isLoc('about'))}`}
                         >
                             {Loacle.about}
