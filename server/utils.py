@@ -10,7 +10,7 @@ from httpx import post
 from .shared import SECRETS
 
 
-logger = logging.getLogger('warn')
+logger = logging.getLogger('debug')
 logger.name = __name__
 
 HR = '\n' + ('-' * 50) + '\n'
@@ -30,15 +30,19 @@ def get_user_ip(request: Request):
 
 
 def verify_captcha(token, user_addr=None):
+    logger.debug(f'{token=}\n{user_addr=}')
     data = {
         'secret': SECRETS['G-CAPTCHA']['secret'],
         'response': token
     }
 
+    logger.debug(f'{data=}')
+
     if user_addr:
         data['remoteip'] = user_addr
 
     response = post('https://google.com/recaptcha/api/siteverify', params=data)
+    logger.debug(f'{response.text=}')
     response_json = response.json()
 
     if not response_json.get('success'):
