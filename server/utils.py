@@ -30,19 +30,15 @@ def get_user_ip(request: Request):
 
 
 def verify_captcha(token, user_addr=None):
-    logger.debug(f'{token=}\n{user_addr=}')
     data = {
         'secret': SECRETS['G-CAPTCHA']['secret'],
         'response': token
     }
 
-    logger.debug(f'{data=}')
-
     if user_addr:
         data['remoteip'] = user_addr
 
     response = post('https://google.com/recaptcha/api/siteverify', params=data)
-    logger.debug(f'{response.text=}')
     response_json = response.json()
 
     if not response_json.get('success'):
