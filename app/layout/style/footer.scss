@@ -23,6 +23,9 @@
             justify-content: center;
             gap: 5vh;
         }
+        @media screen and (max-width: 751px) {
+            margin: 5vh 0;
+        }
         .header-section-container {
             width: 25%;
             min-width: 320px;
