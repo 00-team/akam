@@ -9,12 +9,12 @@ import './style/home.scss'
 
 const Home: FC = () => {
     return (
-        <div className='home-container'>
+        <main className='home-container'>
             <HeroSection />
             <About />
             <Selling />
             <Contact />
-        </div>
+        </main>
     )
 }
 
