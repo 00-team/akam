@@ -44,7 +44,6 @@
     gap: 1vh;
 
     width: 30px;
-    height: 20px;
 
     &:hover .line:nth-child(2) {
         width: 50%;
@@ -53,14 +52,13 @@
     &.active {
         .line {
             &:nth-child(1) {
-                transform: rotate(45deg) translate(42%);
+                transform: rotateZ(41deg) translateX(-4%);
             }
             &:nth-child(2) {
                 opacity: 0;
-                width: 0%;
             }
             &:nth-child(3) {
-                transform: rotate(-45deg) translate(42%);
+                transform: rotateZ(-41deg);
             }
 
             background-color: var(--primary-color);
@@ -78,6 +76,15 @@
         background-color: var(--accent-color);
 
         transition: all 0.5s ease-in-out;
+
+        &:nth-child(1) {
+            transform: rotateZ(0deg);
+            transform-origin: left top;
+        }
+        &:nth-child(3) {
+            transform: rotateZ(0deg);
+            transform-origin: left bottom;
+        }
     }
 }
 .mobile-nav {
