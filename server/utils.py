@@ -10,7 +10,7 @@ from httpx import post
 from .shared import SECRETS
 
 
-logger = logging.getLogger('warn')
+logger = logging.getLogger('debug')
 logger.name = __name__
 
 HR = '\n' + ('-' * 50) + '\n'
