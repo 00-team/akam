@@ -1,0 +1,25 @@
+.selling-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    .selling-header {
+        display: grid;
+        place-items: center;
+        color: var(--primary-color);
+
+        width: 100%;
+        aspect-ratio: 1/0.22;
+
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        @media screen and (max-width: 1024px) {
+            aspect-ratio: 1/0.5;
+        }
+        @media screen and (max-width: 1440px) {
+            aspect-ratio: 1/0.3;
+        }
+    }
+}
