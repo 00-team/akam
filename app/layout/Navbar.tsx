@@ -104,6 +104,7 @@ const SmallScreenNav: FC<NavProps> = ({ isLoc, Loacle }) => {
                             <Link
                                 to='contact'
                                 className={`nav-item ${C(isLoc('contact'))}`}
+                                onClick={() => setActive(false)}
                             >
                                 <div className='icon'>
                                     <CgPhone size={24} />
@@ -113,6 +114,7 @@ const SmallScreenNav: FC<NavProps> = ({ isLoc, Loacle }) => {
                             <Link
                                 to='services'
                                 className={`nav-item ${C(isLoc('services'))}`}
+                                onClick={() => setActive(false)}
                             >
                                 <div className='icon'>
                                     <GrServices size={24} />
@@ -122,11 +124,16 @@ const SmallScreenNav: FC<NavProps> = ({ isLoc, Loacle }) => {
                             <Link
                                 to='about'
                                 className={`nav-item ${C(isLoc('about'))}`}
+                                onClick={() => setActive(false)}
                             >
                                 <FaBuilding size={24} />
                                 <div className='holder'>{Loacle.about}</div>
                             </Link>
-                            <Link to='/' className={`nav-item ${C(isLoc(''))}`}>
+                            <Link
+                                to='/'
+                                className={`nav-item ${C(isLoc(''))}`}
+                                onClick={() => setActive(false)}
+                            >
                                 <div className='icon'>
                                     <FaHome size={24} />
                                 </div>
