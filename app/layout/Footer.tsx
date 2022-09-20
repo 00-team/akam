@@ -124,7 +124,9 @@ const ContentSection: FC = () => {
                     </a>
                 </div>
             </div>
-            <div className='logo-wrapper title_hero'>LOGO</div>
+            <div className='logo-wrapper title_hero'>
+                <img src='/static/image/logo.png' alt='' />
+            </div>
         </div>
     )
 }
