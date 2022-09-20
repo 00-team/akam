@@ -148,6 +148,12 @@
                         opacity: 0;
                         transform: translateX(100%);
 
+                        @media screen and (max-width: 1024px) {
+                            width: unset;
+                            min-width: 270px;
+                            max-width: 340px;
+                        }
+
                         &:hover {
                             color: #f2f2f2;
 
