@@ -6,9 +6,7 @@ import { LocaleAtom } from 'state'
 import { Colored } from 'components'
 
 import AboutCard from './AboutCard'
-import AboutCreators from './AboutCreators'
 import AboutHeader from './AboutHeader'
-import AboutStory from './AboutStory'
 
 import './style/about.scss'
 
@@ -19,8 +17,8 @@ const About: FC = () => {
         <div className='about-page-container'>
             <AboutHeader />
             <section className='about-wrapper'>
-                <AboutCreators />
-                <AboutStory />
+                {/* <AboutCreators /> */}
+                {/* <AboutStory /> */}
                 <div className='about-creators'>
                     <header className='creators-title title_hero'>
                         <div className='header-wrapper'>
