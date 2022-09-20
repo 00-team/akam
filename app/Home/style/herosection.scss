@@ -9,6 +9,7 @@
 
     @media screen and (max-width: 768px) {
         flex-direction: column-reverse;
+        height: 95vh;
     }
 
     &#hero .svg-container {
@@ -86,7 +87,7 @@
             opacity: 0.7;
 
             @media screen and (max-width: 768px) {
-                width: 85%;
+                width: 90%;
             }
         }
 
