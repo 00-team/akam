@@ -15,17 +15,17 @@
                     ""
                 ]
             },
-            "description": "Trade  \n With World",
+            "description": "Торговля \n С миром",
             "title": {
-                "sentence": "Akam Company",
+                "sentence": "Akam Компания",
                 "word": "Akam"
             },
             "buttons": {
                 "about": {
-                    "sentence": "Why Akam?",
+                    "sentence": "Почему Akam?",
                     "word": "Akam?"
                 },
-                "collaboration": "collaboration with Akam"
+                "collaboration": "сотрудничество с Akam"
             }
         },
         "about": {
