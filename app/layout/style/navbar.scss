@@ -38,17 +38,12 @@
     z-index: 999;
 
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     flex-direction: column;
     gap: 1vh;
 
     width: 30px;
-
-    @media screen and (max-width: 751px) {
-        gap: 0;
-        margin: 1vh 0;
-    }
 
     &:hover .line:nth-child(2) {
         width: 50%;
@@ -57,13 +52,13 @@
     &.active {
         .line {
             &:nth-child(1) {
-                transform: rotateZ(41deg) translateX(-4%);
+                transform: rotateZ(48deg) translateX(3%);
             }
             &:nth-child(2) {
                 opacity: 0;
             }
             &:nth-child(3) {
-                transform: rotateZ(-41deg);
+                transform: rotateZ(-46deg);
             }
 
             background-color: var(--primary-color);
@@ -89,6 +84,11 @@
         &:nth-child(3) {
             transform: rotateZ(0deg);
             transform-origin: left bottom;
+        }
+
+        @media screen and (max-width: 751px) {
+            gap: 0;
+            margin: 1px 0;
         }
     }
 }
