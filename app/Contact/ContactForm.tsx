@@ -109,7 +109,7 @@ const ContactForm: FC = () => {
                     }}
                 ></textarea>
                 <Recaptcha
-                    sitekey='6LdtbPchAAAAAHnA1I7gwa_mKl5sWh-jWe6daYif'
+                    sitekey='6Lf01QgiAAAAAI6-_ZOgTZAfNa-I0jn2jAzJrMYm'
                     ref={node => {
                         if (node) inputs.current.captcha = node
                     }}

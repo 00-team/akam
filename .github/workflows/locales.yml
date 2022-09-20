@@ -5,6 +5,10 @@ on:
     paths:
       - 'locale/*.json'
 
+  pull_request:
+    paths:
+      - 'locale/*.json'
+
 jobs:
   verify:
     name: Verify the Locales by schema
