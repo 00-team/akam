@@ -6,6 +6,7 @@ import { CgPhone } from '@react-icons/all-files/cg/CgPhone'
 import { FaBuilding } from '@react-icons/all-files/fa/FaBuilding'
 import { FaHome } from '@react-icons/all-files/fa/FaHome'
 import { FiChevronDown } from '@react-icons/all-files/fi/FiChevronDown'
+import { GrClose } from '@react-icons/all-files/gr/GrClose'
 import { GrServices } from '@react-icons/all-files/gr/GrServices'
 import { IoIosGlobe } from '@react-icons/all-files/io/IoIosGlobe'
 
@@ -61,8 +62,8 @@ const MajorScreenNav: FC<NavProps> = ({ isLoc, Loacle }) => {
                             {Loacle.contact}
                         </Link>
                         <Link
-                            to='services/'
-                            className={`nav-item ${C(isLoc('services'))}`}
+                            to='selling/'
+                            className={`nav-item ${C(isLoc('selling'))}`}
                         >
                             {Loacle.services}
                         </Link>
@@ -77,7 +78,10 @@ const MajorScreenNav: FC<NavProps> = ({ isLoc, Loacle }) => {
                         </Link>
                     </div>
                 </div>
-                <div className='nav-logo'>LOGO</div>
+                <div
+                    className='nav-logo'
+                    style={{ backgroundImage: 'url(/static/image/logo.png)' }}
+                ></div>
             </div>
         </nav>
     )
@@ -92,9 +96,19 @@ const SmallScreenNav: FC<NavProps> = ({ isLoc, Loacle }) => {
                 className={`toggle-btn ${C(Active)}`}
                 onClick={() => setActive(!Active)}
             >
-                <div className='line'></div>
-                <div className='line'></div>
-                <div className='line'></div>
+                {!Active ? (
+                    <>
+                        <div className='line'></div>
+                        <div className='line'></div>
+                        <div className='line'></div>
+                    </>
+                ) : (
+                    <>
+                        <div className='close'>
+                            <GrClose size={24} />
+                        </div>
+                    </>
+                )}
             </div>
             <nav className={`mobile-nav ${C(Active)}`}>
                 <section className='navbar-wrapper title '>
@@ -112,8 +126,8 @@ const SmallScreenNav: FC<NavProps> = ({ isLoc, Loacle }) => {
                                 <div className='holder'>{Loacle.contact}</div>
                             </Link>
                             <Link
-                                to='services'
-                                className={`nav-item ${C(isLoc('services'))}`}
+                                to='selling'
+                                className={`nav-item ${C(isLoc('selling'))}`}
                                 onClick={() => setActive(false)}
                             >
                                 <div className='icon'>
@@ -141,7 +155,12 @@ const SmallScreenNav: FC<NavProps> = ({ isLoc, Loacle }) => {
                             </Link>
                         </div>
                     </div>
-                    <div className='nav-logo'>LOGO</div>
+                    <div
+                        className='nav-logo'
+                        style={{
+                            backgroundImage: 'url(/static/image/logo.png)',
+                        }}
+                    ></div>
                 </section>
             </nav>
         </>
