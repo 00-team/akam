@@ -14,12 +14,12 @@
 
 ::-webkit-scrollbar {
     width: 10px;
-    background: #040404;
+    background: var(--thirty-percent);
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #272727;
-    border: 2px solid #040404;
+    background-color: var(--sixty-percent);
+    border: 2px solid var(--sixty-percent);
     border-radius: 20px;
 }
 
