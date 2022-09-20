@@ -4,6 +4,9 @@
     justify-content: flex-start;
     flex-direction: column;
 
+    // debug
+    min-height: 100vh;
+
     .selling-header {
         display: grid;
         place-items: center;
@@ -20,6 +23,19 @@
         }
         @media screen and (max-width: 1440px) {
             aspect-ratio: 1/0.3;
+        }
+    }
+
+    .selling-wrapper {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 15vh;
+
+        @media screen and (max-width: 768px) {
+            gap: 17vh;
         }
     }
 }
