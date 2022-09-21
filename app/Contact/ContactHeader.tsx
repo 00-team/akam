@@ -9,7 +9,7 @@ const ContactHeader: FC = () => {
     const Locale = useAtomValue(LocaleAtom).Contact.header
 
     return (
-        <div
+        <header
             className='contact-header'
             style={{
                 backgroundImage: `
@@ -20,7 +20,7 @@ const ContactHeader: FC = () => {
             <div className='header-text title_hero'>
                 <Colored {...Locale} />
             </div>
-        </div>
+        </header>
     )
 }
 

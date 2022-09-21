@@ -9,16 +9,16 @@ import './style/contactus.scss'
 
 const Contact: FC = () => {
     return (
-        <section className='contact-page-container'>
+        <main className='contact-page-container'>
             <ContactHeader />
-            <div className='contact-wrapper'>
+            <section className='contact-wrapper'>
                 <ContactSocials />
                 <div className='contact-loc_form'>
                     <ContactForm />
                     <ContactLocation />
                 </div>
-            </div>
-        </section>
+            </section>
+        </main>
     )
 }
 

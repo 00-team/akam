@@ -94,6 +94,9 @@
         @media screen and (max-width: 768px) {
             row-gap: 25vh;
         }
+        @media screen and (max-width: 751px) {
+            row-gap: 30vh;
+        }
 
         .sell-card-wrapper {
             aspect-ratio: 3.5/5;

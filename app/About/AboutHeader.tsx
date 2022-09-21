@@ -9,7 +9,7 @@ const AboutHeader: FC = () => {
     const Locale = useAtomValue(LocaleAtom).About.header
 
     return (
-        <div
+        <header
             className='about-header'
             style={{
                 backgroundImage: `
@@ -20,7 +20,7 @@ const AboutHeader: FC = () => {
             <div className='header-text title_hero'>
                 <Colored {...Locale} />
             </div>
-        </div>
+        </header>
     )
 }
 

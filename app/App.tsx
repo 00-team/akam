@@ -7,6 +7,7 @@ import About from 'About'
 import Footer from 'layout/Footer'
 import Navbar from 'layout/Navbar'
 import { Route, Routes } from 'react-router-dom'
+import Selling from 'selling'
 
 import { useAtom, useSetAtom } from 'jotai'
 import { LocaleAtom, LocalesListAtom } from 'state'
@@ -61,6 +62,7 @@ const MainContent: FC = () => {
             <Route index element={<Home />} />
             <Route path='contact' element={<Contact />} />
             <Route path='about' element={<About />} />
+            <Route path='selling' element={<Selling />} />
         </Routes>
     )
 }

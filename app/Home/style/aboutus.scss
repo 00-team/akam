@@ -130,6 +130,10 @@
                     flex-direction: column;
                 }
 
+                @media screen and (max-width: 751px) {
+                    row-gap: 12vh;
+                }
+
                 .contents-wrapper {
                     @media screen and (min-width: 768px) {
                         &:nth-child(1) {
@@ -146,6 +150,9 @@
 
                     @media screen and (max-width: 768px) {
                         gap: 8vh;
+                    }
+                    @media screen and (max-width: 751px) {
+                        gap: 12vh;
                     }
 
                     .about-content {
@@ -174,7 +181,11 @@
                         transition: box-shadow 0.3s;
 
                         @media screen and (max-width: 768px) {
-                            width: 310px;
+                            max-width: 310px;
+                        }
+                        @media screen and (max-width: 768px) {
+                            width: unset;
+                            max-width: 300px;
                         }
 
                         &:hover {
@@ -225,6 +236,7 @@
                             padding: 0.5rem 1rem;
 
                             background-color: var(--ten-percent);
+                            color: var(--primary-color);
 
                             border-radius: 5px;
 

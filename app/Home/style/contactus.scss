@@ -4,6 +4,8 @@
     justify-content: center;
     gap: 5vw;
 
+    overflow: hidden;
+
     @media screen and (max-width: 768px) {
         flex-direction: column-reverse;
     }
@@ -83,7 +85,7 @@
             }
 
             .contact-title-wrapper {
-                padding-left: 10px;
+                padding: 0 10px;
 
                 background-color: var(--primary-color);
 
@@ -109,6 +111,8 @@
                 justify-content: center;
 
                 gap: 5vw;
+
+                direction: rtl;
 
                 @media screen and (max-width: 768px) {
                     flex-direction: column;
@@ -147,6 +151,12 @@
                         // animation
                         opacity: 0;
                         transform: translateX(100%);
+
+                        @media screen and (max-width: 1024px) {
+                            width: unset;
+                            min-width: 270px;
+                            max-width: 340px;
+                        }
 
                         &:hover {
                             color: #f2f2f2;

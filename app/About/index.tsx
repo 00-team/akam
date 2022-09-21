@@ -14,9 +14,11 @@ const About: FC = () => {
     const Locale = useAtomValue(LocaleAtom).About
 
     return (
-        <div className='about-page-container'>
+        <main className='about-page-container'>
             <AboutHeader />
             <section className='about-wrapper'>
+                {/* <AboutCreators /> */}
+                {/* <AboutStory /> */}
                 <div className='about-creators'>
                     <header className='creators-title title_hero'>
                         <div className='header-wrapper'>
@@ -30,7 +32,7 @@ const About: FC = () => {
                     </div>
                 </div>
             </section>
-        </div>
+        </main>
     )
 }
 

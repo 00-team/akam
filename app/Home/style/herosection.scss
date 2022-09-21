@@ -9,6 +9,7 @@
 
     @media screen and (max-width: 768px) {
         flex-direction: column-reverse;
+        height: 95vh;
     }
 
     &#hero .svg-container {
@@ -62,6 +63,8 @@
         flex-direction: column;
         gap: 1vh;
 
+        width: 50%;
+
         .motto {
             margin: 1vh 0;
 
@@ -78,15 +81,14 @@
         }
 
         .text-desc {
-            width: 70%;
-            margin-left: auto;
+            width: 75%;
 
             margin-top: 0.25vh;
 
             opacity: 0.7;
 
             @media screen and (max-width: 768px) {
-                width: 85%;
+                width: 90%;
             }
         }
 
