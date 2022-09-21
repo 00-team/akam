@@ -2,6 +2,8 @@ import React, { FC, useEffect, useRef, useState } from 'react'
 
 import { C } from '@00-team/utils'
 
+import { Link } from 'react-router-dom'
+
 import { useAtomValue } from 'jotai'
 import { DescriptionModel, LocaleAtom } from 'state'
 
@@ -108,20 +110,22 @@ const SellCard: FC<SellCardProps> = props => {
             Intersected={isIntersecting}
             setState={setisIntersecting}
         >
-            <div className='card-img'>
-                {isIntersecting && <img src={svg} />}
-            </div>
-            <div className='card-content'>
-                <div className='card-title-wrapper title'>
-                    <span className='card-title'>{title}</span>
+            <Link to={'selling'} className='sell-card-wrapper'>
+                <div className='card-img'>
+                    {isIntersecting && <img src={svg} />}
                 </div>
-                <div className='card-description title_small'>
-                    {description}
+                <div className='card-content'>
+                    <div className='card-title-wrapper title'>
+                        <span className='card-title'>{title}</span>
+                    </div>
+                    <div className='card-description title_small'>
+                        {description}
+                    </div>
                 </div>
-            </div>
-            <div className='see-more-wrapper '>
-                <button className='see-more title_smaller'>{Locale}</button>
-            </div>
+                <div className='see-more-wrapper '>
+                    <button className='see-more title_smaller'>{Locale}</button>
+                </div>
+            </Link>
         </IsIntersecting>
     )
 }

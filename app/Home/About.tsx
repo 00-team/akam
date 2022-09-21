@@ -6,6 +6,8 @@ import { IconType } from '@react-icons/all-files'
 import { FaGlobe } from '@react-icons/all-files/fa/FaGlobe'
 import { FaHandshake } from '@react-icons/all-files/fa/FaHandshake'
 
+import { Link } from 'react-router-dom'
+
 import { useAtomValue } from 'jotai'
 import { DescriptionModel, LocaleAtom } from 'state'
 
@@ -96,7 +98,8 @@ const AboutContent: FC<AboutContentProps> = props => {
     const Locale = useAtomValue(LocaleAtom).Home.about.card_button
 
     return (
-        <div
+        <Link
+            to={'about'}
             className={`about-content ${className && className}`}
             style={{ animationDelay: `${delay}s` }}
         >
@@ -108,7 +111,7 @@ const AboutContent: FC<AboutContentProps> = props => {
                 <Description text={description} />
             </div>
             <button className='about-see-more description'>{Locale}</button>
-        </div>
+        </Link>
     )
 }
 

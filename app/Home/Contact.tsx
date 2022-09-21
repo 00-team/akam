@@ -8,6 +8,8 @@ import { MdLocationCity } from '@react-icons/all-files/md/MdLocationCity'
 import { MdPhoneInTalk } from '@react-icons/all-files/md/MdPhoneInTalk'
 import { SiGmail } from '@react-icons/all-files/si/SiGmail'
 
+import { Link } from 'react-router-dom'
+
 import { useAtomValue } from 'jotai'
 import { LocaleAtom } from 'state'
 
@@ -69,10 +71,12 @@ const ContactUs: FC = () => {
                     </div>
                 </div>
                 <div className='contact-see-more title_smaller'>
-                    <button>
-                        <div className='holder'>{Locale.button}</div>
-                        <div className='icon'></div>
-                    </button>
+                    <Link to={'contact'}>
+                        <button>
+                            <div className='holder'>{Locale.button}</div>
+                            <div className='icon'></div>
+                        </button>
+                    </Link>
                 </div>
             </div>
             <div className='svg-container'>

@@ -59,6 +59,7 @@ const SellColumn = () => {
                     src='https://picsum.photos/1920/1080'
                     alt=''
                 />
+                <h1 className='title_hero'>عنوان استراژی</h1>
             </div>
             <div className='sell-description title_smaller'>{loremSmaple}</div>
         </div>
