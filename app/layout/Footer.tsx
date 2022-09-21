@@ -24,7 +24,7 @@ const FooterMainSection: FC = () => {
                         <div className='icon header-icon call'>
                             <IoCall size={24} />
                         </div>
-                        <div className='header-holder'>09120974956</div>
+                        <div className='header-holder'>09124862614</div>
                         <div className='header-svg'></div>
                     </div>
                 </div>
