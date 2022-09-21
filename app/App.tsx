@@ -4,10 +4,10 @@ import { Empty } from '@00-team/utils'
 
 import loadable from '@loadable/component'
 import About from 'About'
+import Selling from 'Selling'
 import Footer from 'layout/Footer'
 import Navbar from 'layout/Navbar'
 import { Route, Routes } from 'react-router-dom'
-import Selling from 'selling'
 
 import { useAtom, useSetAtom } from 'jotai'
 import { LocaleAtom, LocalesListAtom } from 'state'
