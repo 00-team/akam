@@ -26,7 +26,7 @@ const ContactSocials: FC = () => {
                     style={{ animationDelay: `.5s` }}
                 >
                     <FiPhoneCall size={35} className='icon-svg' />
-                    <div className='tooltip'>09120974956</div>
+                    <div className='tooltip'>09124862614</div>
                 </a>
                 <a
                     className='social-icon instagram'
@@ -40,7 +40,7 @@ const ContactSocials: FC = () => {
                     style={{ animationDelay: `.7s` }}
                 >
                     <SiWhatsapp size={35} className='icon-svg' />
-                    <div className='tooltip'>09120974956</div>
+                    <div className='tooltip'>09124862614</div>
                 </a>
                 <a
                     className='social-icon tel'
