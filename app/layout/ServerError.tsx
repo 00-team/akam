@@ -11,8 +11,11 @@ const ServerError = () => {
                 <object data={Svg} type=''></object>
             </div>
             <div className='error-texts'>
-                <div className='title'></div>
-                <div className='title_hero'></div>
+                <div className='title_hero'>خطا در ارتباط با سرور</div>
+                <div className='title'>
+                    درخواست ارسالی شما به سرور با مشکل مواجه شده است، لطفا بعدا
+                    دوباره تلاش کنید.
+                </div>
             </div>
         </div>
     )
