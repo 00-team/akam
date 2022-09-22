@@ -31,7 +31,9 @@
 
         cursor: pointer;
 
-        animation: bounce 0.5s alternate infinite;
+        @media screen and (min-width: 768px) {
+            animation: bounce 0.5s alternate infinite;
+        }
 
         &:hover {
             animation: none;
