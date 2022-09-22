@@ -6,6 +6,7 @@ import loadable from '@loadable/component'
 import About from 'About'
 import Footer from 'layout/Footer'
 import Navbar from 'layout/Navbar'
+import ServerError from 'layout/ServerError'
 import { Route, Routes } from 'react-router-dom'
 import Selling from 'selling'
 
@@ -63,6 +64,7 @@ const MainContent: FC = () => {
             <Route path='contact' element={<Contact />} />
             <Route path='about' element={<About />} />
             <Route path='selling' element={<Selling />} />
+            <Route path='server' element={<ServerError />} />
         </Routes>
     )
 }
