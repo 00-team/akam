@@ -98,6 +98,28 @@ const ContactForm: FC = () => {
                         if (node) inputs.current.email = node
                     }}
                 />
+                <input
+                    className='phone title_smaller'
+                    type={'tel'}
+                    placeholder='0911 111 1111'
+                />
+                <div className='contact-platform title_small'>
+                    <div className='platform-title'>
+                        <span className='title-wrapper'>
+                            راه های ارتباطی شما با آکام
+                        </span>
+                    </div>
+                    <div className='platforms'>
+                        <div className='platform wat'>
+                            <div className='icon'></div>
+                            <div className='holder'></div>
+                        </div>
+                        <div className='platform tel'>
+                            <div className='icon'></div>
+                            <div className='holder'></div>
+                        </div>
+                    </div>
+                </div>
                 <textarea
                     className='title_smaller'
                     name='message'
