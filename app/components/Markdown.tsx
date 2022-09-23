@@ -24,8 +24,8 @@ const Description: FC<{ text: DescriptionModel }> = ({ text }) => {
         return (
             <>
                 {text.map((sentence, index) => (
-                    <span className='line' key={index}>
-                        {sentence}
+                    <span className='description-line' key={index}>
+                        {sentence ? sentence : <br />}
                     </span>
                 ))}
             </>
