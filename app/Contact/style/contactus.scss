@@ -291,6 +291,49 @@
                 .gmail {
                     width: 100%;
                 }
+                .phone {
+                    width: 100%;
+
+                    direction: ltr;
+                }
+                .contact-platform {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2vh;
+
+                    width: 100%;
+
+                    .platform-title {
+                        position: relative;
+                        isolation: isolate;
+
+                        display: flex;
+
+                        width: 100%;
+
+                        .title-wrapper {
+                            background-color: var(--thirty-percent);
+
+                            padding: 0 10px;
+                        }
+
+                        &::before {
+                            content: ' ';
+                            position: absolute;
+
+                            top: 50%;
+
+                            margin: 0 20px;
+
+                            width: 90%;
+                            height: 1px;
+
+                            background-color: var(--accent-color);
+
+                            z-index: -1;
+                        }
+                    }
+                }
 
                 textarea {
                     width: 100%;
