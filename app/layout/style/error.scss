@@ -16,6 +16,10 @@
 
     .svg-container {
         width: 30vw;
+
+        @media screen and (max-width: 768px) {
+            width: 80%;
+        }
     }
 
     .home-link {
@@ -31,7 +35,9 @@
 
         cursor: pointer;
 
-        animation: bounce 0.5s alternate infinite;
+        @media screen and (min-width: 768px) {
+            animation: bounce 0.5s alternate infinite;
+        }
 
         &:hover {
             animation: none;

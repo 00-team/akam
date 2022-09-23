@@ -245,6 +245,10 @@
                 border-color: var(--accent-color);
                 border-style: solid;
 
+                @media screen and (max-width: 768px) {
+                    gap: 4vh;
+                }
+
                 &:hover {
                     legend.title {
                         transform: translateY(-10%);
@@ -286,10 +290,172 @@
                             margin: 0 5%;
                         }
                     }
+
+                    @media screen and (max-width: 768px) {
+                        flex-direction: column;
+                        gap: 3vh;
+                        input {
+                            width: 100%;
+                            &:nth-child(3) {
+                                width: 100%;
+                            }
+                        }
+                    }
                 }
 
                 .gmail {
                     width: 100%;
+                }
+                .phone {
+                    width: 100%;
+
+                    direction: ltr;
+                }
+                .contact-platform {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2vh;
+
+                    width: 100%;
+
+                    .platform-title {
+                        position: relative;
+                        isolation: isolate;
+
+                        display: flex;
+
+                        width: 100%;
+
+                        .title-wrapper {
+                            background-color: var(--thirty-percent);
+
+                            padding: 0 10px;
+                        }
+
+                        &::before {
+                            content: ' ';
+                            position: absolute;
+
+                            top: 50%;
+
+                            margin: 0 20px;
+
+                            width: 90%;
+                            height: 1px;
+
+                            background-color: var(--accent-color);
+
+                            z-index: -1;
+                        }
+                    }
+                    .platforms {
+                        display: flex;
+                        align-items: center;
+                        gap: 2vw;
+                        flex-wrap: wrap;
+
+                        width: 100%;
+
+                        @media screen and (max-width: 768px) {
+                            gap: 3vh;
+                        }
+
+                        .platform {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            width: 30%;
+                            min-width: 200px;
+
+                            padding: 15px;
+                            border-radius: 10px;
+
+                            background-color: var(--primary-color);
+                            color: var(--accent-color);
+
+                            transition: all 0.5s ease-in-out;
+
+                            position: relative;
+                            isolation: isolate;
+
+                            direction: ltr;
+                            cursor: pointer;
+
+                            @media screen and (max-width: 768px) {
+                                min-width: unset;
+                                width: 100%;
+                            }
+
+                            .icon {
+                                position: absolute;
+                                top: 50%;
+                                right: 3%;
+                                transform: translateY(-50%);
+
+                                border-radius: 100vmax;
+                                padding: 7px;
+
+                                transition: all 0.5s 0.2s ease-in-out;
+                            }
+
+                            &.tel {
+                                &.active {
+                                    background: linear-gradient(
+                                            to left,
+                                            rgba(255, 255, 255, 0.2),
+                                            rgba(0, 0, 0, 0.15)
+                                        ),
+                                        #08a0e9;
+                                    color: var(--primary-color);
+
+                                    .icon {
+                                        background: transparent;
+                                    }
+                                }
+
+                                .icon {
+                                    background: linear-gradient(
+                                            to left,
+                                            rgba(255, 255, 255, 0.2),
+                                            rgba(0, 0, 0, 0.15)
+                                        ),
+                                        #08a0e9;
+                                }
+                            }
+                            &.wat {
+                                &.active {
+                                    background: linear-gradient(
+                                            to left,
+                                            rgba(255, 255, 255, 0.2),
+                                            rgba(0, 0, 0, 0.2)
+                                        ),
+                                        linear-gradient(
+                                            -35deg,
+                                            #69c9d0 30%,
+                                            #1dee40 75%
+                                        );
+                                    color: var(--primary-color);
+
+                                    .icon {
+                                        background: transparent;
+                                    }
+                                }
+                                .icon {
+                                    background: linear-gradient(
+                                            to left,
+                                            rgba(255, 255, 255, 0.2),
+                                            rgba(0, 0, 0, 0.2)
+                                        ),
+                                        linear-gradient(
+                                            -35deg,
+                                            #69c9d0 30%,
+                                            #1dee40 75%
+                                        );
+                                }
+                            }
+                        }
+                    }
                 }
 
                 textarea {
@@ -305,6 +471,9 @@
                     color: var(--accent-color);
                 }
 
+                .captach-container {
+                    width: 100%;
+                }
                 .cta-wrapper {
                     width: 100%;
 

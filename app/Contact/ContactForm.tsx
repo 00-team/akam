@@ -7,6 +7,8 @@ import { LocaleAtom, SendContact } from 'state'
 
 import { Colored } from 'components'
 
+import ContactPlatforms from './ContactPlatforms'
+
 interface InputRefs {
     first_name: HTMLInputElement | null
     last_name: HTMLInputElement | null
@@ -98,6 +100,14 @@ const ContactForm: FC = () => {
                         if (node) inputs.current.email = node
                     }}
                 />
+                <input
+                    className='phone title_smaller'
+                    type={'tel'}
+                    placeholder='0911 111 1111'
+                />
+
+                <ContactPlatforms />
+
                 <textarea
                     className='title_smaller'
                     name='message'
@@ -109,6 +119,8 @@ const ContactForm: FC = () => {
                     }}
                 ></textarea>
                 <Recaptcha
+                    size={`${innerWidth > 768 ? 'normal' : 'compact'}`}
+                    className='captach-container'
                     sitekey='6Lf01QgiAAAAAI6-_ZOgTZAfNa-I0jn2jAzJrMYm'
                     ref={node => {
                         if (node) inputs.current.captcha = node
