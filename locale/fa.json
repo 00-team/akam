@@ -5,11 +5,7 @@
         "hero": {
             "motto": {
                 "sentence": "خود را به سطح جهانی ببرید",
-                "words": [
-                    "بیزینس",
-                    "شرکت",
-                    "تیم"
-                ]
+                "words": ["بیزینس", "شرکت", "تیم"]
             },
             "title": {
                 "word": "آکام",
@@ -148,26 +144,33 @@
             {
                 "name": " Habib Aryamanesh ",
                 "role": "Role x",
-                "description": [
-                    "line 1",
-                    "line 2"
-                ]
+                "description": ["line 1", "line 2"]
             },
             {
                 "name": "Reza Kangari",
                 "role": "Role x",
-                "description": [
-                    "line 1",
-                    "line 2"
-                ]
+                "description": ["line 1", "line 2"]
             },
             {
                 "name": "Parisa Safarkhani ",
                 "role": "Role x",
-                "description": [
-                    "line 1",
-                    "line 2"
-                ]
+                "description": ["line 1", "line 2"]
+            }
+        ]
+    },
+    "Selling": {
+        "header": {
+            "sentence": "استراتژی های فروش آکام",
+            "word": "آکام"
+        },
+        "strategies": [
+            {
+                "title": "عنوان استراژی 1",
+                "description": ["line 1", "line 2", "line 3", "", "line 5"]
+            },
+            {
+                "title": "عنوان استراژی 2",
+                "description": ["line 1", "line 2", "line 3", "", "line 5"]
             }
         ]
     }

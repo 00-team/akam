@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { FC } from 'react'
+
+import { useAtomValue } from 'jotai'
+import { LocaleAtom } from 'state'
+
+import { Colored } from 'components'
 
 import SellColumn from './SellColumn'
 
 import './style/selling.scss'
 
-const Selling = () => {
+const Selling: FC = () => {
+    const Locale = useAtomValue(LocaleAtom).Selling
+
     return (
         <main className='selling-container'>
             <header
@@ -16,14 +23,13 @@ const Selling = () => {
                 }}
             >
                 <div className='header-text title_hero'>
-                    استراتژی های فروش <span className='colored-word'>آکام</span>
+                    <Colored {...Locale.header} />
                 </div>
             </header>
             <section className='selling-wrapper'>
-                <SellColumn />
-                <SellColumn />
-                <SellColumn />
-                <SellColumn />
+                {Locale.strategies.map(strategy => (
+                    <SellColumn {...strategy} />
+                ))}
             </section>
         </main>
     )

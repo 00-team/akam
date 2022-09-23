@@ -23,6 +23,11 @@ interface MemberCard {
 
 interface SellingCard extends AboutCard {}
 
+interface Strategy {
+    title: string
+    description: Description
+}
+
 interface Locale {
     id: string
     label: string
@@ -100,6 +105,10 @@ interface Locale {
         title: Colored
         members: [MemberCard, ...MemberCard[]]
     }
+    Selling: {
+        header: Colored
+        strategies: [Strategy, ...Strategy[]]
+    }
 }
 
 export { Locale as LocaleModel, LocalesList as LocalesListModel }
@@ -109,4 +118,5 @@ export {
     AboutCard as AboutCardModel,
     MemberCard as MemberCardModel,
     SellingCard as SellingCardModel,
+    Strategy as StrategyModel,
 }

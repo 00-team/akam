@@ -10,10 +10,7 @@
         "hero": {
             "motto": {
                 "sentence": "In The  world ",
-                "words": [
-                    "Take your business",
-                    ""
-                ]
+                "words": ["Take your business", ""]
             },
             "description": "Trade  \n With World",
             "title": {
@@ -130,26 +127,37 @@
             {
                 "name": " Habib Aryamanesh ",
                 "role": "Role x",
-                "description": [
-                    "line 1",
-                    "line 2"
-                ]
+                "description": ["line 1", "line 2"]
             },
             {
                 "name": "Reza Kangari",
                 "role": "Manager x",
-                "description": [
-                    "line 1",
-                    "line 2"
-                ]
+                "description": ["line 1", "line 2"]
             },
             {
                 "name": "Parisa Safarkhani ",
                 "role": "Role x",
-                "description": [
-                    "line 1",
-                    "line 2"
-                ]
+                "description": ["line 1", "line 2"]
+            }
+        ]
+    },
+    "Selling": {
+        "header": {
+            "sentence": "akam ggez",
+            "word": "gg"
+        },
+        "strategies": [
+            {
+                "title": "strategy 1",
+                "description": ["line 1", "line 2", "line 3", "", "line 5"]
+            },
+            {
+                "title": "strategy 2",
+                "description": ["line 1", "line 2", "line 3", "", "line 5"]
+            },
+            {
+                "title": "strategy 3",
+                "description": ["line 1", "line 2", "line 3", "", "line 5"]
             }
         ]
     }
