@@ -333,6 +333,105 @@
                             z-index: -1;
                         }
                     }
+                    .platforms {
+                        display: flex;
+                        align-items: center;
+                        gap: 2vw;
+                        flex-wrap: wrap;
+
+                        width: 100%;
+
+                        .platform {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            width: 30%;
+                            min-width: 200px;
+
+                            padding: 15px;
+                            border-radius: 10px;
+
+                            background-color: var(--primary-color);
+                            color: var(--accent-color);
+
+                            transition: all 0.5s ease-in-out;
+
+                            position: relative;
+                            isolation: isolate;
+
+                            direction: ltr;
+                            cursor: pointer;
+
+                            .icon {
+                                position: absolute;
+                                top: 50%;
+                                right: 3%;
+                                transform: translateY(-50%);
+
+                                border-radius: 100vmax;
+                                padding: 7px;
+
+                                transition: all 0.5s 0.2s ease-in-out;
+                            }
+
+                            &.tel {
+                                &.active {
+                                    background: linear-gradient(
+                                            to left,
+                                            rgba(255, 255, 255, 0.2),
+                                            rgba(0, 0, 0, 0.15)
+                                        ),
+                                        #08a0e9;
+                                    color: var(--primary-color);
+
+                                    .icon {
+                                        background: transparent;
+                                    }
+                                }
+
+                                .icon {
+                                    background: linear-gradient(
+                                            to left,
+                                            rgba(255, 255, 255, 0.2),
+                                            rgba(0, 0, 0, 0.15)
+                                        ),
+                                        #08a0e9;
+                                }
+                            }
+                            &.wat {
+                                &.active {
+                                    background: linear-gradient(
+                                            to left,
+                                            rgba(255, 255, 255, 0.2),
+                                            rgba(0, 0, 0, 0.2)
+                                        ),
+                                        linear-gradient(
+                                            -35deg,
+                                            #69c9d0 30%,
+                                            #1dee40 75%
+                                        );
+                                    color: var(--primary-color);
+
+                                    .icon {
+                                        background: transparent;
+                                    }
+                                }
+                                .icon {
+                                    background: linear-gradient(
+                                            to left,
+                                            rgba(255, 255, 255, 0.2),
+                                            rgba(0, 0, 0, 0.2)
+                                        ),
+                                        linear-gradient(
+                                            -35deg,
+                                            #69c9d0 30%,
+                                            #1dee40 75%
+                                        );
+                                }
+                            }
+                        }
+                    }
                 }
 
                 textarea {
@@ -348,6 +447,9 @@
                     color: var(--accent-color);
                 }
 
+                .captach-container {
+                    width: 100%;
+                }
                 .cta-wrapper {
                     width: 100%;
 
