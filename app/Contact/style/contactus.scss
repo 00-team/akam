@@ -245,6 +245,10 @@
                 border-color: var(--accent-color);
                 border-style: solid;
 
+                @media screen and (max-width: 768px) {
+                    gap: 4vh;
+                }
+
                 &:hover {
                     legend.title {
                         transform: translateY(-10%);
@@ -284,6 +288,17 @@
                         &:nth-child(3) {
                             width: 45%;
                             margin: 0 5%;
+                        }
+                    }
+
+                    @media screen and (max-width: 768px) {
+                        flex-direction: column;
+                        gap: 3vh;
+                        input {
+                            width: 100%;
+                            &:nth-child(3) {
+                                width: 100%;
+                            }
                         }
                     }
                 }
@@ -341,6 +356,10 @@
 
                         width: 100%;
 
+                        @media screen and (max-width: 768px) {
+                            gap: 3vh;
+                        }
+
                         .platform {
                             display: flex;
                             align-items: center;
@@ -362,6 +381,11 @@
 
                             direction: ltr;
                             cursor: pointer;
+
+                            @media screen and (max-width: 768px) {
+                                min-width: unset;
+                                width: 100%;
+                            }
 
                             .icon {
                                 position: absolute;
