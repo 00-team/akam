@@ -160,5 +160,11 @@
                 "description": ["line 1", "line 2", "line 3", "", "line 5"]
             }
         ]
+    },
+    "errors": {
+        "404": {
+            "title": "Page not Found",
+            "description": "the requested url was not found on this server"
+        }
     }
 }
