@@ -119,6 +119,7 @@ const ContactForm: FC = () => {
                     }}
                 ></textarea>
                 <Recaptcha
+                    size={`${innerWidth > 768 ? 'normal' : 'compact'}`}
                     className='captach-container'
                     sitekey='6Lf01QgiAAAAAI6-_ZOgTZAfNa-I0jn2jAzJrMYm'
                     ref={node => {
