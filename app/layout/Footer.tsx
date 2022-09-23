@@ -17,7 +17,7 @@ const Footer: FC = () => {
 
 const FooterMainSection: FC = () => {
     return (
-        <div className='header-section-wrapper title_small'>
+        <div className='header-section-wrapper title_smaller'>
             <div className='header-section-container'>
                 <div className='header-section header-call'>
                     <div className='header-section-elems'>
