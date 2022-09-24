@@ -1,4 +1,4 @@
-from flask import render_template, request, session
+from flask import Response, render_template, request, session
 from werkzeug.exceptions import HTTPException
 
 from .locale import DEFAULT_LOCALE, LOCALES, LOCALES_LIST
@@ -33,6 +33,18 @@ def get_locale():
         session['locale'] = locale
 
     return data
+
+
+def robots_txt():
+
+    content = (
+        'User-Agent: *\n'
+        'Disallow: /admin/\n'
+        'Allow: /\n\n'
+        f'Sitemap: {request.host_url}sitemap.xml'
+    )
+
+    return Response(content, content_type='text/plain')
 
 
 def errors(error: HTTPException):
