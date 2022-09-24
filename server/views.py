@@ -38,10 +38,11 @@ def get_locale():
 def errors(error: HTTPException):
     locale = session.get('locale', DEFAULT_LOCALE)
     content = LOCALES[locale]['errors']
+    direction = LOCALES[locale].get('direction')
     code = str(error.code)
 
     if code in content:
-        context = {'code': code, **content[code]}
+        context = {'code': code, **content[code], 'locale_dir': direction}
     else:
         context = {
             'code': code,
