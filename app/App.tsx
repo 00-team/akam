@@ -3,10 +3,7 @@ import React, { FC, useEffect } from 'react'
 import { Empty } from '@00-team/utils'
 
 import loadable from '@loadable/component'
-import About from 'About'
-import Selling from 'Selling'
-import Footer from 'layout/Footer'
-import Navbar from 'layout/Navbar'
+import { Footer, Navbar } from 'layout'
 import { Route, Routes } from 'react-router-dom'
 
 import { useAtom, useSetAtom } from 'jotai'
@@ -18,6 +15,8 @@ import './style/base.scss'
 
 const Home = loadable(() => import('Home'))
 const Contact = loadable(() => import('Contact'))
+const About = loadable(() => import('About'))
+const Selling = loadable(() => import('Selling'))
 
 const App: FC = () => {
     const [Locale, UpdateLocale] = useAtom(LocaleAtom)
@@ -44,9 +43,7 @@ const App: FC = () => {
     return (
         <>
             <Navbar />
-
             <MainContent />
-
             <Footer />
         </>
     )

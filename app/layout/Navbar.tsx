@@ -218,4 +218,4 @@ const ChangeLang: FC<ChangeLangProps> = ({ titleFont }) => {
         </div>
     )
 }
-export default Navbar
+export { Navbar }
