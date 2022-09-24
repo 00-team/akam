@@ -16,7 +16,6 @@ import { LocaleAtom, LocalesListAtom } from 'state'
 import { Loading } from 'components'
 
 import './style/base.scss'
-import './style/fonts/imports.scss'
 
 const Home = loadable(() => import('Home'))
 const Contact = loadable(() => import('Contact'))
