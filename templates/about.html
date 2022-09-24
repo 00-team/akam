@@ -1,3 +1,7 @@
 {% extends 'base.html' %}
 
-{% block title %}About Akam!{% endblock title %}
+{% block head %}
+    {% with title="About"  %}
+        {% include "includes/meta.html"  %}
+    {% endwith %}
+{% endblock head %}

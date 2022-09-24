@@ -1,3 +1,7 @@
 {% extends 'base.html' %}
 
-{% block title %}Contact GG!{% endblock title %}
+{% block head %}
+    {% with title="Contact"  %}
+        {% include "includes/meta.html"  %}
+    {% endwith %}
+{% endblock head %}
