@@ -1,5 +1,4 @@
 
-
 from . import views
 from .contact import send_contact
 from .shared import app
