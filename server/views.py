@@ -40,14 +40,19 @@ def errors(error: HTTPException):
     content = LOCALES[locale]['errors']
     direction = LOCALES[locale].get('direction')
     code = str(error.code)
+    base = {
+        'code': code,
+        'locale_dir': direction,
+        'button_404': content['button_404']
+    }
 
     if code in content:
-        context = {'code': code, **content[code], 'locale_dir': direction}
+        context = {**content[code], **base}
     else:
         context = {
-            'code': code,
             'title': error.name,
             'description': error.description,
+            **base
         }
 
     return render_template('error.html', error=context), error.code

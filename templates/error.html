@@ -21,7 +21,7 @@
                 <div class="description">{{ error.description }}</div>
             </div>
             {% if error.code == "404" %}
-                <a href="/">Home</a>
+                <a href="/">{{ error.button_404 }}</a>
             {% endif %}
         </div>
     </body>

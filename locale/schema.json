@@ -278,7 +278,11 @@
                     },
                     "required": ["title", "description"]
                 }
-            }
+            },
+            "properties": {
+                "button_404": { "type": "string" }
+            },
+            "required": ["button_404"]
         }
     },
     "required": [

@@ -165,6 +165,7 @@
         "404": {
             "title": "Page not Found",
             "description": "the requested url was not found on this server"
-        }
+        },
+        "button_404": "Home"
     }
 }
