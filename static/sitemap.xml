@@ -2,6 +2,15 @@
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
-      <loc>http://www.example.com/</loc>
+      <loc>https://akambusiness.com/</loc>
+   </url>
+   <url>
+      <loc>https://akambusiness.com/about/</loc>
+   </url>
+   <url>
+      <loc>https://akambusiness.com/selling/</loc>
+   </url>
+   <url>
+      <loc>https://akambusiness.com/contact/</loc>
    </url>
 </urlset>
