@@ -7,6 +7,7 @@ from server import app, send_contact, views
 app.get('/')(views.home)
 app.get('/contact/')(views.contact)
 app.get('/about/')(views.about)
+app.get('/selling/')(views.selling)
 
 # apis
 app.get('/api/locales_list/')(views.locales_list)

@@ -16,6 +16,10 @@ def about():
     return render_template('about.html')
 
 
+def selling():
+    return render_template('selling.html')
+
+
 def locales_list():
     return LOCALES_LIST
 
