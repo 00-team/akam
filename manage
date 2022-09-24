@@ -29,4 +29,8 @@ elif [[ $1 =~ ^(tag)$ ]]; then
         git push origin "v$2"
     fi
 
+elif [[ $1 =~ ^(delete all tags)$ ]]; then
+    # git tag | grep <pattern> | xargs -n 1 -i% git push origin :refs/tags/%
+    git tag | xargs -n 1 -i% sh -c 'git push origin :% && git tag -d %'
+
 fi
