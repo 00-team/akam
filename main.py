@@ -1,3 +1,4 @@
+from werkzeug.exceptions import HTTPException
 
 from server import app, send_contact, views
 
@@ -13,4 +14,4 @@ app.post('/api/send_contact/')(send_contact)
 
 
 # errors
-app.register_error_handler(404, views.errors)
+app.errorhandler(HTTPException)(views.errors)
