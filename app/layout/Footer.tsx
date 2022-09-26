@@ -8,10 +8,16 @@ import './style/footer.scss'
 
 const Footer: FC = () => {
     return (
-        <footer className='footer-container'>
-            <FooterMainSection />
-            <ContentSection />
-        </footer>
+        <>
+            <footer className='footer-container'>
+                <FooterMainSection />
+                <ContentSection />
+            </footer>
+            <div className='team-00 title_smaller'>
+                Created By{'  '}
+                <a href='https://web-00-team.web.app/'> 00 TEAM</a>
+            </div>
+        </>
     )
 }
 
