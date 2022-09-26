@@ -266,3 +266,17 @@
         }
     }
 }
+.team-00 {
+    width: 100%;
+    text-align: center;
+
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+
+    padding: 10px 15px;
+
+    a {
+        color: unset;
+        text-decoration: none;
+    }
+}
