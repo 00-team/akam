@@ -29,7 +29,7 @@ const Base: Configuration = {
     },
     devtool: 'source-map',
     plugins: [
-        // new BundleAnalyzerPlugin({ openAnalyzer: true, analyzerPort: 7777 }),
+        // new BundleAnalyzerPlugin({ openAnalyzer: false, analyzerPort: 7777 }),
     ],
     resolve: {
         extensions: ['.mjs', '.tsx', '.ts', '.js'],

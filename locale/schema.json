@@ -243,7 +243,56 @@
                 }
             },
             "required": ["header", "title", "members"]
+        },
+        "Selling": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "header": { "$ref": "#/$defs/colored" },
+                "strategies": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "title": { "type": "string" },
+                            "description": { "$ref": "#/$defs/description" }
+                        },
+                        "required": ["title", "description"]
+                    }
+                }
+            },
+            "required": ["header", "strategies"]
+        },
+        "errors": {
+            "type": "object",
+            "additionalProperties": false,
+            "patternProperties": {
+                "^[1-5]\\d{2}$": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "title": { "type": "string" },
+                        "description": { "type": "string" }
+                    },
+                    "required": ["title", "description"]
+                }
+            },
+            "properties": {
+                "button_404": { "type": "string" }
+            },
+            "required": ["button_404"]
         }
     },
-    "required": ["label", "Home", "Navbar", "Footer", "Contact", "About"]
+    "required": [
+        "label",
+        "Home",
+        "Navbar",
+        "Footer",
+        "Contact",
+        "About",
+        "Selling",
+        "errors"
+    ]
 }

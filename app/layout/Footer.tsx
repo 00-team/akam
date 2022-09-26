@@ -131,4 +131,4 @@ const ContentSection: FC = () => {
     )
 }
 
-export default Footer
+export { Footer }

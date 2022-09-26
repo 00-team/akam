@@ -3,12 +3,8 @@ import React, { FC, useEffect } from 'react'
 import { Empty } from '@00-team/utils'
 
 import loadable from '@loadable/component'
-import About from 'About'
-import Footer from 'layout/Footer'
-import Navbar from 'layout/Navbar'
-import ServerError from 'layout/ServerError'
+import { Footer, Navbar } from 'layout'
 import { Route, Routes } from 'react-router-dom'
-import Selling from 'selling'
 
 import { useAtom, useSetAtom } from 'jotai'
 import { LocaleAtom, LocalesListAtom } from 'state'
@@ -16,11 +12,11 @@ import { LocaleAtom, LocalesListAtom } from 'state'
 import { Loading } from 'components'
 
 import './style/base.scss'
-import './style/fonts/imports.scss'
 
 const Home = loadable(() => import('Home'))
 const Contact = loadable(() => import('Contact'))
-const ErrorPage = loadable(() => import('layout/Error'))
+const About = loadable(() => import('About'))
+const Selling = loadable(() => import('Selling'))
 
 const App: FC = () => {
     const [Locale, UpdateLocale] = useAtom(LocaleAtom)
@@ -47,24 +43,19 @@ const App: FC = () => {
     return (
         <>
             <Navbar />
-
             <MainContent />
-
             <Footer />
         </>
     )
 }
 
 const MainContent: FC = () => {
-    if (typeof ERROR !== 'undefined') return <ErrorPage {...ERROR} />
-
     return (
         <Routes>
             <Route index element={<Home />} />
             <Route path='contact' element={<Contact />} />
             <Route path='about' element={<About />} />
             <Route path='selling' element={<Selling />} />
-            <Route path='server' element={<ServerError />} />
         </Routes>
     )
 }

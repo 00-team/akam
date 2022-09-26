@@ -1,13 +1,29 @@
-{% extends 'base.html' %}
-
-{% block head %}
-    <script>
-        var ERROR = {
-            'code': {{ error.code }},
-            'title': `{{ error.title }}`,
-            'description': `{{ error.description }}`
-        };
-    </script>
-{% endblock head %}
-
-{% block title %}{{ error.title }}{% endblock title %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+        
+        <title>Error {{ error.code }} - {{ error.title }}</title>
+        <link rel="stylesheet" href="/static/css/error.css" />
+        <link rel="stylesheet" href="/static/fonts/imports.css" />
+    </head>
+    <body
+    {% if error.locale_dir == "rtl" %}
+        style="direction:rtl;text-align:right"
+    {% endif %}
+    >
+        <div class="error-container">
+            <div class="svg-container">
+                <object data="/static/svg/servererror.svg"></object>
+            </div>
+            <div class="error-texts">
+                <div class="title">{{ error.code }} - {{ error.title }}</div>
+                <div class="description">{{ error.description }}</div>
+            </div>
+            {% if error.code == "404" %}
+                <a href="/">{{ error.button_404 }}</a>
+            {% endif %}
+        </div>
+    </body>
+</html>
