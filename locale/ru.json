@@ -101,6 +101,8 @@
             "first_name": "Name",
             "last_name": "Last name",
             "email": " example@example.com",
+            "phone": "ru phone +1 999 999 999",
+            "platforms": "platfroms ...",
             "message": "your message",
             "button": "Send",
             "responses": {

@@ -119,6 +119,8 @@
             "last_name": "نام خانوادگی",
             "message": "متن پیام...",
             "email": "example@gmail.com",
+            "phone": "fa phone 09000",
+            "platforms": "راه ارتباطی شما با ما",
             "button": "ارسال",
             "responses": {
                 "success": "your message successfully has been send!",

@@ -87,6 +87,8 @@ interface Locale {
             first_name: string
             last_name: string
             email: string
+            phone: string
+            platforms: string
             message: string
             button: string
             responses: {

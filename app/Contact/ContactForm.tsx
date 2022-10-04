@@ -118,7 +118,7 @@ const ContactForm: FC = () => {
                 <input
                     className='phone title_smaller'
                     type='tel'
-                    placeholder='0911 111 1111'
+                    placeholder={Locale.phone}
                     ref={node => {
                         if (node) inputs.current.phone = node
                     }}
