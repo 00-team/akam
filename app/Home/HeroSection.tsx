@@ -46,18 +46,20 @@ const HeroSection: FC = () => {
                 </div>
                 <div className='animation'>
                     <div className='hero-btns title_smaller'>
-                        <button
+                        <a
+                            href='#about'
                             className='hero-btn about'
                             style={{ animationDelay: '2s' }}
                         >
                             <Colored {...Locale.buttons.about} />
-                        </button>
-                        <button
+                        </a>
+                        <a
+                            href='#contact'
                             className='hero-btn action'
                             style={{ animationDelay: '2.2s' }}
                         >
                             {Locale.buttons.collaboration}
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>

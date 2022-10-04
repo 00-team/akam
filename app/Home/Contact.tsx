@@ -24,6 +24,7 @@ const ContactUs: FC = () => {
     return (
         <IsIntersecting
             Tag='section'
+            id='contact'
             Intersected={HasIntersected}
             setState={setHasIntersected}
             options={{ threshold: 0.5 }}
