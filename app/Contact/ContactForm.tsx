@@ -13,7 +13,9 @@ interface InputRefs {
     first_name: HTMLInputElement | null
     last_name: HTMLInputElement | null
     email: HTMLInputElement | null
+    phone: HTMLInputElement | null
     message: HTMLTextAreaElement | null
+    platforms: string[]
     captcha: Recaptcha | null
 }
 
@@ -21,7 +23,9 @@ const DefaultInputs: InputRefs = {
     first_name: null,
     last_name: null,
     email: null,
+    phone: null,
     message: null,
+    platforms: [],
     captcha: null,
 }
 
@@ -32,9 +36,18 @@ const ContactForm: FC = () => {
 
     const Send = async () => {
         if (!inputs.current) return
-        const { first_name, last_name, email, message, captcha } =
-            inputs.current
-        if (!first_name || !last_name || !email || !message || !captcha) {
+
+        const { first_name, last_name, email, phone } = inputs.current
+        const { message, platforms, captcha } = inputs.current
+
+        if (
+            !first_name ||
+            !last_name ||
+            !email ||
+            !phone ||
+            !message ||
+            !captcha
+        ) {
             return setResponse(Locale.responses['empty'])
         }
 
@@ -53,9 +66,11 @@ const ContactForm: FC = () => {
 
         const status = await SendContact({
             first_name: first_name.value,
-            email: email.value,
             last_name: last_name.value,
+            email: email.value,
+            phone: phone.value,
             message: message.value,
+            platforms: platforms,
             recaptcha: token,
         })
 
@@ -102,11 +117,18 @@ const ContactForm: FC = () => {
                 />
                 <input
                     className='phone title_smaller'
-                    type={'tel'}
+                    type='tel'
                     placeholder='0911 111 1111'
+                    ref={node => {
+                        if (node) inputs.current.phone = node
+                    }}
                 />
 
-                <ContactPlatforms />
+                <ContactPlatforms
+                    onChange={platforms =>
+                        (inputs.current.platforms = platforms)
+                    }
+                />
 
                 <textarea
                     className='title_smaller'

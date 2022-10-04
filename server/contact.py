@@ -59,6 +59,8 @@ def send_contact():
         first_name = str(data['first_name'])  # 0-50
         last_name = str(data['last_name'])  # 0-50
         email = str(data['email'])  # 0-250
+        phone = str(data['phone'])  # 0-50
+        platforms = data['platforms'] or []  # list of string
         message = str(data['message'])  # 20-500
 
         # ensure that the email is in ascii
@@ -68,12 +70,16 @@ def send_contact():
             len(first_name) > 50 or
             len(last_name) > 50 or
             len(email) > 250 or
+            len(phone) > 50 or
             len(message) < 20 or
-            len(message) > 500
+            len(message) > 500 or
+            not isinstance(platforms, list)
         ):
             raise ValueError
 
         verify_captcha(recaptcha, user_ip)
+
+        platforms = ' , '.join(platforms) if platforms else 'None'
 
     # UnicodeEncodeError is completely unnecessary bc is a subclass of ValueError
     except (KeyError, ValueError, UnicodeEncodeError):
@@ -82,7 +88,7 @@ def send_contact():
     except (InvalidCaptcha, AttributeError):
         return {'error': 'captcha'}, 400
 
-    now = int(time.time())
+    now = int(time.time()) + 800000
 
     try:
         contact_info = (
@@ -117,10 +123,12 @@ def send_contact():
             f'First Name: {first_name}\n'
             f'Last Name: {last_name}\n'
             f'Email: {email}\n'
-            f'Message: {message}'
+            f'Phone: {phone}\n'
+            f'Platforms: {platforms}\n'
+            f'Message: \n{message}'
         ),
         charset='utf-8',
     )
-    contact_hook(first_name, last_name, email, message)
+    contact_hook(first_name, last_name, email, phone, platforms, message)
 
     return {'success': True}

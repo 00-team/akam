@@ -72,29 +72,22 @@ def hook(url, embeds):
             Thread(target=execute_hook, args=(u, data)).start()
 
 
-def contact_hook(fname, lname, email, message):
+def contact_hook(fname, lname, email, phone, platforms, message):
 
     description = (
-        f'**First Name**: `{fname}`{HR}'
-        f'**Last Name**: `{lname}`{HR}'
+        f'**First Name**: ||{fname}||{HR}'
+        f'**Last Name**: ||{lname}||{HR}'
         f'**Email**: ||`{email}`||{HR}'
-        f'**Message**: {message}'
+        f'**Phone**: ||`{phone}`||{HR}'
+        f'**Platforms**: {platforms}{HR}'
+        f'**Message**: \n||{message}||'
     )
 
     embed = {
         'title': 'Contact',
-        'color': 4884536,
+        'color': 5347839,
         'timestamp': str(datetime.now()),
-        # 'author': {
-        #     'name': author_name
-        # },
         'description': description,
-        # 'thumbnail': {
-        #     'url': get_picture(account._picture)
-        # },
     }
-
-    # if status == 'delete':
-    #     del embed['thumbnail']
 
     hook(SECRETS['WEBHOOKS']['Contact'], [embed])
