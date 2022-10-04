@@ -110,7 +110,10 @@
                     }
                 ]
             }
-        ]
+        ],
+        "phone": "fa phone",
+        "email": "info@akambusiness.com",
+        "address": "en addr fafff"
     },
     "Contact": {
         "header": {

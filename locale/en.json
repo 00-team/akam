@@ -98,7 +98,10 @@
                     }
                 ]
             }
-        ]
+        ],
+        "phone": "en phone",
+        "email": "info@akambusiness.com",
+        "address": "en addr"
     },
     "Contact": {
         "header": {

@@ -205,9 +205,12 @@
                         },
                         "required": ["title", "rows"]
                     }
-                }
+                },
+                "phone": { "type": "string" },
+                "email": { "type": "string" },
+                "address": { "type": "string" }
             },
-            "required": ["columns"]
+            "required": ["columns", "phone", "email", "address"]
         },
         "Contact": {
             "type": "object",

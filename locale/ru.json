@@ -93,7 +93,10 @@
                     }
                 ]
             }
-        ]
+        ],
+        "phone": "ru phone",
+        "email": "info@akambusiness.com",
+        "address": "ru addr"
     },
     "Contact": {
         "header": {

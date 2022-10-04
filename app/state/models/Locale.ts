@@ -49,6 +49,9 @@ interface Locale {
             title: string
             rows: FooterLink[]
         }[]
+        phone: string
+        email: string
+        address: string
     }
     Home: {
         hero: {

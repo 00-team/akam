@@ -27,6 +27,8 @@ const Footer: FC = () => {
 }
 
 const FooterMainSection: FC = () => {
+    const Locale = useAtomValue(LocaleAtom).Footer
+
     return (
         <div className='header-section-wrapper title_smaller'>
             <div className='header-section-container'>
@@ -35,7 +37,7 @@ const FooterMainSection: FC = () => {
                         <div className='icon header-icon call'>
                             <IoCall size={24} />
                         </div>
-                        <div className='header-holder'>09124862614</div>
+                        <div className='header-holder'>{Locale.phone}</div>
                         <div className='header-svg'></div>
                     </div>
                 </div>
@@ -46,9 +48,7 @@ const FooterMainSection: FC = () => {
                         <div className='icon header-icon gmail'>
                             <MdEmail size={24} />
                         </div>
-                        <div className='header-holder '>
-                            Info@akambusiness.com
-                        </div>
+                        <div className='header-holder '>{Locale.email}</div>
                         <div className='header-svg'></div>
                     </div>
                 </div>
@@ -59,9 +59,7 @@ const FooterMainSection: FC = () => {
                         <div className='icon header-icon location'>
                             <HiLocationMarker size={24} />
                         </div>
-                        <div className='header-holder '>
-                            تهران، امیر اباد، خیابان عبداللهی، پلاک 20
-                        </div>
+                        <div className='header-holder '>{Locale.address}</div>
                         <div className='header-svg'></div>
                     </div>
                 </div>
