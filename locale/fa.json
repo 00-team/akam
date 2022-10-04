@@ -99,7 +99,19 @@
         "contact": "ارتباط با ما",
         "services": "استراژی های شرکت"
     },
-    "Footer": {},
+    "Footer": {
+        "columns": [
+            {
+                "title": "درباره ما",
+                "rows": [
+                    {
+                        "label": "lable 1",
+                        "url": "/ggez/"
+                    }
+                ]
+            }
+        ]
+    },
     "Contact": {
         "header": {
             "sentence": "تماس با آکام",

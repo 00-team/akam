@@ -39,7 +39,8 @@
                 "description": { "$ref": "#/$defs/description" }
             },
             "required": ["name", "role", "description"]
-        }
+        },
+        "footer_column": {}
     },
 
     "properties": {
@@ -171,8 +172,42 @@
         "Footer": {
             "type": "object",
             "additionalProperties": false,
-            "properties": {},
-            "required": []
+            "properties": {
+                "columns": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 8,
+                    "additionalItems": false,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "title": { "type": "string" },
+                            "rows": {
+                                "type": "array",
+                                "minItems": 1,
+                                "maxItems": 10,
+                                "additionalItems": false,
+                                "items": {
+                                    "type": "object",
+                                    "additionalProperties": false,
+                                    "properties": {
+                                        "label": { "type": "string" },
+                                        "url": { "type": "string" },
+                                        "external": {
+                                            "type": "boolean",
+                                            "default": false
+                                        }
+                                    },
+                                    "required": ["label", "url"]
+                                }
+                            }
+                        },
+                        "required": ["title", "rows"]
+                    }
+                }
+            },
+            "required": ["columns"]
         },
         "Contact": {
             "type": "object",

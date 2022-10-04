@@ -4,6 +4,11 @@ import { HiLocationMarker } from '@react-icons/all-files/hi/HiLocationMarker'
 import { IoCall } from '@react-icons/all-files/io5/IoCall'
 import { MdEmail } from '@react-icons/all-files/md/MdEmail'
 
+import { Link } from 'react-router-dom'
+
+import { useAtomValue } from 'jotai'
+import { FooterLinkModel, LocaleAtom } from 'state'
+
 import './style/footer.scss'
 
 const Footer: FC = () => {
@@ -15,7 +20,7 @@ const Footer: FC = () => {
             </footer>
             <div className='team-00 title_smaller'>
                 Created By{'  '}
-                <a href='https://web-00-team.web.app/'> 00 TEAM</a>
+                <a href='https://web-00-team.web.app/'> 00 Team</a>
             </div>
         </>
     )
@@ -66,75 +71,43 @@ const FooterMainSection: FC = () => {
 }
 
 const ContentSection: FC = () => {
+    const Locale = useAtomValue(LocaleAtom).Footer.columns
+
     return (
         <div className='content-section'>
             <div className='content-wrapper'>
-                <div className='content'>
-                    <div className='content-header title_small'>
-                        <span className='title-wrapper'>درباره ما</span>
+                {Locale.map(({ title, rows }, i0) => (
+                    <div key={i0} className='content'>
+                        <div className='content-header title_small'>
+                            <span className='title-wrapper'>{title}</span>
+                        </div>
+                        {rows.map((row, i1) => (
+                            <ContentRow key={i1} {...row} />
+                        ))}
                     </div>
-                    <a className='content-link-wrapper' href=''>
-                        <div className='content-link title_smaller'>
-                            لورم ایپسون متن
-                        </div>
-                    </a>
-                    <a className='content-link-wrapper' href=''>
-                        <div className='content-link title_smaller'>
-                            لورم ایپسون متن
-                        </div>
-                    </a>
-                    <a className='content-link-wrapper' href=''>
-                        <div className='content-link title_smaller'>
-                            لورم ایپسون متن
-                        </div>
-                    </a>
-                </div>
-                <div className='content'>
-                    <div className='content-header title_small'>
-                        <span className='title-wrapper'>خدمات</span>
-                    </div>
-                    <a className='content-link-wrapper' href=''>
-                        <div className='content-link title_smaller'>
-                            لورم ایپسون متن
-                        </div>
-                    </a>
-                    <a className='content-link-wrapper' href=''>
-                        <div className='content-link title_smaller'>
-                            لورم ایپسون متن
-                        </div>
-                    </a>
-                    <a className='content-link-wrapper' href=''>
-                        <div className='content-link title_smaller'>
-                            لورم ایپسون متن
-                        </div>
-                    </a>
-                </div>
-                <div className='content'>
-                    <div className='content-header title_small'>
-                        <span className='title-wrapper'>ارتباط با ما</span>
-                    </div>
-                    <a className='content-link-wrapper' href=''>
-                        <div className='content-link title_smaller'>
-                            لورم ایپسون متن
-                        </div>
-                    </a>
-                    <a className='content-link-wrapper' href=''>
-                        <div className='content-link title_smaller'>
-                            لورم ایپسون متن
-                        </div>
-                    </a>
-                    <a className='content-link-wrapper' href=''>
-                        <div className='content-link title_smaller'>
-                            لورم ایپسون متن
-                        </div>
-                    </a>
-                </div>
+                ))}
             </div>
             <div className='logo-wrapper title_hero'>
                 <img src='/static/image/logo.png' alt='' />
             </div>
         </div>
     )
+}
+
+const ContentRow: FC<FooterLinkModel> = ({ label, url, external }) => {
+    if (external) {
+        return (
+            <a className='content-link-wrapper' href={url}>
+                <div className='content-link title_smaller'>{label}</div>
+            </a>
+        )
+    } else {
+        return (
+            <Link className='content-link-wrapper' to={url}>
+                <div className='content-link title_smaller'>{label}</div>
+            </Link>
+        )
+    }
 }
 
 export { Footer }

@@ -28,6 +28,12 @@ interface Strategy {
     description: Description
 }
 
+interface FooterLink {
+    label: string
+    url: string
+    external?: boolean
+}
+
 interface Locale {
     id: string
     label: string
@@ -37,6 +43,12 @@ interface Locale {
         about: string
         services: string
         contact: string
+    }
+    Footer: {
+        columns: {
+            title: string
+            rows: FooterLink[]
+        }[]
     }
     Home: {
         hero: {
@@ -121,4 +133,5 @@ export {
     MemberCard as MemberCardModel,
     SellingCard as SellingCardModel,
     Strategy as StrategyModel,
+    FooterLink as FooterLinkModel,
 }

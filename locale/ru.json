@@ -82,7 +82,19 @@
             "button": "read more"
         }
     },
-    "Footer": {},
+    "Footer": {
+        "columns": [
+            {
+                "title": "درباره ما",
+                "rows": [
+                    {
+                        "label": "lable 1",
+                        "url": "/ggez/"
+                    }
+                ]
+            }
+        ]
+    },
     "Contact": {
         "header": {
             "sentence": "Contact  Akam",
