@@ -267,17 +267,14 @@
         }
     }
 }
-.team-00 {
+.OO-team {
     width: 100%;
     text-align: center;
 
-    background-color: var(--accent-color);
-    color: var(--primary-color);
+    background-color: #040404;
+    color: #f2f2f2;
+    text-decoration: none;
 
     padding: 10px 15px;
-
-    a {
-        color: unset;
-        text-decoration: none;
-    }
+    display: block;
 }

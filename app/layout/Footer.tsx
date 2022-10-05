@@ -18,10 +18,13 @@ const Footer: FC = () => {
                 <FooterMainSection />
                 <ContentSection />
             </footer>
-            <div className='team-00 title_smaller'>
-                Created By{'  '}
-                <a href='https://web-00-team.web.app/'> 00 Team</a>
-            </div>
+            <a
+                href='https://web-00-team.web.app/'
+                className='OO-team title_smaller'
+                target='_blank'
+            >
+                Created By 00 Team
+            </a>
         </>
     )
 }
