@@ -88,7 +88,7 @@ def send_contact():
     except (InvalidCaptcha, AttributeError):
         return {'error': 'captcha'}, 400
 
-    now = int(time.time()) + 800000
+    now = int(time.time())
 
     try:
         contact_info = (
