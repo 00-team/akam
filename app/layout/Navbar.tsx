@@ -20,7 +20,7 @@ import './style/navbar.scss'
 const Navbar: FC = () => {
     const [WindowWidth, setWindowWidth] = useState(innerWidth)
 
-    const Loacle = useAtomValue(LocaleAtom).Navbar
+    const Locale = useAtomValue(LocaleAtom).Navbar
     const Location = useLocation()
 
     useEffect(() => {
@@ -35,9 +35,9 @@ const Navbar: FC = () => {
     return (
         <>
             {WindowWidth >= 1026 ? (
-                <MajorScreenNav isLoc={CheckLocation} Loacle={Loacle} />
+                <MajorScreenNav isLoc={CheckLocation} Locale={Locale} />
             ) : (
-                <SmallScreenNav isLoc={CheckLocation} Loacle={Loacle} />
+                <SmallScreenNav isLoc={CheckLocation} Locale={Locale} />
             )}
         </>
     )
@@ -45,10 +45,10 @@ const Navbar: FC = () => {
 
 interface NavProps {
     isLoc: (item: string) => void
-    Loacle: LocaleModel['Navbar']
+    Locale: LocaleModel['Navbar']
 }
 
-const MajorScreenNav: FC<NavProps> = ({ isLoc, Loacle }) => {
+const MajorScreenNav: FC<NavProps> = ({ isLoc, Locale }) => {
     return (
         <nav className='nav-container'>
             <div className='nav-wrapper title_small'>
@@ -59,22 +59,22 @@ const MajorScreenNav: FC<NavProps> = ({ isLoc, Loacle }) => {
                             to='contact/'
                             className={`nav-item ${C(isLoc('contact'))}`}
                         >
-                            {Loacle.contact}
+                            {Locale.contact}
                         </Link>
                         <Link
                             to='selling/'
                             className={`nav-item ${C(isLoc('selling'))}`}
                         >
-                            {Loacle.services}
+                            {Locale.services}
                         </Link>
                         <Link
                             to='about/'
                             className={`nav-item ${C(isLoc('about'))}`}
                         >
-                            {Loacle.about}
+                            {Locale.about}
                         </Link>
                         <Link to='/' className={`nav-item ${C(isLoc(''))}`}>
-                            {Loacle.home}
+                            {Locale.home}
                         </Link>
                     </div>
                 </div>
@@ -87,7 +87,7 @@ const MajorScreenNav: FC<NavProps> = ({ isLoc, Loacle }) => {
     )
 }
 
-const SmallScreenNav: FC<NavProps> = ({ isLoc, Loacle }) => {
+const SmallScreenNav: FC<NavProps> = ({ isLoc, Locale }) => {
     const [Active, setActive] = useState(false)
 
     return (
@@ -123,7 +123,7 @@ const SmallScreenNav: FC<NavProps> = ({ isLoc, Loacle }) => {
                                 <div className='icon'>
                                     <CgPhone size={24} />
                                 </div>
-                                <div className='holder'>{Loacle.contact}</div>
+                                <div className='holder'>{Locale.contact}</div>
                             </Link>
                             <Link
                                 to='selling'
@@ -133,7 +133,7 @@ const SmallScreenNav: FC<NavProps> = ({ isLoc, Loacle }) => {
                                 <div className='icon'>
                                     <GrServices size={24} />
                                 </div>
-                                <div className='holder'>{Loacle.services}</div>
+                                <div className='holder'>{Locale.services}</div>
                             </Link>
                             <Link
                                 to='about'
@@ -141,7 +141,7 @@ const SmallScreenNav: FC<NavProps> = ({ isLoc, Loacle }) => {
                                 onClick={() => setActive(false)}
                             >
                                 <FaBuilding size={24} />
-                                <div className='holder'>{Loacle.about}</div>
+                                <div className='holder'>{Locale.about}</div>
                             </Link>
                             <Link
                                 to='/'
@@ -151,7 +151,7 @@ const SmallScreenNav: FC<NavProps> = ({ isLoc, Loacle }) => {
                                 <div className='icon'>
                                     <FaHome size={24} />
                                 </div>
-                                <div className='holder'>{Loacle.home}</div>
+                                <div className='holder'>{Locale.home}</div>
                             </Link>
                         </div>
                     </div>
