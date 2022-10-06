@@ -4,10 +4,10 @@ from datetime import datetime
 from threading import Thread
 from time import sleep
 
-from flask import Request
+from flask import Markup, Request
 from httpx import post
 
-from .shared import SECRETS
+from .shared import SECRETS, app
 
 
 logger = logging.getLogger('warn')
@@ -16,6 +16,21 @@ logger.name = __name__
 HR = '\n' + ('-' * 50) + '\n'
 USERNAME = 'Akam'
 AVATAR = 'https://cdn.discordapp.com/attachments/731174051170746500/814603567704047646/00_logo_f27.png'
+
+
+@app.template_global('description')
+def description(text: str | list):
+
+    if isinstance(text, str) and len(text.split('\n')) > 1:
+        text = text.split('\n')
+
+    if isinstance(text, str):
+        return text
+
+    base = '<span class="description-line">{}</span>'
+    return Markup(''.join(
+        map(lambda l: base.format(l if l else '<br />'), text)
+    ))
 
 
 class InvalidCaptcha(Exception):
