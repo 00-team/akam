@@ -4,26 +4,6 @@ from werkzeug.exceptions import HTTPException
 from .locale import DEFAULT_LOCALE, LOCALES, LOCALES_LIST
 
 
-def home():
-    return render_template('home.html')
-
-
-def contact():
-    return render_template('contact.html')
-
-
-def about():
-    return render_template('about.html')
-
-
-def selling():
-    return render_template('selling.html')
-
-
-def locales_list():
-    return LOCALES_LIST
-
-
 def get_locale():
     # basicly: locale from request OR locale from session OR DEFAULT_LOCALE
     session_locale = session.get('locale', DEFAULT_LOCALE)
@@ -37,6 +17,30 @@ def get_locale():
         session['locale'] = locale
 
     return data
+
+
+def home():
+    locale = get_locale()
+    return render_template('home.html', locale=locale)
+
+
+def contact():
+    locale = get_locale()
+    return render_template('contact.html', locale=locale)
+
+
+def about():
+    locale = get_locale()
+    return render_template('about.html', locale=locale)
+
+
+def selling():
+    locale = get_locale()
+    return render_template('selling.html', locale=locale)
+
+
+def locales_list():
+    return LOCALES_LIST
 
 
 def robots_txt():
