@@ -1,0 +1,18 @@
+{% set Locale = locale.Navbar %}
+<nav class="nav-container">
+    <div class="nav-wrapper title_small">
+        <div class="nav-content">
+            <!-- <ChangeLang /> -->
+            <div class="nav-items">
+                <a href="/contact/" class="nav-item">{{ Locale.contact }}</a>
+                <a href="/selling/" class="nav-item">{{ Locale.services }}</a>
+                <a href="/about/" class="nav-item">{{ Locale.about }}</a>
+                <a href="/" class="nav-item">{{ Locale.home }}</a>
+            </div>
+        </div>
+        <div
+            class="nav-logo"
+            style="background-image: url(/static/image/logo.png)"
+        ></div>
+    </div>
+</nav>

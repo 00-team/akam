@@ -6,7 +6,15 @@
         <link rel="stylesheet" href="/static/fonts/imports.css" />
 
     </head>
-    <body>
-        <div id="root" class="root">{% block content %}{% endblock %}</div>
+    <body
+    {% if locale.direction == 'rtl' %}
+    style="text-align: right;direction: rtl;"
+    {% endif %}
+    >
+        <div id="root" class="root">
+            {% include "layout/navbar.html" %}
+            {% block content %}{% endblock %}
+            {% include "layout/footer.html" %}
+        </div>
     </body>
 </html>
