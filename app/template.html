@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ locale.id }}">
     <head>
         {% block head %}{% endblock head %}
         
         <link rel="stylesheet" href="/static/fonts/imports.css" />
+
+        <!-- Locale -->
+        <script>
+            var Locale = {{ locale | tojson | safe }};
+        </script>
 
     </head>
     <body
