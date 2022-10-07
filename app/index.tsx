@@ -15,7 +15,7 @@ const Root: FC = () => {
 const container = document.getElementById('root')!
 
 if (container.hasChildNodes()) {
-    hydrateRoot(container, <Root />)
+    hydrateRoot(container, <Root />, { onRecoverableError: () => {} })
 } else {
     createRoot(container).render(<Root />)
 }
