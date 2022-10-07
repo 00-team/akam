@@ -14,6 +14,7 @@ interface InputRefs {
     last_name: HTMLInputElement | null
     email: HTMLInputElement | null
     phone: HTMLInputElement | null
+    company: HTMLInputElement | null
     message: HTMLTextAreaElement | null
     platforms: string[]
     captcha: Recaptcha | null
@@ -24,6 +25,7 @@ const DefaultInputs: InputRefs = {
     last_name: null,
     email: null,
     phone: null,
+    company: null,
     message: null,
     platforms: [],
     captcha: null,
@@ -38,13 +40,14 @@ const ContactForm: FC = () => {
         if (!inputs.current) return
 
         const { first_name, last_name, email, phone } = inputs.current
-        const { message, platforms, captcha } = inputs.current
+        const { message, platforms, captcha, company } = inputs.current
 
         if (
             !first_name ||
             !last_name ||
             !email ||
             !phone ||
+            !company ||
             !message ||
             !captcha
         ) {
@@ -69,6 +72,7 @@ const ContactForm: FC = () => {
             last_name: last_name.value,
             email: email.value,
             phone: phone.value,
+            company: company.value,
             message: message.value,
             platforms: platforms,
             recaptcha: token,
@@ -85,8 +89,8 @@ const ContactForm: FC = () => {
                 <legend className='title'>
                     <Colored {...Locale.title} />
                 </legend>
+                <div>{Response}</div>
                 <div className='title-inps'>
-                    <div>{Response}</div>
                     <input
                         type='text'
                         className='name title_smaller'
@@ -115,14 +119,24 @@ const ContactForm: FC = () => {
                         if (node) inputs.current.email = node
                     }}
                 />
-                <input
-                    className='phone title_smaller'
-                    type='tel'
-                    placeholder={Locale.phone}
-                    ref={node => {
-                        if (node) inputs.current.phone = node
-                    }}
-                />
+                <div className='title-inps'>
+                    <input
+                        className='phone title_smaller'
+                        type='tel'
+                        placeholder={Locale.phone}
+                        ref={node => {
+                            if (node) inputs.current.phone = node
+                        }}
+                    />
+                    <input
+                        className='title_smaller'
+                        type='text'
+                        placeholder={Locale.company}
+                        ref={node => {
+                            if (node) inputs.current.company = node
+                        }}
+                    />
+                </div>
 
                 <ContactPlatforms
                     onChange={platforms =>

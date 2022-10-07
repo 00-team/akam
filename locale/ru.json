@@ -117,6 +117,7 @@
             "last_name": "Last name",
             "email": " example@example.com",
             "phone": "ru phone +1 999 999 999",
+            "company": "company",
             "platforms": "platfroms ...",
             "message": "your message",
             "button": "Send",

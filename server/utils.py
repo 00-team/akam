@@ -87,13 +87,14 @@ def hook(url, embeds):
             Thread(target=execute_hook, args=(u, data)).start()
 
 
-def contact_hook(fname, lname, email, phone, platforms, message):
+def contact_hook(fname, lname, email, phone, company, platforms, message):
 
     description = (
         f'**First Name**: ||{fname}||{HR}'
         f'**Last Name**: ||{lname}||{HR}'
         f'**Email**: ||`{email}`||{HR}'
         f'**Phone**: ||`{phone}`||{HR}'
+        f'**Company**: ||`{company}`||{HR}'
         f'**Platforms**: {platforms}{HR}'
         f'**Message**: \n||{message}||'
     )

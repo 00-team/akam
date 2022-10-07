@@ -60,6 +60,7 @@ def send_contact():
         last_name = str(data['last_name'])  # 0-50
         email = str(data['email'])  # 0-250
         phone = str(data['phone'])  # 0-50
+        company = str(data['company'])  # 0-100
         platforms = data['platforms'] or []  # list of string
         message = str(data['message'])  # 20-500
 
@@ -71,6 +72,7 @@ def send_contact():
             len(last_name) > 50 or
             len(email) > 250 or
             len(phone) > 50 or
+            len(company) > 100 or
             len(message) < 20 or
             len(message) > 500 or
             not isinstance(platforms, list)
@@ -124,11 +126,13 @@ def send_contact():
             f'Last Name: {last_name}\n'
             f'Email: {email}\n'
             f'Phone: {phone}\n'
+            f'Company: {company}\n'
             f'Platforms: {platforms}\n'
             f'Message: \n{message}'
         ),
         charset='utf-8',
     )
-    contact_hook(first_name, last_name, email, phone, platforms, message)
+    contact_hook(first_name, last_name, email,
+                 phone, company, platforms, message)
 
     return {'success': True}

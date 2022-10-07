@@ -103,6 +103,7 @@ interface Locale {
             last_name: string
             email: string
             phone: string
+            company: string
             platforms: string
             message: string
             button: string

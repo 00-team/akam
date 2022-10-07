@@ -135,6 +135,7 @@
             "message": "متن پیام...",
             "email": "example@gmail.com",
             "phone": "fa phone 09000",
+            "company": "company",
             "platforms": "راه ارتباطی شما با ما",
             "button": "ارسال",
             "responses": {

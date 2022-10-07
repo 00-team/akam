@@ -122,6 +122,7 @@
             "last_name": "Last name",
             "email": "example@example.com",
             "phone": "en phone +1 999 999 999",
+            "company": "company",
             "platforms": "platfroms ...",
             "message": "your messages",
             "button": "Send",

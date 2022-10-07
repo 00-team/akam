@@ -5,6 +5,7 @@ interface DataProps {
     last_name: string
     email: string
     phone: string
+    company: string
     message: string
     platforms: string[]
     recaptcha: string
