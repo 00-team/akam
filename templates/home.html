@@ -1,7 +1,58 @@
 {% extends 'base.html' %}
 
 {% block head %}
-    {% with title="Home"  %}
-        {% include "includes/meta.html"  %}
+    {% with title="Home" %}
+        {% include "include/meta.html" %}
     {% endwith %}
 {% endblock head %}
+
+{% block content %}
+<main class="home-container">
+    {% set Locale = locale.Home.hero %}
+    <section class="hero-cointainer" id="hero">
+        <div class="texts-container title_small">
+            <div class="animation">
+                <div class="title_small motto" style="animation-delay: 1s">
+                    <span class="word">{{ Locale.motto.words[0] }}</span> 
+                    {{ Locale.motto.sentence }}
+                </div>
+            </div>
+            <div class="animation">
+                <div class="title_hero" style="animation-delay: 1.3s">
+                    {{ Locale.title.sentence }}
+                </div>
+            </div>
+            <div class="animation">
+                <div
+                    class="title_small text-desc"
+                    style="animation-delay: 1.6s"
+                >
+                    {{ description(Locale.description) }}
+                </div>
+            </div>
+            <div class="animation">
+                <div class="hero-btns title_smaller">
+                    <a
+                        href="#about"
+                        class="hero-btn about"
+                        style="animation-delay: 2s"
+                    >
+                        {{ Locale.buttons.about.sentence }}
+                    </a>
+                    <a
+                        href="#contact"
+                        class="hero-btn action"
+                        style="animation-delay: 2.2s"
+                    >
+                        {{ Locale.buttons.collaboration }}
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="svg-container">
+            <img src="/static/svg/hero.svg" alt="" />
+        </div>
+        <div class="scroll-down"></div>
+    </section>
+</main>
+{% endblock %}
