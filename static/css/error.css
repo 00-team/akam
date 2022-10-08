@@ -60,6 +60,30 @@ body {
     padding: 0 3rem;
 }
 
+.error-container .home-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+
+    padding: 1rem 3rem;
+    border-radius: 10px;
+
+    font-size: clamp(0.7rem, 0.4rem + 1.8vw, 1.25rem);
+    font-family: Shabnam;
+
+    background-color: #f2f2f2;
+    box-shadow: 0 25px 15px -25px #000;
+    color: #7b54c4;
+
+    /* reset  */
+    text-decoration: none;
+}
+.error-container .home-btn .icon{
+    display: grid;
+    place-items: center;
+}
+
 @media screen and (max-width: 768px) {
     .error-container .svg-container {
         width: 80%;
