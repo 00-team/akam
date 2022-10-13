@@ -140,11 +140,11 @@
             "button": "ارسال",
             "responses": {
                 "success": "your message successfully has been send!",
-                "captcha": "error! please verify the captcha",
-                "data": "error! invalid input",
-                "timeout": "error! you are sending your messages too quickly!",
-                "empty": "error! please fill all the fields",
-                "email": "error! please enter a valid email",
+                "captcha": "please verify the captcha",
+                "data": "invalid input",
+                "timeout": "you are sending your messages too quickly!",
+                "empty": "please fill all the fields",
+                "email": "لطفا ایمیل خود را به درستی وارد کنید",
                 "unknown": "an unknown error has happend"
             }
         }
