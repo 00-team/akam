@@ -1,5 +1,9 @@
 import React, { FC, useRef, useState } from 'react'
 
+import { C } from '@00-team/utils'
+
+import { MdErrorOutline } from '@react-icons/all-files/md/MdErrorOutline'
+
 import Recaptcha from 'react-google-recaptcha'
 
 import { useAtomValue } from 'jotai'
@@ -89,8 +93,13 @@ const ContactForm: FC = () => {
                 <legend className='title'>
                     <Colored {...Locale.title} />
                 </legend>
-                <div>{Response}</div>
-                <div className='title-inps'>
+                <div className={`form-error title_small ${C(Response)}`}>
+                    <div className='icon'>
+                        <MdErrorOutline size={24} />
+                    </div>
+                    <div className='holder'>{Response}</div>
+                </div>
+                <div className={`title-inps ${C(Response)}`} id='top'>
                     <input
                         type='text'
                         className='name title_smaller'
