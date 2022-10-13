@@ -38,7 +38,8 @@ const DefaultInputs: InputRefs = {
 const ContactForm: FC = () => {
     const Locale = useAtomValue(LocaleAtom).Contact.form
     const inputs = useRef<InputRefs>(DefaultInputs)
-    const [Response, setResponse] = useState('')
+    // Response = [message, is_error]
+    const [Response, setResponse] = useState(['', false])
 
     const Send = async () => {
         if (!inputs.current) return
@@ -55,20 +56,20 @@ const ContactForm: FC = () => {
             !message ||
             !captcha
         ) {
-            return setResponse(Locale.responses['empty'])
+            return setResponse([Locale.responses['empty'], true])
         }
 
         if (
             !/^[\x00-\x7F]*$/.test(email.value) ||
             !/^[\w\-\.]+@([\w-]+\.)+[\w-]{2,}$/gm.test(email.value)
         ) {
-            return setResponse(Locale.responses['email'])
+            return setResponse([Locale.responses['email'], true])
         }
 
         const token = captcha.getValue()
 
         if (!token) {
-            return setResponse(Locale.responses['captcha'])
+            return setResponse([Locale.responses['captcha'], true])
         }
 
         const status = await SendContact({
@@ -84,7 +85,7 @@ const ContactForm: FC = () => {
 
         captcha.reset()
 
-        setResponse(Locale.responses[status])
+        setResponse([Locale.responses[status], status !== 'success'])
     }
 
     return (
@@ -93,13 +94,13 @@ const ContactForm: FC = () => {
                 <legend className='title'>
                     <Colored {...Locale.title} />
                 </legend>
-                <div className={`form-error title_small ${C(Response)}`}>
+                <div className={`form-error title_small ${C(Response[0])}`}>
                     <div className='icon'>
                         <MdErrorOutline size={24} />
                     </div>
-                    <div className='holder'>{Response}</div>
+                    <div className='holder'>{Response[0]}</div>
                 </div>
-                <div className={`title-inps ${C(Response)}`} id='top'>
+                <div className={`title-inps ${C(Response[0])}`} id='top'>
                     <input
                         type='text'
                         className='name title_smaller'
