@@ -94,7 +94,11 @@ const ContactForm: FC = () => {
                 <legend className='title'>
                     <Colored {...Locale.title} />
                 </legend>
-                <div className={`form-error title_small ${C(Response[0])}`}>
+                <div
+                    className={`form-error title_small ${C(Response[0])} ${
+                        Response[1] ? 'error' : 'success'
+                    }`}
+                >
                     <div className='icon'>
                         <MdErrorOutline size={24} />
                     </div>
