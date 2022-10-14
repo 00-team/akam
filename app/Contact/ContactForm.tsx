@@ -2,6 +2,7 @@ import React, { FC, useRef, useState } from 'react'
 
 import { C } from '@00-team/utils'
 
+import { FaCheckCircle } from '@react-icons/all-files/fa/FaCheckCircle'
 import { MdErrorOutline } from '@react-icons/all-files/md/MdErrorOutline'
 
 import Recaptcha from 'react-google-recaptcha'
@@ -100,7 +101,11 @@ const ContactForm: FC = () => {
                     }`}
                 >
                     <div className='icon'>
-                        <MdErrorOutline size={24} />
+                        {Response[1] ? (
+                            <MdErrorOutline size={24} />
+                        ) : (
+                            <FaCheckCircle size={24} />
+                        )}
                     </div>
                     <div className='holder'>{Response[0]}</div>
                 </div>
